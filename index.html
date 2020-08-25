@@ -63,9 +63,9 @@
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="navbar-nav mx-auto">
-                <a class="nav-item nav-link" id="portTop">Portfolio</a>
-                <a class="nav-item nav-link" id="aboutTop">About Me</a>
-                <a class="nav-item nav-link" id="contactTop">Contact</a>
+                <a tabindex="0" class="nav-item nav-link" id="portTop">Portfolio</a>
+                <a tabindex="0" class="nav-item nav-link" id="aboutTop">About Me</a>
+                <a tabindex="0" class="nav-item nav-link" id="contactTop">Contact</a>
             </div>
         </nav>
 
@@ -74,14 +74,14 @@
     <!-- PORTFOLIO -->
     <div class="container mb-5" id="portfolio">
         <div class="row">
-            <h3 class="haze mx-auto mt-3 text-info" id="goPort">P o r t f o l i o</h3>
+            <h3 tabindex="0" class="haze mx-auto mt-3 text-info" id="goPort">P o r t f o l i o</h3>
         </div>
         <div class="card-deck m-4">
             <!-- Owl Carousel, mobile swipe friendly, or use nav arrows -->
             <div class="owl-carousel owl-theme">
                 <!-- Emoji Runner - Project 2 -->
                 <div class="item card shadow">
-                    <a href="http://emoji-runner.herokuapp.com/" target="_blank">
+                    <a class="imgFocus" href="http://emoji-runner.herokuapp.com/" target="_blank">
                         <img class="card-img-top" src="./assets/images/emoji.png"
                             alt="Logo that reads 'Emoji Runner' with an emoji character."></a>
                     <div class="card-body">
@@ -96,7 +96,7 @@
                 </div>
                 <!-- Covid-19 Tracker - Project 1 -->
                 <div class="item card shadow">
-                    <a href="https://gloriousloaf.github.io/Covid-19-Tracker/" target="_blank">
+                    <a class="imgFocus" href="https://gloriousloaf.github.io/Covid-19-Tracker/" target="_blank">
                         <img class="card-img-top" src="./assets/images/covid.png"
                             alt="Logo that reads 'Covid-19 Tracker'"></a>
                     <div class="card-body">
@@ -111,8 +111,9 @@
                 </div>
                 <!-- Burger Cravings MVC -->
                 <div class="item card shadow">
-                    <a href="https://maple-whistler-67367.herokuapp.com/" target="_blank"><img class="card-img-top"
-                            src="./assets/images/Burger-Cravings.png" alt="Cartoon Burger & Fries"></a>
+                    <a class="imgFocus" href="https://maple-whistler-67367.herokuapp.com/" target="_blank"><img
+                            class="card-img-top" src="./assets/images/Burger-Cravings.png"
+                            alt="Cartoon Burger & Fries"></a>
                     <div class="card-body">
                         <h5 class="card-title move-left">Burger Cravings</h5>
                         <p class="card-text">A fun demo of the MVC design pattern. Do you want fries with that?</p>
@@ -123,8 +124,8 @@
                 </div>
                 <!-- Express Note Taker -->
                 <div class="item card shadow">
-                    <a href="https://powerful-island-62545.herokuapp.com/" target="_blank"><img class="card-img-top"
-                            src="./assets/images/Express-Note-Taker.png"
+                    <a class="imgFocus" href="https://powerful-island-62545.herokuapp.com/" target="_blank"><img
+                            class="card-img-top" src="./assets/images/Express-Note-Taker.png"
                             alt="Brighly colored succulents in white pots."></a>
                     <div class="card-body">
                         <h5 class="card-title move-left">Express Note Taker</h5>
@@ -137,7 +138,7 @@
                 </div>
                 <!-- Weather Dashboard -->
                 <div class="item card shadow">
-                    <a href="https://gloriousloaf.github.io/Weather-Dashboard/" target="_blank"><img
+                    <a class="imgFocus" href="https://gloriousloaf.github.io/Weather-Dashboard/" target="_blank"><img
                             class="card-img-top" src="./assets/images/Weather-Dashboard.png"
                             alt="A five day weather forecast display."></a>
                     <div class="card-body">
@@ -151,7 +152,7 @@
                 </div>
                 <!-- Work Day Scheduler -->
                 <div class="item card shadow">
-                    <a href="https://gloriousloaf.github.io/Work-Day-Scheduler/" target="_blank"><img
+                    <a class="imgFocus" href="https://gloriousloaf.github.io/Work-Day-Scheduler/" target="_blank"><img
                             class="card-img-top" src="./assets/images/Work-Day-Scheduler.png"
                             alt="A work day scheduler."></a>
                     <div class="card-body">
@@ -174,7 +175,7 @@
     <!-- ABOUT ME -->
     <div class="container mb-5" id="aboutme">
         <div class="row">
-            <h3 class="haze mx-auto mt-3 text-info" id="goAbout">A b o u t &nbsp; M e</h3>
+            <h3 tabindex="0" class="haze mx-auto mt-3 text-info" id="goAbout">A b o u t &nbsp; M e</h3>
         </div>
         <div class="row mt-4">
             <div class="col-sm-7 m-2">
@@ -224,13 +225,13 @@
             </div>
         </div>
         <!-- tiny home link: #scroll styles it, .scrollUp for event listener-->
-        <p class="text-center mt-1 scroll"><a class="text-decoration-none text-muted scrollUp">home</a></p>
+        <p class="text-center mt-1 scroll"><a tabindex="0" class="text-decoration-none text-muted scrollUp">home</a></p>
     </div>
 
     <!-- CONTACT -->
     <div class="container mb-5" id="contact">
         <div class="row">
-            <h3 class="haze mx-auto mt-3 text-info" id="goContact">C o n t a c t</h3>
+            <h3 tabindex="0" class="haze mx-auto mt-3 text-info" id="goContact">C o n t a c t</h3>
         </div>
         <div class="row mt-4">
             <div class="col-sm-7 m-2">
@@ -309,15 +310,15 @@
             </div>
         </div>
         <!-- tiny home link: #scroll styles it, .scrollUp for event listener-->
-        <p class="text-center mt-1 scroll"><a class="text-decoration-none text-muted scrollUp">home</a></p>
+        <p class="text-center mt-1 scroll"><a tabindex="0" class="text-decoration-none text-muted scrollUp">home</a></p>
     </div>
 
     <!-- Footer -->
     <footer class="footer bg-info">
         <div class="text-center">
             <span aria-hidden="true">
-                <i class="fab fa-github" aria-hidden="true"></i> <a class="text-decoration-none text-white"
-                    href="https://github.com/gloriousLoaf" target="_blank">gloriousLoaf</a>
+                <a class="text-decoration-none text-white" href="https://github.com/gloriousLoaf" target="_blank">
+                    <i class="fab fa-github" aria-hidden="true"></i> gloriousLoaf</a>
             </span>
         </div>
     </footer>
