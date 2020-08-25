@@ -20,7 +20,7 @@ body {
 
 /* SHOWCASE / HERO */ 
 .showcase {
-    height: 65vh;
+    height: 45vh;
     width: 100%;
     background-image: url(../images/Metcalf-Media.svg);
     background-size: 743px 272px;
@@ -38,6 +38,8 @@ body {
 
 .content .text {
     line-height: 1.7;
+    font-size: 1.1rem;
+    font-weight: 600;
     color: #17a2b8;
 }
 
@@ -209,7 +211,7 @@ span:hover i, span a:focus i {
 @media(max-width: 575px) {
     /* hero */ 
     .showcase {
-        height: 50vh;
+        height: 40vh;
     }
     /* navbar adjustments */ 
     .navbar {
