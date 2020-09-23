@@ -59,9 +59,9 @@
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="navbar-nav mx-auto">
-                <a data-scroll href="#portfolio" class="nav-item nav-link" id="portTop">Portfolio</a>
-                <a data-scroll href="#aboutme" class="nav-item nav-link" id="aboutTop">About Me</a>
-                <a data-scroll href="#contact" class="nav-item nav-link" id="contactTop">Contact</a>
+                <a data-scroll href="#portfolio" class="nav-item nav-link">Portfolio</a>
+                <a data-scroll href="#aboutme" class="nav-item nav-link">About Me</a>
+                <a data-scroll href="#contact" class="nav-item nav-link">Contact</a>
             </div>
         </nav>
 
@@ -93,7 +93,7 @@
             <!-- Google Books Search -->
             <div class="card shadow">
                 <a class="img-focus" href="https://google-books-loaf.herokuapp.com/" target="_blank"><img
-                        class="card-img-top" src="./assets/images/snipit.png"
+                        class="card-img-top" src="./assets/images/books.jpg"
                         alt="Colorful spines of books on a shelf"></a>
                 <div class="card-body">
                     <h5 class="card-title move-left">Google Books</h5>
@@ -137,15 +137,16 @@
         </div>
         
         <!-- tiny home link: #scroll styles it -->
-        <p class="text-center mt-1"><a href="#home" class="text-decoration-none text-muted scroll">home</a></p>
+        <p class="text-center mt-1"><a href="#home" class="scrollHome">home</a></p>
     
     </div>
 
     <!-- ABOUT ME -->
     <div class="container mb-5" id="aboutme">
 
+        <!-- #goAbout instead of #aboutme fixes a jitter scroll to from mid-page clicks --> 
         <div class="row">
-            <a href="#aboutme" class="haze mx-auto mt-3" id="goAbout"><h3>A b o u t &nbsp; M e</h3></a>
+            <a href="#goAbout" class="haze mx-auto mt-3" id="goAbout"><h3>A b o u t &nbsp; M e</h3></a>
         </div>
 
         <div class="row mt-4">
@@ -198,7 +199,7 @@
 
         </div>
 
-        <p class="text-center mt-1"><a href="#home" class="text-decoration-none text-muted scroll scrollUp">home</a></p>
+        <p class="text-center mt-1"><a href="#home" class="scrollHome">home</a></p>
     
     </div>
 
@@ -291,7 +292,7 @@
             
         </div>
         
-        <p class="text-center mt-1"><a href="#home" class="text-decoration-none text-muted scroll scrollUp">home</a></p>
+        <p class="text-center mt-1"><a href="#home" class="scrollHome">home</a></p>
     
     </div>
 

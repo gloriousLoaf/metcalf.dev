@@ -52,11 +52,11 @@ body {
     font-weight: bold;
 }
 /* Hover Effects - Navbar, Card links, Section headers and 'home' scroll*/ 
-.navbar-nav a, .scroll, .card-body a, .haze {
+.navbar-nav a, .scrollHome, .card-body a, .haze {
     transition: letter-spacing 400ms;
 }
-.navbar-nav a:hover, .scroll:hover, .card-body a:hover,
-.navbar-nav a:focus, .scroll:focus, .card-body a:focus {
+.navbar-nav a:hover, .scrollHome:hover, .card-body a:hover,
+.navbar-nav a:focus, .scrollHome:focus, .card-body a:focus {
     outline: none;
     letter-spacing: 0.08rem;
     border-bottom: 2px solid #e75a7c;
@@ -65,15 +65,22 @@ body {
 .navbar-nav a:hover, .navbar-nav a:focus {
     margin-bottom: -2px;
 }
-.scroll:hover, .scroll:focus{
+/* 'home' links little & faint */ 
+.scrollHome {
+    color: #6c757d;
+    font-size: 0.9em;
+    opacity: 0.9;
+    border-bottom: 2px solid rgba(231, 90, 124, 0.4);
+}
+.scrollHome:hover, .scrollHome:focus{
+    outline: none;
+    text-decoration: none;
     color: #262626;
 }
 /* Section Headers*/
 /* unstyling <a/> tags */ 
-.haze, .scroll {
+.haze {
     color: #17a2b8;
-    border: none;
-    background-color: inherit;
     border-bottom: 2px solid rgba(231, 90, 124, 0.4);
 }
 /* and restyling <a/> tags! */ 
@@ -83,11 +90,6 @@ body {
     color: #17a2b8;
     letter-spacing: 0.08rem;
     border-bottom: 2px solid #e75a7c;
-}
-/* make 'home' links little & faint */ 
-.scroll {
-    font-size: 0.9em;
-    opacity: 0.9;
 }
 
 

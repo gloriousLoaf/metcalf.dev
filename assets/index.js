@@ -6,18 +6,8 @@
 let scroll = new SmoothScroll('a[href*="#"]', {
     speed: 400
 });
-// var scroll = new SmoothScroll('a[href*="#"]');
-// vars to pass to scroll
-// const portfolio = document.querySelector(`#portfolio`);
-// const about = document.querySelector(`#about`);
-// const contact = document.querySelector(`#contact`);
-
-// scroll.animateScroll(portfolio);
-// scroll.animateScroll(about);
-// scroll.animateScroll(contact);
 
 /* Contact Form - Verification of Info, Google Sheets API */
-
 // listener on Contact card Submit calls storeInfo()
 $(`#submit-btn`).on(`click`, storeInfo);
 
