@@ -35,12 +35,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <!-- Owl Carousel -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/style.css">
 
     <title>Welcome | Metcalf.dev</title>
 
@@ -63,9 +59,9 @@
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="navbar-nav mx-auto">
-                <a tabindex="0" class="nav-item nav-link" id="portTop">Portfolio</a>
-                <a tabindex="0" class="nav-item nav-link" id="aboutTop">About Me</a>
-                <a tabindex="0" class="nav-item nav-link" id="contactTop">Contact</a>
+                <a data-scroll href="#portfolio" class="nav-item nav-link">Portfolio</a>
+                <a data-scroll href="#aboutme" class="nav-item nav-link">About Me</a>
+                <a data-scroll href="#contact" class="nav-item nav-link">Contact</a>
             </div>
         </nav>
 
@@ -73,112 +69,88 @@
 
     <!-- PORTFOLIO -->
     <div class="container mb-5" id="portfolio">
+
         <div class="row">
-            <!-- <h3 tabindex="0" class="haze mx-auto mt-3 text-info" id="goPort">P o r t f o l i o</h3> -->
-            <button class="haze mx-auto mt-3 text-info" id="goPort"><h3>P o r t f o l i o</h3></button>
+            <a href="#portfolio" class="haze mx-auto mt-3" id="goPort"><h3>P o r t f o l i o</h3></a>
         </div>
+
         <div class="card-deck m-4">
-            <!-- Owl Carousel, mobile swipe friendly, or use nav arrows -->
-            <div class="owl-carousel owl-theme">
-                <!-- Emoji Runner - Project 2 -->
-                <div class="item card shadow">
-                    <a class="imgFocus" href="http://emoji-runner.herokuapp.com/" target="_blank">
-                        <img class="card-img-top" src="./assets/images/emoji.png"
-                            alt="Emoji Runner with an emoji character."></a>
-                    <div class="card-body">
-                        <h5 class="card-title move-left">Emoji Runner</h5>
-                        <p class="card-text">A fun twist on the classic runner game, with secure user login and
-                            score tracking.</p>
-                        <p class="card-text"><small class="text-muted">P5JS, Express & MySQL - <a
-                                    href="https://github.com/gloriousLoaf/Emoji-Runner"
-                                    target="_blank">Repository</a></small>
-                        </p>
-                    </div>
+
+            <!-- Burger Cravings MVC -->
+            <div class="card shadow">
+                <a class="img-focus" href="https://snipit-social.herokuapp.com/" target="_blank"><img
+                        class="card-img-top" src="./assets/images/snipit.png"
+                        alt="Snipit Social landing page"></a>
+                <div class="card-body">
+                    <h5 class="card-title move-left">Snipit Social</h5>
+                    <p class="card-text">A MERN stack social media app for devs and designers to meetup and share.</p>
+                    <p class="card-text"><small class="text-muted">MERN, Redux, Socket.io - <span><a
+                                    href="https://github.com/gloriousLoaf/Snipit-Social"
+                                    target="_blank">Repository</a></span></small></p>
                 </div>
-                <!-- Covid-19 Tracker - Project 1 -->
-                <div class="item card shadow">
-                    <a class="imgFocus" href="https://gloriousloaf.github.io/Covid-19-Tracker/" target="_blank">
-                        <img class="card-img-top" src="./assets/images/covid.png"
-                            alt="Covid-19 Tracker"></a>
-                    <div class="card-body">
-                        <h5 class="card-title move-left">Covid-19 Tracker</h5>
-                        <p class="card-text">A global tracker information
-                            and resources. Includes statewide testing information.</p>
-                        <p class="card-text"><small class="text-muted">JS / jQuery & Multiple APIs - <a
-                                    href="https://github.com/gloriousLoaf/Covid-19-Tracker"
-                                    target="_blank">Repository</a></small>
-                        </p>
-                    </div>
+            </div>
+
+            <!-- Google Books Search -->
+            <div class="card shadow">
+                <a class="img-focus" href="https://google-books-loaf.herokuapp.com/" target="_blank"><img
+                        class="card-img-top" src="./assets/images/books.jpg"
+                        alt="Colorful spines of books on a shelf"></a>
+                <div class="card-body">
+                    <h5 class="card-title move-left">Google Books</h5>
+                    <p class="card-text">A MERN stack app to find, save and remove books from your personal digital library.</p>
+                    <p class="card-text"><small class="text-muted">MERN, Google Books API - <span><a
+                                    href="https://github.com/gloriousLoaf/Google-Books-Search"
+                                    target="_blank">Repository</a></span></small></p>
                 </div>
-                <!-- Burger Cravings MVC -->
-                <div class="item card shadow">
-                    <a class="imgFocus" href="https://maple-whistler-67367.herokuapp.com/" target="_blank"><img
-                            class="card-img-top" src="./assets/images/Burger-Cravings.png"
-                            alt="Cartoon Burger & Fries"></a>
-                    <div class="card-body">
-                        <h5 class="card-title move-left">Burger Cravings</h5>
-                        <p class="card-text">A fun demo of the MVC design pattern. Do you want fries with that?</p>
-                        <p class="card-text"><small class="text-muted">Handlebars, MySQL & ORM - <span><a
-                                        href="https://github.com/gloriousLoaf/burger"
-                                        target="_blank">Repository</a></span></small></p>
-                    </div>
+            </div>
+
+            <!-- Emoji Runner - Project 2 -->
+            <div class="card shadow">
+                <a class="img-focus" href="http://emoji-runner.herokuapp.com/" target="_blank">
+                    <img class="card-img-top" src="./assets/images/emoji.png"
+                        alt="Emoji Runner with an emoji character."></a>
+                <div class="card-body">
+                    <h5 class="card-title move-left">Emoji Runner</h5>
+                    <p class="card-text">A fun twist on the classic runner game, with secure user login and
+                        score tracking.</p>
+                    <p class="card-text"><small class="text-muted">P5JS, Express & MySQL - <a
+                                href="https://github.com/gloriousLoaf/Emoji-Runner"
+                                target="_blank">Repository</a></small>
+                    </p>
                 </div>
-                <!-- Express Note Taker -->
-                <div class="item card shadow">
-                    <a class="imgFocus" href="https://powerful-island-62545.herokuapp.com/" target="_blank"><img
-                            class="card-img-top" src="./assets/images/Express-Note-Taker.png"
-                            alt="Brighly colored succulents in white pots."></a>
-                    <div class="card-body">
-                        <h5 class="card-title move-left">Express Note Taker</h5>
-                        <p class="card-text">A note taking web app written with Express that demos basic CRUD in a clean
-                            design.</p>
-                        <p class="card-text"><small class="text-muted">HTML & Custom CSS - <span><a
-                                        href="https://github.com/gloriousLoaf/Note-Taker"
-                                        target="_blank">Repository</a></span></small></p>
-                    </div>
-                </div>
-                <!-- Weather Dashboard -->
-                <div class="item card shadow">
-                    <a class="imgFocus" href="https://gloriousloaf.github.io/Weather-Dashboard/" target="_blank"><img
-                            class="card-img-top" src="./assets/images/Weather-Dashboard.png"
-                            alt="A five day weather forecast display."></a>
-                    <div class="card-body">
-                        <h5 class="card-title move-left">Weather Dashboard</h5>
-                        <p class="card-text">Current weather conditions plus five day forecast.
-                            Recent search history to find results quickly.</p>
-                        <p class="card-text"><small class="text-muted">JS / jQuery & Multiple APIs - <a
-                                    href="https://github.com/gloriousLoaf/Weather-Dashboard"
-                                    target="_blank">Repository</a></small>
-                    </div>
-                </div>
-                <!-- Work Day Scheduler -->
-                <div class="item card shadow">
-                    <a class="imgFocus" href="https://gloriousloaf.github.io/Work-Day-Scheduler/" target="_blank"><img
-                            class="card-img-top" src="./assets/images/Work-Day-Scheduler.png"
-                            alt="A work day scheduler."></a>
-                    <div class="card-body">
-                        <h5 class="card-title move-left">Work Day Scheduler</h5>
-                        <p class="card-text">Plan your day with saved events, local weather, and clear
-                            it out for tomorrow.</p>
-                        <p class="card-text"><small class="text-muted">JS / jQuery, Moment.js - <a
-                                    href="https://github.com/gloriousLoaf/Work-Day-Scheduler"
-                                    target="_blank">Repository</a></small>
-                    </div>
+            </div>
+
+            <!-- Covid-19 Tracker - Project 1 -->
+            <div class="card shadow">
+                <a class="img-focus" href="https://gloriousloaf.github.io/Covid-19-Tracker/" target="_blank">
+                    <img class="card-img-top" src="./assets/images/covid.png"
+                        alt="Covid-19 Tracker"></a>
+                <div class="card-body">
+                    <h5 class="card-title move-left">Covid-19 Tracker</h5>
+                    <p class="card-text">Statistics, news and resources. Includes statewide testing information.</p>
+                    <p class="card-text"><small class="text-muted">JS, Mapbox & Multiple APIs - <a
+                                href="https://github.com/gloriousLoaf/Covid-19-Tracker"
+                                target="_blank">Repository</a></small>
+                    </p>
                 </div>
             </div>
         </div>
-        <!-- Carousel Nav instructions -->
-        <div class="row d-flex justify-content-center" id="swipe-me">
-            <p class="text-muted">(or swipe)</p>
-        </div>
+        
+        <!-- tiny home link: #scroll styles it -->
+        <p class="text-center mt-1"><a href="#home" class="scrollHome">home</a></p>
+    
     </div>
 
     <!-- ABOUT ME -->
     <div class="container mb-5" id="aboutme">
+
+        <!-- #goAbout instead of #aboutme fixes a jitter scroll to from mid-page clicks --> 
         <div class="row">
-            <button tabindex="0" class="haze mx-auto mt-3 text-info" id="goAbout"><h3>A b o u t &nbsp; M e</h3></button>
+            <a href="#goAbout" class="haze mx-auto mt-3" id="goAbout"><h3>A b o u t &nbsp; M e</h3></a>
         </div>
+
         <div class="row mt-4">
+
             <div class="col-sm-7 m-2">
                 <div class="card p-2 shadow">
                     <div class="card-body">
@@ -224,17 +196,22 @@
                     </div>
                 </div>
             </div>
+
         </div>
-        <!-- tiny home link: #scroll styles it, .scrollUp for event listener-->
-        <p class="text-center mt-1"><button tabindex="0" class="text-decoration-none text-muted scroll scrollUp">home</button></p>
+
+        <p class="text-center mt-1"><a href="#home" class="scrollHome">home</a></p>
+    
     </div>
 
     <!-- CONTACT -->
     <div class="container mb-5" id="contact">
+
         <div class="row">
-            <button tabindex="0" class="haze mx-auto mt-3 text-info" id="goContact"><h3>C o n t a c t</h3></button>
+            <a href="#contact" class="haze mx-auto mt-3" id="goContact"><h3>C o n t a c t</h3></a>
         </div>
+
         <div class="row mt-4">
+
             <div class="col-sm-7 m-2">
                 <div class="card shadow">
                     <div class="card-body">
@@ -312,8 +289,11 @@
                     </div>
                 </div>
             </div>
+            
         </div>
-        <p class="text-center mt-1"><button tabindex="0" class="text-decoration-none text-muted scroll scrollUp">home</button></p>
+        
+        <p class="text-center mt-1"><a href="#home" class="scrollHome">home</a></p>
+    
     </div>
 
     <!-- Footer -->
@@ -329,8 +309,6 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <!-- Owl Carousel JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
@@ -339,11 +317,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
-    <!-- Smooth Scroll Polyfill -->
-    <!-- <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
-    <script src="https://unpkg.com/smoothscroll-anchor-polyfill"></script> -->
+    <!-- Smooth Scroll Polyfills -->
+    <script src="./assets/smooth-scroll/smooth-scroll.polyfills.min.js"></script>
     <!-- Custom JS -->
-    <script src="./assets/js/app.js"></script>
+    <script src="./assets/index.js"></script>
 
 </body>
 
