@@ -24,14 +24,14 @@ If you are interested, feel free to clone this repo and use it for inspiration i
 <p>&nbsp;</p>
 
 ## Usage
-For now, this is a purely frontend experience, allowing the user to view relevant information. The next reworking will deploy a database to handle user contacts sent through the page.
+Visitors to my site can view some select works from my portfolio; both the GitHub repositories and deployed sites. There is a short bio section to introduce myself. And finally there is a contact form to allow visitors to quickly send my an email without leaving the site. Additionally there are links to view my LinkedIn, GitHub and Twitter, or access me via email in their preferred method.
 <p>&nbsp;</p>
 
 ---
 <p>&nbsp;</p>
 
 ## License
-Free to use as you see fit.
+Open Source.
 <p>&nbsp;</p>
 
 ## Contributors
