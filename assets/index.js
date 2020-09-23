@@ -23,7 +23,7 @@ const form = document.forms['submit-to-google-sheet'];
 
 // storeInfo() validates info then calls Fetch API to Google Sheets & triggers modal
 function storeInfo() {
-    e.preventDefault();
+    event.preventDefault();
     // remove <small>&<span> msgs, in case of multiple clicks, see below
     $(`.try-again`).remove();
     // capture values in vars
