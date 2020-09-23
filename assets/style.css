@@ -22,7 +22,7 @@ body {
 .showcase {
     height: 45vh;
     width: 100%;
-    background-image: url(../images/metcalfdev.svg);
+    background-image: url(./images/metcalfdev.svg);
     background-size: 743px 272px;
     background-repeat: no-repeat;
     background-position: center;
@@ -44,43 +44,47 @@ body {
 }
 
 
-/* NAVBAR, HOME & SECTION SCROLLING & CONTACT LINKS*/ 
-/* fuzzy box-shadow, positioned inside bottom of header */ 
+/* NAVBAR, HOME & SECTION SCROLLING & CONTACT LINKS*/
 .navbar {
     box-shadow: 0 5px 4px 0px rgba(23, 162, 184, 0.4);
     position: relative;
     top: 75%;
     font-weight: bold;
 }
-/* Hover Effects */ 
+/* Hover Effects - Navbar, Card links, Section headers and 'home' scroll*/ 
 .navbar-nav a, .scroll, .card-body a, .haze {
     transition: letter-spacing 400ms;
 }
 .navbar-nav a:hover, .scroll:hover, .card-body a:hover,
 .navbar-nav a:focus, .scroll:focus, .card-body a:focus {
     outline: none;
-    letter-spacing: 0.07rem;
-    cursor: pointer;
+    letter-spacing: 0.08rem;
     border-bottom: 2px solid #e75a7c;
+}
 /* decrease margin so hover doesn't distort size of elements */ 
+.navbar-nav a:hover, .navbar-nav a:focus {
     margin-bottom: -2px;
 }
-/* Section Headers*/ 
+.scroll:hover, .scroll:focus{
+    color: #262626;
+}
+/* Section Headers*/
+/* unstyling <a/> tags */ 
 .haze, .scroll {
-    /* basically unstyling buttons */ 
+    color: #17a2b8;
     border: none;
     background-color: inherit;
     border-bottom: 2px solid rgba(231, 90, 124, 0.4);
 }
-.haze:hover, .haze:focus {
-    /* and restyling buttons! */ 
+/* and restyling <a/> tags! */ 
+.haze:hover, .haze:focus {  
     outline: none;
-    cursor: pointer;
-    letter-spacing: 0.07rem;
+    text-decoration: none;
+    color: #17a2b8;
+    letter-spacing: 0.08rem;
     border-bottom: 2px solid #e75a7c;
 }
-
-/* make (home) links little & faint */ 
+/* make 'home' links little & faint */ 
 .scroll {
     font-size: 0.9em;
     opacity: 0.9;
@@ -107,7 +111,7 @@ body {
     object-fit: cover
 }
 /* focus for .card-img-top */ 
-.imgFocus:focus {
+.img-focus:focus {
     outline: 3px solid #e75a7c;
 }
 /* line up card titles */ 
@@ -140,12 +144,12 @@ body {
     transition: letter-spacing 400ms;
 }
 #submit-btn:hover {
-    letter-spacing: 0.07rem;
+    letter-spacing: 0.08rem;
     background-color: #e75a7c;
 }
 #submit-btn:focus {
     color: #fff;
-    letter-spacing: 0.07rem;
+    letter-spacing: 0.08rem;
     background-color: #e75a7c;
 }
 
