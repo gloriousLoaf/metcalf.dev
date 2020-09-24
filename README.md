@@ -1,12 +1,12 @@
 
-# David Metcalf, Full Stack Developer
-Featured repos, contact info and a little bio.
+<h1 align="center">David Metcalf, Full Stack Developer</h1>
+<h3 align="center">A portfolio of my work with contact info.</h3>
 
-<img src="https://github.com/gloriousLoaf/gloriousLoaf.github.io/blob/main/assets/images/metcalfdev.svg" alt="Metcalf.dev" height="400">
+<p align="center"> <img src="https://github.com/gloriousLoaf/gloriousLoaf.github.io/blob/main/assets/images/metcalfdev.svg" alt="Metcalf.dev" height="400"> </p>
 <p>&nbsp;</p>
 
-![GitHub language count](https://img.shields.io/github/languages/count/gloriousLoaf/gloriousLoaf.github.io)
-![GitHub top language](https://img.shields.io/github/languages/top/gloriousLoaf/gloriousLoaf.github.io)
+<p align="center"> <img src="https://img.shields.io/github/languages/count/gloriousLoaf/gloriousLoaf.github.io" alt="Development language count" /> </p>
+<p align="center"> <img src="https://img.shields.io/github/languages/top/gloriousLoaf/gloriousLoaf.github.io" alt="Development language stats" /> </p>
 
 ## Table of Contents
 * [Description](#-description)
