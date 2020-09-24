@@ -5,8 +5,7 @@
 <p align="center"> <img src="https://github.com/gloriousLoaf/gloriousLoaf.github.io/blob/main/assets/images/metcalfdev.svg" alt="Metcalf.dev" height="400"> </p>
 <p>&nbsp;</p>
 
-<p align="center"> <img src="https://img.shields.io/github/languages/count/gloriousLoaf/gloriousLoaf.github.io" alt="Development language count" /> </p>
-<p align="center"> <img src="https://img.shields.io/github/languages/top/gloriousLoaf/gloriousLoaf.github.io" alt="Development language stats" /> </p>
+<p align="center"> <img src="https://img.shields.io/github/languages/count/gloriousLoaf/gloriousLoaf.github.io" alt="Development language count" /> <img src="https://img.shields.io/github/languages/top/gloriousLoaf/gloriousLoaf.github.io" alt="Development language stats" /> </p>
 
 ## Table of Contents
 * [Description](#-description)
