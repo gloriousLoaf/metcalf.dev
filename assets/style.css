@@ -52,6 +52,11 @@ body {
     font-weight: bold;
 }
 /* Hover Effects - Navbar, Card links, Section headers and 'home' scroll*/ 
+/* repo and contact links */ 
+.card-body a {
+    border-bottom: 2px solid #17a2b8;
+}
+/* transitions on hover / focus */ 
 .navbar-nav a, .scrollHome, .card-body a, .haze {
     transition: letter-spacing 400ms;
 }
