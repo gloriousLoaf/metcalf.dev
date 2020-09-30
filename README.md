@@ -20,7 +20,7 @@
 
 ## 📝 Description
 To view my portfolio, please visit [metcalf.dev](https://metcalf.dev).
-This is a constantly updated and evolving portfolio, serving as an introduction to my work and progress in full stack development. This currently uses **Bootstrap, jQuery, Owl Carousel, and custom JavaScript & stylesheet.**
+This is a constantly updated and evolving portfolio, serving as an introduction to my work and progress in full stack development. This currently uses **custom JavaScript & CSS stylesheet, with a little Bootstrap.**
 <p>&nbsp;</p>
 
 ## 💾 Installation
