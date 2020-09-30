@@ -204,6 +204,7 @@ body {
 }
 /* let's have some fun */
 .footer a {
+    border-bottom: 1px solid #9fffcb;
     transition: margin 1s, font-size 1s, letter-spacing 1s;
 }
 .footer a:focus {
