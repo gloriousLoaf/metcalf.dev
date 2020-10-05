@@ -108,13 +108,10 @@ body {
 #portfolio {
     margin-top: 130px;
 }
-.owl-nav {
-    margin-bottom: -50px;
-}
 /* card deck */ 
 .card-img-top {
     width: 100%;
-    height: 15vw;
+    height: 23vh;
     object-fit: cover
 }
 /* focus for .card-img-top */ 
@@ -124,11 +121,6 @@ body {
 /* line up card titles */ 
 .move-left {
     margin-left: 10px;
-}
-/* portfolio nav instructions */ 
-#swipe-me {
-    padding-top: 25px;
-    font-size: 0.8em;
 }
 
 
