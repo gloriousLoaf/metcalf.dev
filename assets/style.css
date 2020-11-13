@@ -1,4 +1,12 @@
 /* GLOBAL */
+:root {
+  --primary: #073b4c;
+  --secondary: #118ab2;
+  --dark: #242423;
+  --light: #fef9ef;
+  --success: #06d6a0;
+  --alert: #ef476f;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,7 +19,7 @@
     scroll-behavior: smooth;
 } */
 body {
-  background-color: #fffafa;
+  background-color: var(--light);
   min-height: 100vh;
   position: relative;
   padding-bottom: 50px;
@@ -32,87 +40,88 @@ body {
 }
 .content .title {
   font-size: 2rem;
-  color: #17a2b8;
+  color: var(--secondary);
 }
 
 .content .text {
   line-height: 1.7;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: #17a2b8;
+  color: var(--secondary);
 }
 
-/* NAVBAR, HOME & SECTION SCROLLING & CONTACT LINKS*/
+/* NAVBAR, HOME & SECTION SCROLLING, CONTACT LINKS*/
 .navbar {
-  box-shadow: 0 5px 4px 0px rgba(23, 162, 184, 0.4);
   position: relative;
   top: 75%;
-  font-weight: bold;
+  box-shadow: 0 5px 4px 0px rgba(17, 138, 178, 0.4);
 }
 /* Hover Effects - Navbar, Card links, Section headers and 'home' scroll*/
-/* repo and contact links */
-.card-body a {
-  border-bottom: 2px solid #17a2b8;
+.navlink {
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0.75rem;
 }
-/* transitions on hover / focus */
-.navbar-nav a,
-.scrollHome,
+/* section headers */
+.sectionHead {
+  color: var(--primary);
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  border-bottom: 2px solid rgba(239, 71, 111, 0.6);
+}
+/* repo, contact & home links */
 .card-body a,
-.haze {
+.scrollHome {
+  color: var(--dark);
+  font-weight: 600;
+  border-bottom: 2px solid var(--secondary);
+}
+/* transition - stretch */
+.navlink,
+.sectionHead,
+.card-body a,
+.scrollHome {
   transition: letter-spacing 400ms;
 }
-.navbar-nav a:hover,
-.scrollHome:hover,
+/* hover & focus */
+.navlink:hover,
+.navlink:focus,
+.sectionHead:hover,
+.sectionHead:focus,
 .card-body a:hover,
-.navbar-nav a:focus,
-.scrollHome:focus,
-.card-body a:focus {
-  outline: none;
-  letter-spacing: 0.08rem;
-  border-bottom: 2px solid #e75a7c;
-}
-/* decrease margin so hover doesn't distort size of elements */
-.navbar-nav a:hover,
-.navbar-nav a:focus {
-  margin-bottom: -2px;
-}
-/* 'home' links little & faint */
-.scrollHome {
-  color: #6c757d;
-  font-size: 0.9em;
-  opacity: 0.9;
-  border-bottom: 2px solid rgba(231, 90, 124, 0.4);
-}
+.card-body a:focus,
 .scrollHome:hover,
 .scrollHome:focus {
   outline: none;
   text-decoration: none;
-  color: #262626;
-}
-/* Section Headers*/
-/* unstyling <a/> tags */
-.haze {
-  color: #17a2b8;
-  border-bottom: 2px solid rgba(231, 90, 124, 0.4);
-}
-/* and restyling <a/> tags! */
-.haze:hover,
-.haze:focus {
-  outline: none;
-  text-decoration: none;
-  color: #17a2b8;
+  color: var(--primary);
   letter-spacing: 0.08rem;
-  border-bottom: 2px solid #e75a7c;
+  border-bottom: 2px solid var(--alert);
+}
+/* decrease margin so hover doesn't distort size of elements */
+.navlink:hover,
+.navlink:focus {
+  margin-bottom: -2px;
+}
+.sectionHead:hover,
+.sectionHead:focus,
+.scrollHome:hover,
+.scrollHome:focus {
+  letter-spacing: 0.25rem;
+}
+.card-body a:hover,
+.card-body a:focus {
+  color: var(--dark);
 }
 
-/* ALL CARDS get a lil border */
+/* CARDS */
 .card {
-  border: 2px solid #9fffcb;
+  border: 2px solid var(--success);
 }
-
-/* PORTFOLIO CARD DECK*/
 #portfolio {
-  margin-top: 130px;
+  margin-top: 120px;
 }
 /* card deck */
 .card-img-top {
@@ -121,23 +130,27 @@ body {
   object-fit: cover;
 }
 /* focus & hover for card images */
-.img-focus:focus {
+.imgFocus:focus {
   outline: none;
 }
 .card-img-top,
-.img-focus > img {
+.imgFocus > img {
   transition: 0.5s ease-in-out transform;
 }
 /* lift and stretch a bit on hover / focus */
-.img-focus:focus > img {
-  outline: 4px solid #e75a7c;
+.imgFocus:focus > img {
+  outline: 4px solid var(--alert);
   transform: translateY(-0.5rem) scaleX(1.02);
 }
 .card-img-top:hover {
-  outline: 4px solid #e75a7c;
+  outline: 4px solid var(--alert);
   transform: translateY(-0.5rem) scaleX(1.02);
 }
 /* line up card titles */
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
 .move-left {
   margin-left: 10px;
 }
@@ -160,26 +173,18 @@ p {
 #submit-btn {
   transition: letter-spacing 400ms;
 }
-#submit-btn:hover {
+#submit-btn:hover,
+#submit-btn:focus {
   letter-spacing: 0.08rem;
-  background-color: #e75a7c;
+  background-color: var(--alert);
 }
 #submit-btn:focus {
   color: #fff;
-  letter-spacing: 0.08rem;
-  background-color: #e75a7c;
 }
-
 /* .try-again styles dynamically-created warnings, see storeInfo() */
 .try-again {
   margin-left: 6px;
-  color: #ff0000;
-}
-/* Thank you card, Contact */
-.card-body a {
-  color: #262626;
-  font-weight: 600;
-  text-decoration: none;
+  color: var(--alert);
 }
 
 /* MODAL */
@@ -205,22 +210,21 @@ p {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 3.5rem;
+  height: 4rem;
   text-align: center;
-  border-top: 2px solid #9fffcb;
+  border-top: 2px solid var(--success);
   color: #fff;
+  background-color: var(--secondary);
 }
 /* let's have some fun */
 .footer a {
-  border-bottom: 1px solid #9fffcb;
+  border-bottom: 2px solid var(--success);
   transition: margin 1s, font-size 1s, letter-spacing 1s;
-}
-.footer a:focus {
-  outline: none;
 }
 .footer a:hover,
 .footer a:focus {
-  border-bottom: 2px solid #e75a7c;
+  outline: none;
+  border-bottom: 2px solid var(--alert);
   margin: 0 0.25rem;
   font-size: 1.25rem;
   letter-spacing: 0.2rem;
@@ -258,21 +262,22 @@ span a:focus i {
     margin-left: auto;
     margin-right: auto;
   }
-  .nav-link {
+  .navlink {
     margin: 0 5px;
   }
-
+  .mobileRow {
+    margin: 0 -1.9rem;
+  }
   /* Card text alignment, all sections */
-  .card-body h2,
-  h5,
-  h6 {
+  .move-left {
+    margin: 0;
+  }
+  .cardTitle,
+  .cardSubtitle {
     text-align: center;
   }
-  .card-body ul {
-    padding-left: 20px;
-  }
 
-  /* Carousel Images */
+  /* Card Images */
   .card-img-top {
     width: 100%;
     height: 50vw;

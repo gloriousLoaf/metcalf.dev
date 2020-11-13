@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/utilities.css">
     <link rel="stylesheet" href="./assets/style.css">
 
     <title>Welcome | Metcalf.dev</title>
@@ -46,7 +47,6 @@
 
     <!-- SHOWCASE / HERO -->
     <header class="showcase text-center" id="home">
-
         <div class="content">
             <div class="title">
                 &nbsp;
@@ -59,105 +59,102 @@
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="navbar-nav mx-auto">
-                <a data-scroll href="#portfolio" class="nav-item nav-link">Portfolio</a>
-                <a data-scroll href="#aboutme" class="nav-item nav-link">About Me</a>
-                <a data-scroll href="#contact" class="nav-item nav-link">Contact</a>
+                <a data-scroll href="#portfolio" class="nav-item navlink">Portfolio</a>
+                <a data-scroll href="#aboutme" class="nav-item navlink">About Me</a>
+                <a data-scroll href="#contact" class="nav-item navlink">Contact</a>
             </div>
         </nav>
-
     </header>
 
     <!-- PORTFOLIO -->
-    <div class="container mb-5" id="portfolio">
-
-        <div class="row">
-            <a href="#portfolio" class="haze mx-auto mt-3 mb-5" id="goPort">
-                <h3>P o r t f o l i o</h3>
-            </a>
-        </div>
-
-        <div class="card-deck">
-
-            <!-- Burger Cravings MVC -->
-            <div class="card shadow">
-                <a class="img-focus" href="https://snipit-social.herokuapp.com/" target="_blank"><img
-                        class="card-img-top" src="./assets/images/snipit.png" alt="Snipit Social landing page"></a>
-                <div class="card-body">
-                    <h5 class="card-title move-left">Snipit Social</h5>
-                    <p class="card-text">A MERN stack social media app for devs and designers to meetup and share.</p>
-                    <p class="card-text"><small class="text-muted">MERN, Redux, Socket.io - <span><a
-                                    href="https://github.com/gloriousLoaf/Snipit-Social"
-                                    target="_blank">Repository</a></span></small></p>
-                </div>
+    <main>
+      <div class="container" id="portfolio">
+        <section aria-labelledby="Portfolio">
+            <div class="row">
+                <a href="#portfolio" class="sectionHead mx-auto my2" id="goPort">
+                    Portfolio
+                </a>
             </div>
 
-            <!-- Google Books Search -->
-            <div class="card shadow">
-                <a class="img-focus" href="https://google-books-loaf.herokuapp.com/" target="_blank"><img
-                        class="card-img-top" src="./assets/images/books.png"
-                        alt="Colorful spines of books on a shelf"></a>
-                <div class="card-body">
-                    <h5 class="card-title move-left">Google Books</h5>
-                    <p class="card-text">A MERN stack app to find, save and remove books from your personal digital
-                        library.</p>
-                    <p class="card-text"><small class="text-muted">MERN, Google Books API - <span><a
-                                    href="https://github.com/gloriousLoaf/Google-Books-Search"
-                                    target="_blank">Repository</a></span></small></p>
-                </div>
+            <div class="card-deck mb4">
+              <!-- Snipit Social - Project 3 -->
+              <div class="card shadow">
+                  <a class="imgFocus" href="https://snipit-social.herokuapp.com/" target="_blank"><img
+                          class="card-img-top" src="./assets/images/snipit.png" alt="Snipit Social landing page"></a>
+                  <div class="card-body">
+                      <p class="cardTitle mb1 move-left">Snipit Social</p>
+                      <p>A MERN stack social media app for devs and designers to meetup and share.</p>
+                      <p><small>MERN, Redux, Socket.io - <span><a
+                                      href="https://github.com/gloriousLoaf/Snipit-Social"
+                                      target="_blank">Repository</a></span></small></p>
+                  </div>
+              </div>
+
+              <!-- Google Books Search -->
+              <div class="card shadow">
+                  <a class="imgFocus" href="https://google-books-loaf.herokuapp.com/" target="_blank"><img
+                          class="card-img-top" src="./assets/images/books.png"
+                          alt="Colorful spines of books on a shelf"></a>
+                  <div class="card-body">
+                      <p class="cardTitle mb1 move-left">Google Books</p>
+                      <p>A MERN stack app to find, save and remove books from your personal digital
+                          library.</p>
+                      <p><small>MERN, Google Books API - <span><a
+                                      href="https://github.com/gloriousLoaf/Google-Books-Search"
+                                      target="_blank">Repository</a></span></small></p>
+                  </div>
+              </div>
+
+              <!-- Emoji Runner - Project 2 -->
+              <div class="card shadow">
+                  <a class="imgFocus" href="http://emoji-runner.herokuapp.com/" target="_blank">
+                      <img class="card-img-top" src="./assets/images/emoji.png"
+                          alt="Emoji Runner with an emoji character."></a>
+                  <div class="card-body">
+                      <p class="cardTitle mb1 move-left">Emoji Runner</p>
+                      <p>A fun twist on the classic runner game, with secure user login and
+                          score tracking.</p>
+                      <p><small>P5JS, Express & MySQL - <a
+                                  href="https://github.com/gloriousLoaf/Emoji-Runner"
+                                  target="_blank">Repository</a></small>
+                      </p>
+                  </div>
+              </div>
+
+              <!-- Covid-19 Tracker - Project 1 -->
+              <div class="card shadow">
+                  <a class="imgFocus" href="https://gloriousloaf.github.io/Covid-19-Tracker/" target="_blank">
+                      <img class="card-img-top" src="./assets/images/covid-map.png" alt="Covid-19 Tracker"></a>
+                  <div class="card-body">
+                      <p class="cardTitle mb1 move-left">Covid-19 Tracker</p>
+                      <p>Statistics, news and resources. Includes statewide testing information.</p>
+                      <p><small>JS, Mapbox & Multiple APIs - <a
+                                  href="https://github.com/gloriousLoaf/Covid-19-Tracker"
+                                  target="_blank">Repository</a></small>
+                      </p>
+                  </div>
+              </div>
             </div>
+            <!-- tiny home link: .scrollHome styles it -->
+            <!-- <p class="text-center my4"><a href="#home" class="scrollHome">home</a></p> -->
+        </section>
+      </div>
 
-            <!-- Emoji Runner - Project 2 -->
-            <div class="card shadow">
-                <a class="img-focus" href="http://emoji-runner.herokuapp.com/" target="_blank">
-                    <img class="card-img-top" src="./assets/images/emoji.png"
-                        alt="Emoji Runner with an emoji character."></a>
-                <div class="card-body">
-                    <h5 class="card-title move-left">Emoji Runner</h5>
-                    <p class="card-text">A fun twist on the classic runner game, with secure user login and
-                        score tracking.</p>
-                    <p class="card-text"><small class="text-muted">P5JS, Express & MySQL - <a
-                                href="https://github.com/gloriousLoaf/Emoji-Runner"
-                                target="_blank">Repository</a></small>
-                    </p>
-                </div>
-            </div>
+      <!-- ABOUT ME -->
+      <div class="container" id="aboutme">
+        <section aria-labelledby="About">
+          <!-- #goAbout instead of #aboutme fixes jittery scroll-to from mid-page clicks -->
+          <div class="row">
+              <a href="#goAbout" class="sectionHead mx-auto my2" id="goAbout">
+                  About Me
+              </a>
+          </div>
 
-            <!-- Covid-19 Tracker - Project 1 -->
-            <div class="card shadow">
-                <a class="img-focus" href="https://gloriousloaf.github.io/Covid-19-Tracker/" target="_blank">
-                    <img class="card-img-top" src="./assets/images/covid-map.png" alt="Covid-19 Tracker"></a>
-                <div class="card-body">
-                    <h5 class="card-title move-left">Covid-19 Tracker</h5>
-                    <p class="card-text">Statistics, news and resources. Includes statewide testing information.</p>
-                    <p class="card-text"><small class="text-muted">JS, Mapbox & Multiple APIs - <a
-                                href="https://github.com/gloriousLoaf/Covid-19-Tracker"
-                                target="_blank">Repository</a></small>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- tiny home link: #scroll styles it -->
-        <p class="text-center mt-3"><a href="#home" class="scrollHome">home</a></p>
-
-    </div>
-
-    <!-- ABOUT ME -->
-    <div class="container mb-5" id="aboutme">
-
-        <!-- #goAbout instead of #aboutme fixes a jitter scroll to from mid-page clicks -->
-        <div class="row">
-            <a href="#goAbout" class="haze mx-auto my-2" id="goAbout">
-                <h3>A b o u t &nbsp; M e</h3>
-            </a>
-        </div>
-
-        <div class="row mt-4">
-
-            <div class="col-sm-7 m-2">
-                <div class="card p-2 shadow">
+          <div class="row mobileRow mb4">
+            <div class="col-sm-7 m1">
+                <div class="card shadow">
                     <div class="card-body">
-                        <h2>About Me</h2>
+                        <p class="cardTitle"><span class="md">David Metcalf</span></p>
                         <hr>
                         <div class="row">
                             <div class="col-sm-4">
@@ -175,15 +172,12 @@
                 </div>
             </div>
 
-            <!-- spacer col -->
-            <div class="col"></div>
-
             <!-- Skills card, same row -->
-            <div class="col-sm-4 m-2">
+            <div class="col-sm-4 m1">
                 <div class="card shadow">
                     <div class="card-body">
-                        <h5 class="card-title move-left">Full Stack Development</h5>
-                        <h6 class="card-subtitle font-weight-light move-left">Skills updated frequently.</h6>
+                        <p class="cardTitle move-left">Full Stack Development</p>
+                        <p class="cardSubtitle move-left">Skills updated frequently.</p>
                         <hr>
                         <ul>
                             <li>MongoDB, Express, React, Node</li>
@@ -198,44 +192,40 @@
                     </div>
                 </div>
             </div>
+          </div>
+          <!-- <p class="text-center my4"><a href="#home" class="scrollHome">home</a></p> -->
+        </section>
+      </div>
 
-        </div>
+      <!-- CONTACT -->
+      <div class="container" id="contact">
+        <section aria-labelledby="Contact">
+          <div class="row">
+              <a href="#contact" class="sectionHead mx-auto my2" id="goContact">
+                  Contact
+              </a>
+          </div>
 
-        <p class="text-center mt-3"><a href="#home" class="scrollHome">home</a></p>
-
-    </div>
-
-    <!-- CONTACT -->
-    <div class="container mb-5" id="contact">
-
-        <div class="row">
-            <a href="#contact" class="haze mx-auto my-2" id="goContact">
-                <h3>C o n t a c t</h3>
-            </a>
-        </div>
-
-        <div class="row mt-4">
-
-            <div class="col-sm-7 m-2">
+          <div class="row mobileRow">
+            <div class="col-sm-7 m1">
                 <div class="card shadow">
                     <div class="card-body">
-                        <h5 class="card-title m-1 d-flex justify-content-center text-info">Send Me a Message</h5>
-                        <br>
+                        <p class="cardTitle m1 d-flex justify-content-center">Send Me a Message</p>
                         <form name="submit-to-google-sheet">
                             <div class="form-group">
-                                <label>Name</label>
+                                <label for="name">Name</label>
                                 <input name="name" type="text" class="form-control" id="contact-name"
                                     placeholder="Nice to meet you.">
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
+                                <label for="email">Email</label>
                                 <input name="email" type="email" class="form-control" id="contact-email"
                                     placeholder="username@somewhere.com">
                                 <small id="email-help" class="form-text text-muted">I will not share your
                                     info.</small>
                             </div>
                             <div class="form-group">
-                                <label>Message</label>
+                                <label for="message">Message</label>
                                 <textarea name="message" class="form-control thank-you" id="contact-msg"
                                     placeholder="How can we collaborate?"></textarea>
                             </div>
@@ -249,7 +239,7 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <!-- stripped down and all content centered -->
-                                    <div class=" modal-header">
+                                    <div class="modal-header">
                                         <h6 class="modal-title text-center w-100">Got it!</h6>
                                     </div>
                                     <div class="modal-body">
@@ -266,17 +256,14 @@
                 </div>
             </div>
 
-            <!-- spacer col -->
-            <div class="col"></div>
-
             <!-- Thank you card -->
-            <div class="col-sm-4 m-2">
+            <div class="col-sm-4 m1">
                 <div class="card shadow">
                     <div class="card-body">
-                        <h5 class="card-title move-left">Thank you for visiting.</h5>
-                        <h6 class="card-subtitle font-weight-light move-left">I will reply within 24
+                        <p class="cardTitle move-left">Thank you for visiting.</p>
+                        <p class="cardSubtitle font-weight-light move-left">I will reply within 24
                             hours.
-                        </h6>
+                        </p>
                         <hr>
                         <p class="font-weight-light">Let's start a conversation. Connect with me and view my resume
                             on <a href="https://www.linkedin.com/in/david-codes/" target="_blank">LinkedIn</a>.
@@ -293,17 +280,16 @@
                     </div>
                 </div>
             </div>
-
-        </div>
-
-        <p class="text-center mt-3"><a href="#home" class="scrollHome">home</a></p>
-
-    </div>
+          </div>
+          <p class="text-center my4"><a href="#home" class="scrollHome">home</a></p>
+        </section>
+      </div>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer bg-info">
+    <footer class="footer">
         <div class="text-center">
-            <span aria-hidden="true">
+            <span>
                 <a class="text-decoration-none text-white" href="https://github.com/gloriousLoaf" target="_blank">
                     <i class="fab fa-github" aria-hidden="true"></i> gloriousLoaf</a>
             </span>
