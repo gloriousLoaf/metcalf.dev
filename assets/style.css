@@ -40,14 +40,13 @@ body {
 }
 .content .title {
   font-size: 2rem;
-  color: var(--secondary);
 }
 
 .content .text {
   line-height: 1.7;
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--secondary);
+  color: var(--primary);
 }
 
 /* NAVBAR, HOME & SECTION SCROLLING, CONTACT LINKS*/
@@ -214,7 +213,7 @@ p {
   text-align: center;
   border-top: 2px solid var(--success);
   color: #fff;
-  background-color: var(--secondary);
+  background-color: var(--primary);
 }
 /* let's have some fun */
 .footer a {
