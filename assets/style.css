@@ -170,6 +170,12 @@ p {
 
 /* CONTACT SECTION */
 #submit-btn {
+  color: #fff;
+  background-color: var(--primary);
+  outline: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--secondary);
+  border-radius: 0.25rem;
   transition: letter-spacing 400ms;
 }
 #submit-btn:hover,
