@@ -169,7 +169,7 @@ p {
 }
 
 /* CONTACT SECTION */
-#submit-btn {
+.submit-btn {
   color: #fff;
   background-color: var(--primary);
   outline: none;
@@ -178,12 +178,12 @@ p {
   border-radius: 0.25rem;
   transition: letter-spacing 400ms;
 }
-#submit-btn:hover,
-#submit-btn:focus {
+.submit-btn:hover,
+.submit-btn:focus {
   letter-spacing: 0.08rem;
   background-color: var(--alert);
 }
-#submit-btn:focus {
+.submit-btn:focus {
   color: #fff;
 }
 /* .try-again styles dynamically-created warnings, see storeInfo() */
