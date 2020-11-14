@@ -29,7 +29,7 @@ function storeInfo() {
     // capture values in vars
     let $contactName = $(`#contact-name`).val();
     let $contactEmail = $(`#contact-email`).val();
-    let $contactMsg = $(`#contact-msg`).val();
+    let $contactMsg = $(`#contact-message`).val();
     // if anything is blank, add a msg to contact card
     if ($contactName === `` || $contactEmail === `` || $contactMsg === ``) {
         $(`#submit-btn`).after(`<small class="try-again">Please complete all fields.</small>`);

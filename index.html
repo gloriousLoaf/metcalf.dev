@@ -68,12 +68,13 @@
 
     <!-- PORTFOLIO -->
     <main>
-      <div class="container" id="portfolio">
-        <section aria-labelledby="Portfolio">
-          <h1 class="mb3 text-center">
+      <div class="container">
+        <section aria-labelledby="portfolio">
+          <!-- <h1 class="mb4 text-center">
             <a href="#portfolio" class="sectionHead mx-auto my2" id="goPort">
             Portfolio</a>
-          </h1>
+          </h1> -->
+          <h1 class="mb4 text-center" id="portfolio"><span class="sectionHead">Portfolio</span></h1>
 
             <div class="card-deck mb4">
               <!-- Snipit Social - Project 3 -->
@@ -141,12 +142,13 @@
 
       <!-- ABOUT ME -->
       <div class="container" id="aboutme">
-        <section aria-labelledby="About">
+        <section aria-labelledby="about">
           <!-- #goAbout instead of #aboutme fixes jittery scroll-to from mid-page clicks -->
-          <h1 class="mt5 mb3 text-center">
+          <!-- <h1 class="mt5 mb3 text-center">
             <a href="#goAbout" class="sectionHead mx-auto my2" id="goAbout">
               About Me</a>
-          </h1>
+          </h1> -->
+          <h1 class="mt5 mb3 text-center" id="about"><span class="sectionHead">About Me</span></h1>
 
           <div class="row mobileRow mb4">
             <div class="col-sm-7 m1">
@@ -197,11 +199,12 @@
 
       <!-- CONTACT -->
       <div class="container" id="contact">
-        <section aria-labelledby="Contact">
-          <h1 class="mt5 mb3 text-center">
+        <section aria-labelledby="contact">
+          <!-- <h1 class="mt5 mb3 text-center">
             <a href="#contact" class="sectionHead mx-auto my2" id="goContact">
               Contact</a>
-          </h1>
+          </h1> -->
+          <h1 class="mt5 mb3 text-center" id="contact"><span class="sectionHead">Contact</span></h1>
 
           <div class="row mobileRow">
             <div class="col-sm-7 m1">
@@ -210,24 +213,22 @@
                         <p class="cardTitle m1 d-flex justify-content-center">Send Me a Message</p>
                         <form name="submit-to-google-sheet">
                             <div class="form-group">
-                                <label for="name">Name
+                                <label for="contact-name">Name</label>
                                   <input name="name" type="text" class="form-control" id="contact-name"
                                       placeholder="Nice to meet you.">
-                                </label>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email
+                                <label for="contact-email">Email</label>
                                   <input name="email" type="email" class="form-control" id="contact-email"
                                       placeholder="username@somewhere.com">
-                                </label>
                                 <small id="email-help" class="form-text text-muted">I will not share your
                                     info.</small>
                             </div>
                             <div class="form-group">
-                                <label for="message">Message
-                                  <textarea name="message" class="form-control thank-you" id="contact-msg"
+                                <label for="contact-message">Message</label>
+                                  <textarea name="message" class="form-control thank-you" id="contact-message"
                                       placeholder="How can we collaborate?"></textarea>
-                                </label>
+                                
                             </div>
                             <!-- data-target for Modal added dynamically, see storeInfo() -->
                             <button type="submit" class="btn btn-outline-info shadow-sm" id="submit-btn"
