@@ -1,8 +1,4 @@
-/* Halfway through rewrite without jQuery, but will need
-    custom modal to really finish. Take on bootstrap next? */
-
 /* smooth-scoll polyfills by Chris Ferdinandi https://vanillajstoolkit.com/ */
-// scroller function
 let scroll = new SmoothScroll('a[href*="#"]', { speed: 400 });
 
 /* Contact Form - Verification of Info, Google Sheets API */
@@ -16,20 +12,24 @@ const validator = (email) =>  {
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzxivBPk8mDjOYPOqm53FndxzXHx4V-EufqCgyhRZpayYwc_aQ/exec';
 const form = document.forms['submit-to-google-sheet'];
 
+// remove helper msgs, see below
+const removeHelpers = () => {
+  const tryAgain = document.querySelectorAll('.try-again');
+  tryAgain ? tryAgain.forEach(e => e.remove()) : console.log('first try');
+}
+
 // storeInfo() validates info then calls Fetch API to Google Sheets & triggers modal
 const storeInfo = (e) => {
   e.preventDefault();
-  // remove <small>&<span> msgs, in case of multiple clicks, see below
-  // THIS DOES NOT QUITE WORK YET...
-  const tryAgain = document.querySelectorAll('.try-again');
-  tryAgain ? tryAgain.forEach(e => e.remove()) : console.log('first try');
-  // capture dom elems
+  // remove helper msgs in case of multiple clicks
+  removeHelpers();
+  // dom elems
   const contactName = document.getElementById('contact-name').value;
   const contactEmail = document.getElementById('contact-email').value;
   const contactMsg = document.getElementById('contact-message').value;
   const submit = document.getElementById('submit');
   const email = document.getElementById('email-help');
-  // helper msgs: `<small class="try-again">(message here)</small>`
+  // helper msgs: '<small class="try-again">(message here)</small>'
   const submitHelper = document.createElement('small');
   submitHelper.textContent = 'Please complete all fields.';
   submitHelper.classList = 'try-again';
@@ -45,25 +45,21 @@ const storeInfo = (e) => {
     submit.after(submitHelper);
     email.append(emailHelper);
   }
-  //// LEFT OFF HERE! Functioning great, but still needs jQuery ////
-  // once fields are verified
+  // once fields are verified, Google Sheets API
   else {
-    // Google Sheets API
     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
         .then(response => console.log('Success!', response))
         .catch(error => console.error('Error!', error.message))
-    // this attr triggers Modal
-    $(`#submit`).attr(`data-target`, `#thanks-modal`)
-    // clear forms after submission
-    $(`form`)[0].reset();
-    // short timeout to let all these scripts work
+    // trigger modal & clear form
+    submit.setAttribute('data-target', '#thanks-modal');
+    form.reset();
+    // short timeout for API to run, clear modal & msgs
     setTimeout(() => {
-        // remove trigger attr in case of multiple clicks
-        $(`#submit`).removeAttr(`data-target`);
-        // remove msgs
-        $(`.try-again`).remove();
+        submit.removeAttribute('data-target');
+        removeHelpers();
     }, 200)
   }
 };
 
-$(`#submit`).on(`click`, storeInfo);
+// listener
+submit.addEventListener('click', storeInfo);

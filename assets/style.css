@@ -238,8 +238,8 @@ p {
 span:focus {
   outline: 0;
 }
-span:hover i,
-span a:focus i {
+span:hover img,
+span a:focus img {
   animation: rotation 800ms 1 linear;
 }
 @keyframes rotation {
