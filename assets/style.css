@@ -257,6 +257,14 @@ span a:focus img {
 
 /* MOBILE */
 @media (max-width: 575px) {
+  /* global */ 
+  .grid,
+  .grid2,
+  .grid3,
+  .grid4 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
   /* hero */
   .showcase {
     height: 40vh;
