@@ -1,3 +1,7 @@
+/* TEMP - HIDE MODAL */
+.hide {
+  display: none;
+}
 /* GLOBAL */
 :root {
   --primary: #073b4c;
@@ -35,19 +39,12 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-.content {
-  position: relative;
-  top: 70%;
-}
-.content .title {
-  font-size: 2rem;
-}
 
-.content .text {
-  line-height: 1.7;
-  font-size: 1.25rem;
-  font-weight: 600;
+.caption {
+  position: relative;
+  top: 85%;
   color: var(--primary);
+  font-weight: 600;
 }
 
 /* NAVBAR, HOME & SECTION SCROLLING, CONTACT LINKS*/
@@ -56,14 +53,14 @@ body {
   padding: 0.5rem 0;
   justify-content: center;
   position: relative;
-  top: 75%;
+  top: 90%;
   box-shadow: 0 5px 4px 0px rgba(17, 138, 178, 0.4);
 }
 /* Hover Effects - Navbar, Card links, Section headers and 'home' scroll*/
 .navlink {
   color: var(--primary);
-  font-size: 1.25rem;
   font-weight: 600;
+  text-decoration: none;
   margin: 0 0.75rem;
 }
 /* section headers */
@@ -86,13 +83,12 @@ body {
 .sectionHead,
 .card-body a,
 .scrollHome {
+  text-decoration: none;
   transition: letter-spacing 400ms;
 }
 /* hover & focus */
 .navlink:hover,
 .navlink:focus,
-.sectionHead:hover,
-.sectionHead:focus,
 .card-body a:hover,
 .card-body a:focus,
 .scrollHome:hover,
@@ -108,8 +104,6 @@ body {
 .navlink:focus {
   margin-bottom: -2px;
 }
-.sectionHead:hover,
-.sectionHead:focus,
 .scrollHome:hover,
 .scrollHome:focus {
   letter-spacing: 0.25rem;
@@ -123,10 +117,6 @@ body {
 .card {
   border: 2px solid var(--success);
 }
-#portfolio {
-  margin-top: 120px;
-}
-/* card deck */
 .card-img-top {
   width: 100%;
   height: 23vh;
@@ -138,7 +128,7 @@ body {
 }
 .card-img-top,
 .imgFocus > img {
-  transition: 0.5s ease-in-out transform;
+  transition: 250ms ease-in-out transform;
 }
 /* lift and stretch a bit on hover / focus */
 .imgFocus:focus > img {
@@ -159,10 +149,6 @@ body {
 }
 
 /* ABOUT SECTION */
-.col .m-2,
-p {
-  margin: 0 10px;
-}
 .profile-pic {
   max-height: 200px;
   max-width: 200px;
@@ -197,7 +183,6 @@ p {
 }
 
 /* MODAL */
-/* trim it up */
 .modal-dialog {
   max-width: 300px;
   margin: 0 auto;
@@ -227,6 +212,9 @@ p {
 }
 /* let's have some fun */
 .footer a {
+  color: #fff;
+  text-decoration: none;
+  padding-bottom: 0.1rem;
   border-bottom: 2px solid var(--success);
   transition: margin 1s, font-size 1s, letter-spacing 1s;
 }
@@ -257,7 +245,7 @@ span a:focus img {
 
 /* MOBILE */
 @media (max-width: 575px) {
-  /* global */ 
+  /* global */
   .grid,
   .grid2,
   .grid3,
@@ -277,10 +265,10 @@ span a:focus img {
     margin: 0 5px;
   }
   /* Card text alignment, all sections */
-  #aboutme,
+  /* #aboutme,
   #contact {
     padding: 0;
-  }
+  } */
   .move-left {
     margin: 0;
   }

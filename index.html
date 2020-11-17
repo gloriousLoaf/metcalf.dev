@@ -29,9 +29,7 @@
     <link rel="apple-touch-icon" href="./favicon.png" sizes="120x120">
     <link rel="apple-touch-icon" href="./favicon.png" sizes="152x152">
     <link rel="apple-touch-icon" href="./favicon.png" sizes="180x180">
-    <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/utilities.css">
     <link rel="stylesheet" href="./assets/style.css">
@@ -43,227 +41,197 @@
 <body>
 
     <!-- SHOWCASE / HERO -->
-    <header class="showcase text-center" id="home">
-      <div class="content">
-        <div class="title">
-          &nbsp;
-        </div>
-        <div class="text mt-4">
+    <header class="showcase center mb5" id="home">
+        <div class="caption md">
           Modern Design • Expressive Content
         </div>
-      </div>
 
       <!-- NAVBAR -->
       <nav class="nav">
-          <a data-scroll href="#portfolio" class="navlink">Portfolio</a>
-          <a data-scroll href="#aboutme" class="navlink">About Me</a>
-          <a data-scroll href="#contact" class="navlink">Contact</a>
+          <a data-scroll href="#portfolio" class="navlink lead">Portfolio</a>
+          <a data-scroll href="#about" class="navlink lead">About Me</a>
+          <a data-scroll href="#contact" class="navlink lead">Contact</a>
       </nav>
     </header>
 
     <!-- PORTFOLIO -->
-    <main>
-      <div class="container">
-        <section aria-labelledby="portfolio">
-          <h1 class="mb4 text-center" id="portfolio"><span class="sectionHead">Portfolio</span></h1>
+    <main class="container">
+      <section aria-labelledby="portfolio">
+        <h1 class="center mt3" id="portfolio"><span class="sectionHead">Portfolio</span></h1>
 
-          <div class="grid4">
-            <!-- Snipit Social - Project 3 -->
-            <div class="card shadow">
-              <a class="imgFocus" href="https://snipit-social.herokuapp.com/" target="_blank" rel="noopener"><img
-                class="card-img-top" src="./assets/images/snipit.png" alt="Snipit Social landing page"></a>
-              <div class="card-body">
-                  <p class="cardTitle mb1 move-left">Snipit Social</p>
-                  <p>A MERN stack social media app for devs and designers to meetup and share.</p>
-                  <p><small>MERN, Redux, Socket.io - <span><a href="https://github.com/gloriousLoaf/Snipit-Social"
-                    target="_blank" rel="noopener">Repository</a></span></small></p>
-              </div>
-            </div>
-
-            <!-- Google Books Search -->
-            <div class="card shadow">
-              <a class="imgFocus" href="https://google-books-loaf.herokuapp.com/" target="_blank" rel="noopener"><img
-                class="card-img-top" src="./assets/images/books.png"
-                alt="Colorful spines of books on a shelf"></a>
-              <div class="card-body">
-                <p class="cardTitle mb1 move-left">Google Books</p>
-                <p>A MERN stack app to find, save and remove books from your personal digital
-                    library.</p>
-                <p><small>MERN, Google Books API - <span><a href="https://github.com/gloriousLoaf/Google-Books-Search"
+        <div class="grid grid4 my4">
+          <!-- Snipit Social - Project 3 -->
+          <div class="card">
+            <a class="imgFocus" href="https://snipit-social.herokuapp.com/" target="_blank" rel="noopener"><img
+              class="card-img-top" src="./assets/images/snipit.png" alt="Snipit Social landing page"></a>
+            <div class="card-body">
+                <p class="cardTitle mb1 move-left">Snipit Social</p>
+                <p>A MERN stack social media app for devs and designers to meetup and share.</p>
+                <p><small>MERN, Redux, Socket.io - <span><a href="https://github.com/gloriousLoaf/Snipit-Social"
                   target="_blank" rel="noopener">Repository</a></span></small></p>
-              </div>
             </div>
+          </div>
 
-            <!-- Emoji Runner - Project 2 -->
-            <div class="card shadow">
-              <a class="imgFocus" href="http://emoji-runner.herokuapp.com/" target="_blank" rel="noopener">
-                <img class="card-img-top" src="./assets/images/emoji.png"
-                  alt="Emoji Runner with an emoji character."></a>
-              <div class="card-body">
-                <p class="cardTitle mb1 move-left">Emoji Runner</p>
-                <p>A fun twist on the classic runner game, with secure user login and
-                    score tracking.</p>
-                <p><small>P5JS, Express & MySQL - <a href="https://github.com/gloriousLoaf/Emoji-Runner"
-                  target="_blank" rel="noopener">Repository</a></small></p>
-              </div>
+          <!-- Google Books Search -->
+          <div class="card">
+            <a class="imgFocus" href="https://google-books-loaf.herokuapp.com/" target="_blank" rel="noopener"><img
+              class="card-img-top" src="./assets/images/books.png"
+              alt="Colorful spines of books on a shelf"></a>
+            <div class="card-body">
+              <p class="cardTitle mb1 move-left">Google Books</p>
+              <p>A MERN stack app to find, save and remove books from your personal digital
+                  library.</p>
+              <p><small>MERN, Google Books API - <span><a href="https://github.com/gloriousLoaf/Google-Books-Search"
+                target="_blank" rel="noopener">Repository</a></span></small></p>
             </div>
+          </div>
 
-            <!-- Covid-19 Tracker - Project 1 -->
-            <div class="card shadow">
-              <a class="imgFocus" href="https://gloriousloaf.github.io/Covid-19-Tracker/" target="_blank" rel="noopener">
-                <img class="card-img-top" src="./assets/images/covid-map.png" alt="Covid-19 Tracker"></a>
-              <div class="card-body">
-                <p class="cardTitle mb1 move-left">Covid-19 Tracker</p>
-                <p>Statistics, news and resources. Includes statewide testing information.</p>
-                <p><small>JS, Mapbox & Multiple APIs - <a href="https://github.com/gloriousLoaf/Covid-19-Tracker"
-                  target="_blank" rel="noopener">Repository</a></small>
+          <!-- Emoji Runner - Project 2 -->
+          <div class="card">
+            <a class="imgFocus" href="http://emoji-runner.herokuapp.com/" target="_blank" rel="noopener">
+              <img class="card-img-top" src="./assets/images/emoji.png"
+                alt="Emoji Runner with an emoji character."></a>
+            <div class="card-body">
+              <p class="cardTitle mb1 move-left">Emoji Runner</p>
+              <p>A fun twist on the classic runner game, with secure user login and
+                  score tracking.</p>
+              <p><small>P5JS, Express & MySQL - <a href="https://github.com/gloriousLoaf/Emoji-Runner"
+                target="_blank" rel="noopener">Repository</a></small></p>
+            </div>
+          </div>
+
+          <!-- Covid-19 Tracker - Project 1 -->
+          <div class="card">
+            <a class="imgFocus" href="https://gloriousloaf.github.io/Covid-19-Tracker/" target="_blank" rel="noopener">
+              <img class="card-img-top" src="./assets/images/covid-map.png" alt="Covid-19 Tracker"></a>
+            <div class="card-body">
+              <p class="cardTitle mb1 move-left">Covid-19 Tracker</p>
+              <p>Statistics, news and resources. Includes statewide testing information.</p>
+              <p><small>JS, Mapbox & Multiple APIs - <a href="https://github.com/gloriousLoaf/Covid-19-Tracker"
+                target="_blank" rel="noopener">Repository</a></small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- ABOUT ME -->
+      <section aria-labelledby="about">
+        <h1 class="center" id="about"><span class="sectionHead">About Me</span></h1>
+        <div class="grid grid2 mobileRow my4">
+          <div class="card p1">
+            <p class="cardTitle"><span class="md">David Metcalf</span></p>
+            <hr>
+            <!-- sub-grid, inside card -->
+            <div class="grid grid2">
+                <img src="./assets/images/me.jpg" alt="David Metcalf" class="profile-pic">
+                <p>I am a MERN full stack web developer with a certificate from UC Davis Continuing &
+                    Professional Education I have managed sales teams, profits & losses, and marketing
+                    campaigns. My background in customer service will contribute a unique skill set to
+                    your development team.
                 </p>
-              </div>
             </div>
           </div>
-        </section>
-      </div>
 
-      <!-- ABOUT ME -->
-      <div class="container" id="aboutme">
-        <section aria-labelledby="about">
-          <h1 class="mt5 mb3 text-center" id="about"><span class="sectionHead">About Me</span></h1>
+        <!-- Skills Card -->
+          <div class="card p1">
+            <p class="cardTitle move-left">Full Stack Development</p>
+            <p class="cardSubtitle move-left">Skills updated frequently.</p>
+            <hr>
+            <ul class="ml2">
+              <li>MongoDB, Express, React, Node</li>
+              <li>HTML5, CSS3, JavaScript</li>
+              <li>MVC, ORM, Functional & OOP</li>
+              <li>SQL & NoSQL</li>
+              <li>Custom APIs</li>
+              <li>Git Version Control</li>
+              <li>PC & Mac</li>
+              <li>Digital Marketing</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-          <div class="row mobileRow mb4">
-            <div class="col-sm-7 m1">
-              <div class="card shadow">
-                <div class="card-body">
-                  <p class="cardTitle"><span class="md">David Metcalf</span></p>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <img src="./assets/images/me.jpg" alt="David Metcalf" class="profile-pic">
-                    </div>
-                    <div class="col m-2">
-                      <p>I am a MERN full stack web developer with a certificate from UC Davis Continuing &
-                          Professional Education I have managed sales teams, profits & losses, and marketing
-                          campaigns. My background in customer service will contribute a unique skill set to
-                          your development team.
-                      </p>
-                    </div>
+    <!-- CONTACT -->
+      <section aria-labelledby="contact">
+        <h1 class="center" id="contact"><span class="sectionHead">Contact</span></h1>
+
+        <div class="grid grid2 my4 mobileRow">
+          <div class="card p1">
+            <p class="cardTitle center">Send Me a Message</p>
+            <form name="submit-to-google-sheet">
+              <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input name="name" type="text" class="form-control" id="contact-name"
+                    placeholder="Nice to meet you.">
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input name="email" type="email" class="form-control" id="contact-email"
+                    placeholder="username@somewhere.com">
+                <small class="form-text text-muted" id="email-help">I will not share your
+                    info.</small>
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea name="message" class="form-control thank-you" id="contact-message"
+                    placeholder="How can we collaborate?"></textarea>
+              </div>
+              <!-- data-target for Modal added dynamically, see storeInfo() -->
+              <button type="submit" class="submit-btn" id="submit"
+                  data-toggle="modal">Submit</button>
+            </form>
+
+            <!-- Modal after Submit click -->
+            <!-- NEW - ADDED HIDE CLASS TO HIDE MODAL WHILE IN DEV -->
+            <div class="modal fade hide" id="thanks-modal" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h6 class="modal-title center w-100">Got it!</h6>
+                  </div>
+                  <div class="modal-body">
+                    <p class="center">Thanks for reaching out.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="submit-btn"
+                        data-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
             </div>
-
-            <!-- Skills card, same row -->
-            <div class="col-sm-4 m1">
-              <div class="card shadow">
-                <div class="card-body">
-                  <p class="cardTitle move-left">Full Stack Development</p>
-                  <p class="cardSubtitle move-left">Skills updated frequently.</p>
-                  <hr>
-                  <ul>
-                      <li>MongoDB, Express, React, Node</li>
-                      <li>HTML5, CSS3, JavaScript</li>
-                      <li>MVC, ORM, Functional & OOP</li>
-                      <li>SQL & NoSQL</li>
-                      <li>Custom APIs</li>
-                      <li>Git Version Control</li>
-                      <li>PC & Mac</li>
-                      <li>Digital Marketing</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
           </div>
-        </section>
-      </div>
 
-      <!-- CONTACT -->
-      <div class="container" id="contact">
-        <section aria-labelledby="contactme">
-          <h1 class="mt5 mb3 text-center" id="contactme"><span class="sectionHead">Contact</span></h1>
-
-          <div class="row mobileRow">
-            <div class="col-sm-7 m1">
-              <div class="card shadow">
-                <div class="card-body">
-                  <p class="cardTitle m1 d-flex justify-content-center">Send Me a Message</p>
-                  <form name="submit-to-google-sheet">
-                    <div class="form-group">
-                      <label for="contact-name">Name</label>
-                      <input name="name" type="text" class="form-control" id="contact-name"
-                          placeholder="Nice to meet you.">
-                    </div>
-                    <div class="form-group">
-                      <label for="contact-email">Email</label>
-                      <input name="email" type="email" class="form-control" id="contact-email"
-                          placeholder="username@somewhere.com">
-                      <small class="form-text text-muted" id="email-help">I will not share your
-                          info.</small>
-                    </div>
-                    <div class="form-group">
-                      <label for="contact-message">Message</label>
-                      <textarea name="message" class="form-control thank-you" id="contact-message"
-                          placeholder="How can we collaborate?"></textarea>
-                    </div>
-                    <!-- data-target for Modal added dynamically, see storeInfo() -->
-                    <button type="submit" class="submit-btn shadow-sm" id="submit"
-                        data-toggle="modal">Submit</button>
-                  </form>
-
-                  <!-- Modal after Submit click -->
-                  <div class="modal fade" id="thanks-modal" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h6 class="modal-title text-center w-100">Got it!</h6>
-                        </div>
-                        <div class="modal-body">
-                          <p class="text-center">Thanks for reaching out.</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="submit-btn"
-                              data-dismiss="modal">Close</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Thank you card -->
-            <div class="col-sm-4 m1">
-              <div class="card shadow">
-                <div class="card-body">
-                  <p class="cardTitle move-left">Thank you for visiting.</p>
-                  <p class="cardSubtitle font-weight-light move-left">I will reply within 24
-                    hours.
-                  </p>
-                  <hr>
-                  <p>Let's start a conversation. Connect with me and view my resume
-                    on <a href="https://www.linkedin.com/in/david-codes/" target="_blank" rel="noopener">LinkedIn</a>.
-                  </p>
-                  <br>
-                  <p>View further work and get a sense of my development style at <a
-                    href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">GitHub</a>.</p>
-                  <br>
-                  <p>Rather not use the contact form? Send me an email at <a
-                    href="mailto:hello@metcalf.dev" target="_blank">hello@metcalf.dev</a>.</p>
-                  <br>
-                  <p>I'm also on Twitter <a href="https://twitter.com/davidmcodes"
-                    target="_blank" rel="noopener">@davidmcodes</a>.</p>
-                </div>
-              </div>
-            </div>
+          <!-- Thank you card -->
+          <div class="card card-body p1">
+            <p class="cardTitle move-left">Thank you for visiting.</p>
+            <p class="cardSubtitle font-weight-light move-left">I will reply within 24
+              hours.
+            </p>
+            <hr>
+            <p>Let's start a conversation. Connect with me and view my resume
+              on <a href="https://www.linkedin.com/in/david-codes/" target="_blank" rel="noopener">LinkedIn</a>.
+            </p>
+            <br>
+            <p>View further work and get a sense of my development style at <a
+              href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">GitHub</a>.</p>
+            <br>
+            <p>Rather not use the contact form? Send me an email at <a
+              href="mailto:hello@metcalf.dev" target="_blank">hello@metcalf.dev</a>.</p>
+            <br>
+            <p>I'm also on Twitter <a href="https://twitter.com/davidmcodes"
+              target="_blank" rel="noopener">@davidmcodes</a>.</p>
           </div>
-          <p class="text-center my4"><a href="#home" class="scrollHome">home</a></p>
-        </section>
-      </div>
+        </div>
+        <p class="center my4"><a href="#home" class="scrollHome">home</a></p>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="text-center">
+      <div class="center">
         <span>
-          <a class="text-decoration-none text-white" href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">
+          <a href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">
             <img src="assets/images/github.png" alt="Github Octocat" aria-hidden="true" height="16px" width="16px"></img> gloriousLoaf</a>
           </span>
       </div>
