@@ -130,14 +130,15 @@ body {
   outline: 4px solid var(--alert);
   transform: translateY(-0.5rem) scaleX(1.02);
 }
-/* line up card titles */
-.cardTitle {
-  font-size: 1.2rem;
-  font-weight: 600;
+/* even-out size of cards for different laptop sizes */
+#portCards .card p:nth-child(2) {
+  min-height: 5rem;
 }
-
 /* ABOUT SECTION */
-.profile-pic {
+#aboutMe .card {
+  min-height: 365px;
+}
+#selfie {
   max-height: 200px;
   max-width: 200px;
 }
@@ -147,7 +148,7 @@ body {
 }
 
 /* CONTACT SECTION */
-.submit-btn {
+.submitBtn {
   color: #fff;
   background-color: var(--primary);
   outline: none;
@@ -156,12 +157,13 @@ body {
   border-radius: 0.25rem;
   transition: letter-spacing 400ms;
 }
-.submit-btn:hover,
-.submit-btn:focus {
+.submitBtn:hover,
+.submitBtn:focus {
+  cursor: pointer;
   letter-spacing: 0.08rem;
   background-color: var(--alert);
 }
-.submit-btn:focus {
+.submitBtn:focus {
   color: #fff;
 }
 /* .try-again styles dynamically-created warnings, see storeInfo() */
@@ -271,8 +273,7 @@ span a:focus img {
 
   /* About */
   #myName,
-  .profile-pic {
-    display: block;
+  #selfie {
     margin: 0 auto;
   }
 

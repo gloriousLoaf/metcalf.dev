@@ -57,14 +57,14 @@
       <section aria-labelledby="portfolio">
         <h1 class="center mt3" id="portfolio"><span class="sectionHead">Portfolio</span></h1>
 
-        <div class="grid grid4 my4">
+        <div class="grid grid4 my4" id="portCards">
           <!-- Snipit Social - Project 3 -->
           <div class="card">
             <a class="imgFocus" href="https://snipit-social.herokuapp.com/" target="_blank" rel="noopener"><img
               class="cardImg" src="./assets/images/snipit.png" alt="Snipit Social landing page"></a>
             <div class="p1">
               <p class="lead bold mb1">Snipit Social</p>
-              <p>A MERN stack social media app for devs and designers to meetup and share.</p>
+              <p class="mb1">A MERN stack social media app for devs and designers to meetup and share.</p>
               <p><small>MERN, Redux, Socket.io - <span><a class="bodyLink" href="https://github.com/gloriousLoaf/Snipit-Social"
                 target="_blank" rel="noopener">Repository</a></span></small></p>
             </div>
@@ -76,7 +76,7 @@
               class="cardImg" src="./assets/images/books.png" alt="Colorful spines of books on a shelf"></a>
             <div class="p1">
               <p class="lead bold mb1">Google Books</p>
-              <p>A MERN stack app to find, save and remove books from your personal digital library.</p>
+              <p class="mb1">A MERN stack app to find, save and remove books from your personal digital library.</p>
               <p><small>MERN, Google Books API - <span><a class="bodyLink" href="https://github.com/gloriousLoaf/Google-Books-Search"
                 target="_blank" rel="noopener">Repository</a></span></small></p>
             </div>
@@ -88,7 +88,7 @@
               <img class="cardImg" src="./assets/images/emoji.png" alt="Emoji Runner with an emoji character."></a>
             <div class="p1">
               <p class="lead bold mb1">Emoji Runner</p>
-              <p>A fun twist on the classic runner game, with secure user login and score tracking.</p>
+              <p class="mb1">A fun twist on the classic runner game, with secure user login and score tracking.</p>
               <p><small>P5JS, Express & MySQL - <a class="bodyLink" href="https://github.com/gloriousLoaf/Emoji-Runner"
                 target="_blank" rel="noopener">Repository</a></small></p>
             </div>
@@ -100,7 +100,7 @@
               <img class="cardImg" src="./assets/images/covid-map.png" alt="Covid-19 Tracker"></a>
             <div class="p1">
               <p class="lead bold mb1">Covid-19 Tracker</p>
-              <p>Statistics, news and resources. Includes statewide testing information.</p>
+              <p class="mb1">Statistics, news and resources. Includes statewide testing information.</p>
               <p><small>jQuery & Multiple APIs - <a class="bodyLink" href="https://github.com/gloriousLoaf/Covid-19-Tracker"
                 target="_blank" rel="noopener">Repository</a></small></p>
               </p>
@@ -112,14 +112,15 @@
     <!-- ABOUT ME -->
       <section aria-labelledby="about">
         <h1 class="center" id="about"><span class="sectionHead">About Me</span></h1>
-        <div class="grid grid2 my4">
+        <div class="grid grid2 my4" id="aboutMe">
           <div class="card p1">
-            <p class="ml1 lead bold md" id="myName">David Metcalf</p>
+            <p class="ml1 md bold" id="myName">David Metcalf</p>
+            <p class="ml1 pb1">Web Developer</p>
             <hr>
             <!-- sub-grid, inside card -->
             <div class="grid grid2 p1">
-                <img src="./assets/images/me.jpg" alt="David Metcalf" class="profile-pic">
-                <p class="">I am a MERN full stack web developer with a certificate from UC Davis Continuing &
+                <img id="selfie" src="./assets/images/me.jpg" alt="David Metcalf">
+                <p>I am a MERN full stack web developer with a certificate from UC Davis Continuing &
                     Professional Education I have managed sales teams, profits & losses, and marketing
                     campaigns. My background in customer service will contribute a unique skill set to
                     your development team.
@@ -129,7 +130,7 @@
 
         <!-- Skills Card -->
           <div class="card p1">
-            <p class="lead bold center">Full Stack Development</p>
+            <p class="md bold center">Full Stack Development</p>
             <p class="center pb1">Skills updated frequently.</p>
             <hr>
             <div class="grid grid3" id="skills">
@@ -156,27 +157,29 @@
         <div class="grid grid2 my4">
           <div class="card p1">
             <p class="lead bold center">Send Me a Message</p>
+            <p class="center pb1">I will reply within 24 hours.</p>
+            <hr>
             <form name="submit-to-google-sheet">
               <div class="form-group">
                 <label for="contact-name">Name</label>
                 <input name="name" type="text" class="form-control" id="contact-name"
-                    placeholder="Nice to meet you.">
+                  placeholder="Nice to meet you.">
               </div>
               <div class="form-group">
                 <label for="contact-email">Email</label>
                 <input name="email" type="email" class="form-control" id="contact-email"
-                    placeholder="username@somewhere.com">
+                  placeholder="username@somewhere.com">
                 <small class="form-text text-muted" id="email-help">I will not share your
-                    info.</small>
+                  info.</small>
               </div>
               <div class="form-group">
                 <label for="contact-message">Message</label>
                 <textarea name="message" class="form-control thank-you" id="contact-message"
-                    placeholder="How can we collaborate?"></textarea>
+                   placeholder="How can we collaborate?"></textarea>
               </div>
               <!-- data-target for Modal added dynamically, see storeInfo() -->
-              <button type="submit" class="submit-btn" id="submit"
-                  data-toggle="modal">Submit</button>
+              <button type="submit" class="submitBtn" id="submit"
+                data-toggle="modal">Submit</button>
             </form>
 
             <!-- MODAL after Submit click -->
@@ -191,8 +194,8 @@
                     <p class="center">Thanks for reaching out.</p>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="submit-btn"
-                        data-dismiss="modal">Close</button>p1
+                    <button type="button" class="submitBtn"
+                        data-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -202,9 +205,7 @@
           <!-- Thank you card -->
           <div class="card p1">
             <p class="lead bold center">Thank you for visiting.</p>
-            <p class="center pb1">I will reply within 24
-              hours.
-            </p>
+            <p class="center pb1">Let's start a conversation.</p>
             <hr>
             <div class="p1">
               <p>Connect with me and view my resume on <a class="bodyLink" href="https://www.linkedin.com/in/david-codes/" target="_blank" rel="noopener">LinkedIn</a>.
