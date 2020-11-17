@@ -49,7 +49,6 @@ body {
 
 /* NAVBAR, HOME & SECTION SCROLLING, CONTACT LINKS*/
 .nav {
-  margin: 0 auto;
   padding: 0.5rem 0;
   justify-content: center;
   position: relative;
@@ -72,8 +71,7 @@ body {
   border-bottom: 2px solid rgba(239, 71, 111, 0.6);
 }
 /* repo, contact & home links */
-.card-body a,
-.scrollHome {
+.bodyLink {
   color: var(--dark);
   font-weight: 600;
   border-bottom: 2px solid var(--secondary);
@@ -81,21 +79,18 @@ body {
 /* transition - stretch */
 .navlink,
 .sectionHead,
-.card-body a,
-.scrollHome {
+.bodyLink {
   text-decoration: none;
   transition: letter-spacing 400ms;
 }
 /* hover & focus */
 .navlink:hover,
 .navlink:focus,
-.card-body a:hover,
-.card-body a:focus,
-.scrollHome:hover,
-.scrollHome:focus {
+.bodyLink:hover,
+.bodyLink:focus {
   outline: none;
   text-decoration: none;
-  color: var(--primary);
+  color: var(--dark);
   letter-spacing: 0.08rem;
   border-bottom: 2px solid var(--alert);
 }
@@ -108,16 +103,12 @@ body {
 .scrollHome:focus {
   letter-spacing: 0.25rem;
 }
-.card-body a:hover,
-.card-body a:focus {
-  color: var(--dark);
-}
 
 /* CARDS */
 .card {
   border: 2px solid var(--success);
 }
-.card-img-top {
+.cardImg {
   width: 100%;
   height: 23vh;
   object-fit: cover;
@@ -126,7 +117,7 @@ body {
 .imgFocus:focus {
   outline: none;
 }
-.card-img-top,
+.cardImg,
 .imgFocus > img {
   transition: 250ms ease-in-out transform;
 }
@@ -135,7 +126,7 @@ body {
   outline: 4px solid var(--alert);
   transform: translateY(-0.5rem) scaleX(1.02);
 }
-.card-img-top:hover {
+.cardImg:hover {
   outline: 4px solid var(--alert);
   transform: translateY(-0.5rem) scaleX(1.02);
 }
@@ -144,9 +135,6 @@ body {
   font-size: 1.2rem;
   font-weight: 600;
 }
-.move-left {
-  margin-left: 10px;
-}
 
 /* ABOUT SECTION */
 .profile-pic {
@@ -154,8 +142,8 @@ body {
   max-width: 200px;
 }
 /* Skills card */
-.card-body ul {
-  margin-left: 40px;
+#skills {
+  grid-template-columns: 2fr 1fr;
 }
 
 /* CONTACT SECTION */
@@ -220,6 +208,7 @@ body {
 }
 .footer a:hover,
 .footer a:focus {
+  color: #fff;
   outline: none;
   border-bottom: 2px solid var(--alert);
   margin: 0 0.25rem;
@@ -244,8 +233,12 @@ span a:focus img {
 }
 
 /* MOBILE */
-@media (max-width: 575px) {
+/* phones & portait tablets */
+@media (max-width: 770px) {
   /* global */
+  .container {
+    padding: 0 1rem;
+  }
   .grid,
   .grid2,
   .grid3,
@@ -257,42 +250,38 @@ span a:focus img {
   .showcase {
     height: 40vh;
   }
+  .caption {
+    font-size: 1.25rem;
+    top: 95%;
+  }
   /* navbar adjustments */
   .nav {
-    padding-top: 0.75rem;
+    padding-top: 2rem;
   }
   .navlink {
-    margin: 0 5px;
-  }
-  /* Card text alignment, all sections */
-  /* #aboutme,
-  #contact {
-    padding: 0;
-  } */
-  .move-left {
-    margin: 0;
-  }
-  .cardTitle,
-  .cardSubtitle {
-    text-align: center;
+    margin: 0 0.5rem;
   }
 
   /* Card Images */
-  .card-img-top {
+  .cardImg {
     width: 100%;
-    height: 50vw;
+    /* height: 50vw; */
     object-fit: cover;
   }
 
-  /* About selfie */
-  .card-body .profile-pic {
+  /* About */
+  #myName,
+  .profile-pic {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
   }
 
-  /* About skills & Contact thank you cards */
-  .col-sm-4 {
-    padding-bottom: 20px;
+  #skills {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  #skills img {
+    margin: 0 auto;
+    padding: 0 0 1rem 1rem;
   }
 }

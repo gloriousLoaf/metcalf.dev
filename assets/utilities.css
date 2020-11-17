@@ -112,7 +112,7 @@
   color: var(--light-color);
 } */
 
-/* text sizes */
+/* text size, weight, alignment */
 .lead {
   font-size: 1.25rem;
 }
@@ -135,6 +135,14 @@
 
 .xl {
   font-size: 3.5rem;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.bolder {
+  font-weight: 700;
 }
 
 .center {
