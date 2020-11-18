@@ -1,7 +1,3 @@
-/* TEMP - HIDE MODAL */
-.hide {
-  display: none;
-}
 /* GLOBAL */
 :root {
   --primary: #073b4c;
@@ -15,7 +11,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* font-family: "Nunito", sans-serif; */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 /* maybe Safari will support this someday? */
@@ -148,7 +143,8 @@ body {
 }
 
 /* CONTACT SECTION */
-.submitBtn {
+.submitBtn,
+.modalBtn {
   color: #fff;
   background-color: var(--primary);
   outline: none;
@@ -158,34 +154,40 @@ body {
   transition: letter-spacing 400ms;
 }
 .submitBtn:hover,
-.submitBtn:focus {
+.submitBtn:focus,
+.modalBtn:hover,
+.modalBtn:focus {
   cursor: pointer;
   letter-spacing: 0.08rem;
   background-color: var(--alert);
 }
-.submitBtn:focus {
+.submitBtn:focus,
+.modalBtn:focus {
   color: #fff;
 }
-/* .try-again styles dynamically-created warnings, see storeInfo() */
-.try-again {
+/* .tryAgain styles dynamically-created warnings, see storeInfo() */
+.tryAgain {
   margin-left: 6px;
   color: var(--alert);
 }
 
 /* MODAL */
-.modal-dialog {
+.modalView {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.modal {
+  z-index: 1;
   max-width: 300px;
-  margin: 0 auto;
+  position: relative;
+  margin: 30% auto;
 }
-/* simplify and center it */
-.modal-header {
-  border-bottom: 0 none;
-}
-.modal-footer {
-  border-top: 0 none;
-}
-.modal-footer {
-  justify-content: center;
+.hide {
+  display: none;
 }
 
 /* FOOTER */
@@ -235,8 +237,8 @@ span a:focus img {
 }
 
 /* MOBILE */
-/* phones & portait tablets */
-@media (max-width: 770px) {
+/* phones & portait mini tablets */
+@media (max-width: 768px) {
   /* global */
   .container {
     padding: 0 1rem;
@@ -263,20 +265,17 @@ span a:focus img {
   .navlink {
     margin: 0 0.5rem;
   }
-
-  /* Card Images */
+  /* card imgs */
   .cardImg {
     width: 100%;
     /* height: 50vw; */
     object-fit: cover;
   }
-
-  /* About */
+  /* about */
   #myName,
   #selfie {
     margin: 0 auto;
   }
-
   #skills {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -285,4 +284,14 @@ span a:focus img {
     margin: 0 auto;
     padding: 0 0 1rem 1rem;
   }
+  /* modal */
+  .modal {
+    margin: 80% auto;
+  }
 }
+/* landscape tablets & small laptops */
+/* @media (min-width: 768px) and (max-width: 1350px) {
+  * {
+    display: none;
+  }
+} */

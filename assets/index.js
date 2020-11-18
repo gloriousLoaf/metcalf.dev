@@ -1,24 +1,30 @@
 /* smooth-scoll polyfills by Chris Ferdinandi https://vanillajstoolkit.com/ */
 let scroll = new SmoothScroll('a[href*="#"]', { speed: 400 });
 
-/* Contact Form - Verification of Info, Google Sheets API */
-// email validator
+/* email validator */
 const validator = (email) =>  {
   const valid = /\S+@\S+\.\S+/;
   return valid.test(email);
 }
 
-// vars for Google Sheets API
+/* Google Sheets API */
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzxivBPk8mDjOYPOqm53FndxzXHx4V-EufqCgyhRZpayYwc_aQ/exec';
 const form = document.forms['submit-to-google-sheet'];
 
-// remove helper msgs, see below
+/* remove helper msgs, see below */
 const removeHelpers = () => {
-  const tryAgain = document.querySelectorAll('.try-again');
+  const tryAgain = document.querySelectorAll('.tryAgain');
   tryAgain ? tryAgain.forEach(e => e.remove()) : console.log('first try');
 }
 
-// storeInfo() validates info then calls Fetch API to Google Sheets & triggers modal
+/* modal view toggle */
+const modal = document.querySelector('.modalView');
+const modalBtn = document.querySelector('.modalBtn');
+const modalToggle = () => {
+  modal.classList.toggle('hide');
+}
+
+/* storeInfo() sends msg to Google Sheets & triggers modal */
 const storeInfo = (e) => {
   e.preventDefault();
   // remove helper msgs in case of multiple clicks
@@ -29,13 +35,13 @@ const storeInfo = (e) => {
   const contactMsg = document.getElementById('contact-message').value;
   const submit = document.getElementById('submit');
   const email = document.getElementById('email-help');
-  // helper msgs: '<small class="try-again">(message here)</small>'
+  // helper msgs: '<small class="tryAgain">(message here)</small>'
   const submitHelper = document.createElement('small');
   submitHelper.textContent = 'Please complete all fields.';
-  submitHelper.classList = 'try-again';
+  submitHelper.classList = 'tryAgain';
   const emailHelper = document.createElement('small');
   emailHelper.textContent = 'Is this right?';
-  emailHelper.classList = 'try-again xs';
+  emailHelper.classList = 'tryAgain xs';
   // if anything is blank, add a msg to contact card
   if (contactName === '' || contactEmail === '' || contactMsg === '') {
     submit.after(submitHelper);
@@ -51,15 +57,15 @@ const storeInfo = (e) => {
         .then(response => console.log('Success!', response))
         .catch(error => console.error('Error!', error.message))
     // trigger modal & clear form
-    submit.setAttribute('data-target', '#thanks-modal');
+    modalToggle();
     form.reset();
-    // short timeout for API to run, clear modal & msgs
+    // short timeout for API to run, the clear helpers
     setTimeout(() => {
-        submit.removeAttribute('data-target');
         removeHelpers();
     }, 200)
   }
 };
 
-// listener
+/* listeners */
 submit.addEventListener('click', storeInfo);
+modalBtn.addEventListener('click', modalToggle);

@@ -39,7 +39,7 @@
 <body>
 
     <!-- SHOWCASE / HERO -->
-    <header class="showcase center mb5" id="home">
+    <header class="showcase txCenter mb5" id="home">
         <div class="caption md">
           Modern Design • Expressive Content
         </div>
@@ -55,7 +55,7 @@
     <!-- PORTFOLIO -->
     <main class="container">
       <section aria-labelledby="portfolio">
-        <h1 class="center mt3" id="portfolio"><span class="sectionHead">Portfolio</span></h1>
+        <h1 class="txCenter mt3" id="portfolio"><span class="sectionHead">Portfolio</span></h1>
 
         <div class="grid grid4 my4" id="portCards">
           <!-- Snipit Social - Project 3 -->
@@ -111,7 +111,7 @@
 
     <!-- ABOUT ME -->
       <section aria-labelledby="about">
-        <h1 class="center" id="about"><span class="sectionHead">About Me</span></h1>
+        <h1 class="txCenter" id="about"><span class="sectionHead">About Me</span></h1>
         <div class="grid grid2 my4" id="aboutMe">
           <div class="card p1">
             <p class="ml1 md bold" id="myName">David Metcalf</p>
@@ -130,8 +130,8 @@
 
         <!-- Skills Card -->
           <div class="card p1">
-            <p class="md bold center">Full Stack Development</p>
-            <p class="center pb1">Skills updated frequently.</p>
+            <p class="md bold txCenter">Full Stack Development</p>
+            <p class="txCenter pb1">Skills updated frequently.</p>
             <hr>
             <div class="grid grid3" id="skills">
               <ul class="ml3 p1">
@@ -152,13 +152,14 @@
 
     <!-- CONTACT -->
       <section aria-labelledby="contact">
-        <h1 class="center" id="contact"><span class="sectionHead">Contact</span></h1>
+        <h1 class="txCenter" id="contact"><span class="sectionHead">Contact</span></h1>
 
         <div class="grid grid2 my4">
           <div class="card p1">
-            <p class="lead bold center">Send Me a Message</p>
-            <p class="center pb1">I will reply within 24 hours.</p>
+            <p class="lead bold txCenter">Send Me a Message</p>
+            <p class="txCenter pb1">I will reply within 24 hours.</p>
             <hr>
+            <!-- LEFT OFF HERE! -->
             <form name="submit-to-google-sheet">
               <div class="form-group">
                 <label for="contact-name">Name</label>
@@ -177,35 +178,15 @@
                 <textarea name="message" class="form-control thank-you" id="contact-message"
                    placeholder="How can we collaborate?"></textarea>
               </div>
-              <!-- data-target for Modal added dynamically, see storeInfo() -->
-              <button type="submit" class="submitBtn" id="submit"
-                data-toggle="modal">Submit</button>
+              <!-- hide / show clas for Modal added dynamically, see storeInfo() -->
+              <button type="submit" class="submitBtn" id="submit">Submit</button>
             </form>
-
-            <!-- MODAL after Submit click -->
-            <!-- NEW - ADDED HIDE CLASS TO HIDE MODAL WHILE IN DEV -->
-            <div class="modal fade hide" id="thanks-modal" tabindex="-1" role="dialog" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h6 class="modal-title center w-100">Got it!</h6>
-                  </div>
-                  <div class="modal-body">
-                    <p class="center">Thanks for reaching out.</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="submitBtn"
-                        data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
-
+          
           <!-- Thank you card -->
           <div class="card p1">
-            <p class="lead bold center">Thank you for visiting.</p>
-            <p class="center pb1">Let's start a conversation.</p>
+            <p class="lead bold txCenter">Thank you for visiting.</p>
+            <p class="txCenter pb1">Let's start a conversation.</p>
             <hr>
             <div class="p1">
               <p>Connect with me and view my resume on <a class="bodyLink" href="https://www.linkedin.com/in/david-codes/" target="_blank" rel="noopener">LinkedIn</a>.
@@ -214,21 +195,29 @@
               <p>View more of my work and repos on <a class="bodyLink"
                 href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">GitHub</a>.</p>
               <br>
-              <!-- <p>Rather not use the contact form? Send me an email at <a class="bodyLink"
-                href="mailto:hello@metcalf.dev" target="_blank">hello@metcalf.dev</a>.</p>
-              <br> -->
               <p>I'm also on Twitter <a class="bodyLink" href="https://twitter.com/davidmcodes"
                 target="_blank" rel="noopener">@davidmcodes</a>.</p>
             </div>
           </div>
         </div>
-        <p class="center my4"><a href="#home" class="bodyLink scrollHome">home</a></p>
+        <p class="txCenter my4"><a href="#home" class="bodyLink scrollHome">home</a></p>
       </section>
     </main>
 
+    <!-- Modal -->
+    <div class="modalView hide">
+      <div class="container">
+        <div class="modal card deadCenter p1">
+          <p class="cardTitle lead p1">Got it!</p>
+          <p class="p1">Thanks for reaching out.</p>
+          <button type="button" class="modalBtn m1">Close</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
-      <div class="center">
+      <div class="txCenter">
         <span>
           <a class="bodyLink" href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">
             <img src="assets/images/github.png" alt="Github Octocat" aria-hidden="true" height="16px" width="16px"></img> gloriousLoaf</a>
