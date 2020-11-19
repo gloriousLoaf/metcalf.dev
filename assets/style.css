@@ -22,7 +22,7 @@ body {
   background-color: var(--light);
   min-height: 100vh;
   position: relative;
-  /* padding-bottom: 50px; */
+  padding-bottom: 50px;
 }
 
 /* SHOWCASE / HERO */
@@ -283,7 +283,7 @@ span a:focus img {
   /* card imgs */
   .cardImg {
     width: 100%;
-    /* height: 50vw; */
+    height: 50vw;
     object-fit: cover;
   }
   /* about */
