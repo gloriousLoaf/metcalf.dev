@@ -46,9 +46,9 @@
 
       <!-- NAVBAR -->
       <nav class="nav">
-          <a data-scroll href="#portfolio" class="navlink lead">Portfolio</a>
-          <a data-scroll href="#about" class="navlink lead">About Me</a>
-          <a data-scroll href="#contact" class="navlink lead">Contact</a>
+          <a data-scroll href="#portfolio" class="navlink lead trapFocus">Portfolio</a>
+          <a data-scroll href="#about" class="navlink lead trapFocus">About Me</a>
+          <a data-scroll href="#contact" class="navlink lead trapFocus">Contact</a>
       </nav>
     </header>
 
@@ -60,48 +60,48 @@
         <div class="grid grid4 my4" id="portCards">
           <!-- Snipit Social - Project 3 -->
           <div class="card">
-            <a class="imgFocus" href="https://snipit-social.herokuapp.com/" target="_blank" rel="noopener"><img
+            <a class="imgFocus trapFocus" href="https://snipit-social.herokuapp.com/" target="_blank" rel="noopener"><img
               class="cardImg" src="./assets/images/snipit.png" alt="Snipit Social landing page"></a>
             <div class="p1">
               <p class="lead bold mb1">Snipit Social</p>
               <p class="mb1">A MERN stack social media app for devs and designers to meetup and share.</p>
-              <p><small>MERN, Redux, Socket.io - <span><a class="bodyLink" href="https://github.com/gloriousLoaf/Snipit-Social"
+              <p><small>MERN, Redux, Socket.io - <span><a class="bodyLink trapFocus" href="https://github.com/gloriousLoaf/Snipit-Social"
                 target="_blank" rel="noopener">Repository</a></span></small></p>
             </div>
           </div>
 
           <!-- Google Books Search -->
           <div class="card">
-            <a class="imgFocus" href="https://google-books-loaf.herokuapp.com/" target="_blank" rel="noopener"><img
+            <a class="imgFocus trapFocus" href="https://google-books-loaf.herokuapp.com/" target="_blank" rel="noopener"><img
               class="cardImg" src="./assets/images/books.png" alt="Colorful spines of books on a shelf"></a>
             <div class="p1">
               <p class="lead bold mb1">Google Books</p>
               <p class="mb1">A MERN stack app to find, save and remove books from your personal digital library.</p>
-              <p><small>MERN, Google Books API - <span><a class="bodyLink" href="https://github.com/gloriousLoaf/Google-Books-Search"
+              <p><small>MERN, Google Books API - <span><a class="bodyLink trapFocus" href="https://github.com/gloriousLoaf/Google-Books-Search"
                 target="_blank" rel="noopener">Repository</a></span></small></p>
             </div>
           </div>
 
           <!-- Emoji Runner - Project 2 -->
           <div class="card">
-            <a class="imgFocus" href="http://emoji-runner.herokuapp.com/" target="_blank" rel="noopener">
+            <a class="imgFocus trapFocus" href="http://emoji-runner.herokuapp.com/" target="_blank" rel="noopener">
               <img class="cardImg" src="./assets/images/emoji.png" alt="Emoji Runner with an emoji character."></a>
             <div class="p1">
               <p class="lead bold mb1">Emoji Runner</p>
               <p class="mb1">A fun twist on the classic runner game, with secure user login and score tracking.</p>
-              <p><small>P5JS, Express & MySQL - <a class="bodyLink" href="https://github.com/gloriousLoaf/Emoji-Runner"
+              <p><small>P5JS, Express & MySQL - <a class="bodyLink trapFocus" href="https://github.com/gloriousLoaf/Emoji-Runner"
                 target="_blank" rel="noopener">Repository</a></small></p>
             </div>
           </div>
 
           <!-- Covid-19 Tracker - Project 1 -->
           <div class="card">
-            <a class="imgFocus" href="https://gloriousloaf.github.io/Covid-19-Tracker/" target="_blank" rel="noopener">
+            <a class="imgFocus trapFocus" href="https://gloriousloaf.github.io/Covid-19-Tracker/" target="_blank" rel="noopener">
               <img class="cardImg" src="./assets/images/covid-map.png" alt="Covid-19 Tracker"></a>
             <div class="p1">
               <p class="lead bold mb1">Covid-19 Tracker</p>
               <p class="mb1">Statistics, news and resources. Includes statewide testing information.</p>
-              <p><small>jQuery & Multiple APIs - <a class="bodyLink" href="https://github.com/gloriousLoaf/Covid-19-Tracker"
+              <p><small>jQuery & Multiple APIs - <a class="bodyLink trapFocus" href="https://github.com/gloriousLoaf/Covid-19-Tracker"
                 target="_blank" rel="noopener">Repository</a></small></p>
               </p>
             </div>
@@ -159,27 +159,26 @@
             <p class="lead bold txCenter">Send Me a Message</p>
             <p class="txCenter pb1">I will reply within 24 hours.</p>
             <hr>
-            <!-- LEFT OFF HERE! -->
             <form name="submit-to-google-sheet">
               <div class="form-group">
                 <label for="contact-name">Name</label>
-                <input name="name" type="text" class="form-control" id="contact-name"
+                <input name="name" type="text" class="trapFocus" id="contact-name"
                   placeholder="Nice to meet you.">
               </div>
               <div class="form-group">
                 <label for="contact-email">Email</label>
-                <input name="email" type="email" class="form-control" id="contact-email"
+                <input name="email" type="email" class="trapFocus" id="contact-email"
                   placeholder="username@somewhere.com">
-                <small class="form-text text-muted" id="email-help">I will not share your
+                <small id="email-help">I will not share your
                   info.</small>
               </div>
               <div class="form-group">
                 <label for="contact-message">Message</label>
-                <textarea name="message" class="form-control thank-you" id="contact-message"
+                <textarea name="message" class="thank-you trapFocus" id="contact-message"
                    placeholder="How can we collaborate?"></textarea>
               </div>
               <!-- hide / show clas for Modal added dynamically, see storeInfo() -->
-              <button type="submit" class="submitBtn" id="submit">Submit</button>
+              <button type="submit" class="submitBtn trapFocus" id="submit">Submit</button>
             </form>
           </div>
           
@@ -189,18 +188,18 @@
             <p class="txCenter pb1">Let's start a conversation.</p>
             <hr>
             <div class="p1">
-              <p>Connect with me and view my resume on <a class="bodyLink" href="https://www.linkedin.com/in/david-codes/" target="_blank" rel="noopener">LinkedIn</a>.
+              <p>Connect with me and view my resume on <a class="bodyLink trapFocus" href="https://www.linkedin.com/in/david-codes/" target="_blank" rel="noopener">LinkedIn</a>.
               </p>
               <br>
-              <p>View more of my work and repos on <a class="bodyLink"
+              <p>View more of my work and repos on <a class="bodyLink trapFocus"
                 href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">GitHub</a>.</p>
               <br>
-              <p>I'm also on Twitter <a class="bodyLink" href="https://twitter.com/davidmcodes"
+              <p>I'm also on Twitter <a class="bodyLink trapFocus" href="https://twitter.com/davidmcodes"
                 target="_blank" rel="noopener">@davidmcodes</a>.</p>
             </div>
           </div>
         </div>
-        <p class="txCenter my4"><a href="#home" class="bodyLink scrollHome">home</a></p>
+        <p class="txCenter my4"><a href="#home" class="bodyLink scrollHome trapFocus">home</a></p>
       </section>
     </main>
 
@@ -210,7 +209,7 @@
         <div class="modal card deadCenter p1">
           <p class="cardTitle lead p1">Got it!</p>
           <p class="p1">Thanks for reaching out.</p>
-          <button type="button" class="modalBtn m1">Close</button>
+          <button type="button" class="modalBtn modalFocus m1">Close</button>
         </div>
       </div>
     </div>
@@ -219,7 +218,7 @@
     <footer class="footer">
       <div class="txCenter">
         <span>
-          <a class="bodyLink" href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">
+          <a class="bodyLink trapFocus" href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">
             <img src="assets/images/github.png" alt="Github Octocat" aria-hidden="true" height="16px" width="16px"></img> gloriousLoaf</a>
           </span>
       </div>

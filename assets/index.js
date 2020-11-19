@@ -17,12 +17,21 @@ const removeHelpers = () => {
   tryAgain ? tryAgain.forEach(e => e.remove()) : console.log('first try');
 }
 
-/* modal view toggle */
+/* Modal View */
+// dom elems
 const modal = document.querySelector('.modalView');
 const modalBtn = document.querySelector('.modalBtn');
+const modalFocus = document.querySelector('.modalFocus');
+// nodelist of focusable elems to obscure while in modal view
+const trapList = document.querySelectorAll('.trapFocus');
+const trapFocus = Array.from(trapList);
+// hide or reveal modal, make other elems reachable or unreachable
 const modalToggle = () => {
   modal.classList.toggle('hide');
-}
+  !trapFocus[0].hasAttribute('tabindex') ?
+    trapFocus.forEach(e => e.setAttribute('tabindex', '-1'))
+    : trapFocus.forEach(e => e.removeAttribute('tabindex'));
+};
 
 /* storeInfo() sends msg to Google Sheets & triggers modal */
 const storeInfo = (e) => {
@@ -61,9 +70,9 @@ const storeInfo = (e) => {
     form.reset();
     // short timeout for API to run, the clear helpers
     setTimeout(() => {
-        removeHelpers();
-    }, 200)
-  }
+      removeHelpers();
+    }, 200);
+  };
 };
 
 /* listeners */
