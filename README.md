@@ -20,7 +20,7 @@
 
 ## 📝 Description
 To view my portfolio, please visit [metcalf.dev](https://metcalf.dev).
-This is a constantly updated and evolving portfolio, serving as an introduction to my work and progress in full stack development. This currently uses **custom JavaScript & CSS stylesheet, with a little Bootstrap.**
+This is a constantly updated and evolving portfolio, serving as an introduction to my work and progress in full stack development. This is written in **pure HTML5, CSS3 & vanilla JS**, plus a sweet smooth-scroll plugin from [Chris Ferdinandi](http://github.com/cferdinandi/smooth-scroll) (soon to be rewritten with ```scroll-behavior``` now that it has good browser support).
 <p>&nbsp;</p>
 
 ## 💾 Installation
