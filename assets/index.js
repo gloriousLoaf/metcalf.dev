@@ -1,41 +1,56 @@
 /* smooth-scoll polyfills by Chris Ferdinandi https://vanillajstoolkit.com/ */
 let scroll = new SmoothScroll('a[href*="#"]', { speed: 400 });
 
-/* Contact Form - Verification of Info, Google Sheets API */
-// email validator
+/* email validator */
 const validator = (email) =>  {
   const valid = /\S+@\S+\.\S+/;
   return valid.test(email);
 }
 
-// vars for Google Sheets API
+/* Google Sheets API */
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzxivBPk8mDjOYPOqm53FndxzXHx4V-EufqCgyhRZpayYwc_aQ/exec';
 const form = document.forms['submit-to-google-sheet'];
 
-// remove helper msgs, see below
+/* remove helper msgs, see below */
 const removeHelpers = () => {
-  const tryAgain = document.querySelectorAll('.try-again');
+  const tryAgain = document.querySelectorAll('.tryAgain');
   tryAgain ? tryAgain.forEach(e => e.remove()) : console.log('first try');
 }
 
-// storeInfo() validates info then calls Fetch API to Google Sheets & triggers modal
+/* Modal View */
+// dom elems
+const modal = document.querySelector('.modalView');
+const modalBtn = document.querySelector('.modalBtn');
+const modalFocus = document.querySelector('.modalFocus');
+// nodelist of focusable elems to obscure while in modal view
+const trapList = document.querySelectorAll('.trapFocus');
+const trapFocus = Array.from(trapList);
+// hide or reveal modal, make other elems reachable or unreachable
+const modalToggle = () => {
+  modal.classList.toggle('hide');
+  !trapFocus[0].hasAttribute('tabindex') ?
+    trapFocus.forEach(e => e.setAttribute('tabindex', '-1'))
+    : trapFocus.forEach(e => e.removeAttribute('tabindex'));
+};
+
+/* storeInfo() sends msg to Google Sheets & triggers modal */
 const storeInfo = (e) => {
   e.preventDefault();
   // remove helper msgs in case of multiple clicks
   removeHelpers();
   // dom elems
-  const contactName = document.getElementById('contact-name').value;
-  const contactEmail = document.getElementById('contact-email').value;
-  const contactMsg = document.getElementById('contact-message').value;
+  const contactName = document.getElementById('contactName').value;
+  const contactEmail = document.getElementById('contactEmail').value;
+  const contactMsg = document.getElementById('contactMessage').value;
   const submit = document.getElementById('submit');
-  const email = document.getElementById('email-help');
-  // helper msgs: '<small class="try-again">(message here)</small>'
+  const email = document.getElementById('emailHelp');
+  // helper msgs: '<small class="tryAgain">(message here)</small>'
   const submitHelper = document.createElement('small');
   submitHelper.textContent = 'Please complete all fields.';
-  submitHelper.classList = 'try-again';
+  submitHelper.classList = 'tryAgain';
   const emailHelper = document.createElement('small');
   emailHelper.textContent = 'Is this right?';
-  emailHelper.classList = 'try-again xs';
+  emailHelper.classList = 'tryAgain xs';
   // if anything is blank, add a msg to contact card
   if (contactName === '' || contactEmail === '' || contactMsg === '') {
     submit.after(submitHelper);
@@ -51,15 +66,15 @@ const storeInfo = (e) => {
         .then(response => console.log('Success!', response))
         .catch(error => console.error('Error!', error.message))
     // trigger modal & clear form
-    submit.setAttribute('data-target', '#thanks-modal');
+    modalToggle();
     form.reset();
-    // short timeout for API to run, clear modal & msgs
+    // short timeout for API to run, the clear helpers
     setTimeout(() => {
-        submit.removeAttribute('data-target');
-        removeHelpers();
-    }, 200)
-  }
+      removeHelpers();
+    }, 200);
+  };
 };
 
-// listener
+/* listeners */
 submit.addEventListener('click', storeInfo);
+modalBtn.addEventListener('click', modalToggle);

@@ -11,7 +11,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* font-family: "Nunito", sans-serif; */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 /* maybe Safari will support this someday? */
@@ -23,7 +22,7 @@ body {
   background-color: var(--light);
   min-height: 100vh;
   position: relative;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
 }
 
 /* SHOWCASE / HERO */
@@ -35,35 +34,23 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-.content {
+.caption {
   position: relative;
-  top: 70%;
-}
-.content .title {
-  font-size: 2rem;
-}
-
-.content .text {
-  line-height: 1.7;
-  font-size: 1.25rem;
-  font-weight: 600;
+  top: 85%;
   color: var(--primary);
+  font-weight: 600;
 }
 
 /* NAVBAR, HOME & SECTION SCROLLING, CONTACT LINKS*/
 .nav {
-  margin: 0 auto;
   padding: 0.5rem 0;
-  justify-content: center;
-  position: relative;
-  top: 75%;
   box-shadow: 0 5px 4px 0px rgba(17, 138, 178, 0.4);
 }
 /* Hover Effects - Navbar, Card links, Section headers and 'home' scroll*/
 .navlink {
   color: var(--primary);
-  font-size: 1.25rem;
   font-weight: 600;
+  text-decoration: none;
   margin: 0 0.75rem;
 }
 /* section headers */
@@ -75,8 +62,7 @@ body {
   border-bottom: 2px solid rgba(239, 71, 111, 0.6);
 }
 /* repo, contact & home links */
-.card-body a,
-.scrollHome {
+.bodyLink {
   color: var(--dark);
   font-weight: 600;
   border-bottom: 2px solid var(--secondary);
@@ -84,22 +70,18 @@ body {
 /* transition - stretch */
 .navlink,
 .sectionHead,
-.card-body a,
-.scrollHome {
+.bodyLink {
+  text-decoration: none;
   transition: letter-spacing 400ms;
 }
 /* hover & focus */
 .navlink:hover,
 .navlink:focus,
-.sectionHead:hover,
-.sectionHead:focus,
-.card-body a:hover,
-.card-body a:focus,
-.scrollHome:hover,
-.scrollHome:focus {
+.bodyLink:hover,
+.bodyLink:focus {
   outline: none;
   text-decoration: none;
-  color: var(--primary);
+  color: var(--dark);
   letter-spacing: 0.08rem;
   border-bottom: 2px solid var(--alert);
 }
@@ -108,26 +90,16 @@ body {
 .navlink:focus {
   margin-bottom: -2px;
 }
-.sectionHead:hover,
-.sectionHead:focus,
 .scrollHome:hover,
 .scrollHome:focus {
   letter-spacing: 0.25rem;
-}
-.card-body a:hover,
-.card-body a:focus {
-  color: var(--dark);
 }
 
 /* CARDS */
 .card {
   border: 2px solid var(--success);
 }
-#portfolio {
-  margin-top: 120px;
-}
-/* card deck */
-.card-img-top {
+.cardImg {
   width: 100%;
   height: 23vh;
   object-fit: cover;
@@ -136,44 +108,60 @@ body {
 .imgFocus:focus {
   outline: none;
 }
-.card-img-top,
+.cardImg,
 .imgFocus > img {
-  transition: 0.5s ease-in-out transform;
+  transition: 250ms ease-in-out transform;
 }
 /* lift and stretch a bit on hover / focus */
 .imgFocus:focus > img {
   outline: 4px solid var(--alert);
   transform: translateY(-0.5rem) scaleX(1.02);
 }
-.card-img-top:hover {
+.cardImg:hover {
   outline: 4px solid var(--alert);
   transform: translateY(-0.5rem) scaleX(1.02);
 }
-/* line up card titles */
-.cardTitle {
-  font-size: 1.2rem;
-  font-weight: 600;
+/* even-out size of cards for different laptop sizes */
+#portCards .card p:nth-child(2) {
+  min-height: 5rem;
 }
-.move-left {
-  margin-left: 10px;
-}
-
 /* ABOUT SECTION */
-.col .m-2,
-p {
-  margin: 0 10px;
+#aboutMe .card {
+  min-height: 365px;
 }
-.profile-pic {
+#selfie {
   max-height: 200px;
   max-width: 200px;
 }
 /* Skills card */
-.card-body ul {
-  margin-left: 40px;
+#skills {
+  grid-template-columns: 2fr 1fr;
 }
 
 /* CONTACT SECTION */
-.submit-btn {
+.contactForm {
+  display: grid;
+}
+.contactForm input,
+.contactForm textarea {
+  border: 1px solid;
+  border-radius: 0.25rem;
+}
+.contactForm label {
+  margin-bottom: 2px;
+}
+.contactForm input {
+  padding: 0.35rem 0 0.15rem 0.15rem;
+}
+.contactForm textarea {
+  padding: 0.15rem 0 0 0.15rem;
+  resize: vertical;
+}
+.thankYou {
+  align-self: baseline;
+}
+.submitBtn,
+.modalBtn {
   color: #fff;
   background-color: var(--primary);
   outline: none;
@@ -182,35 +170,41 @@ p {
   border-radius: 0.25rem;
   transition: letter-spacing 400ms;
 }
-.submit-btn:hover,
-.submit-btn:focus {
+.submitBtn:hover,
+.submitBtn:focus,
+.modalBtn:hover,
+.modalBtn:focus {
+  cursor: pointer;
   letter-spacing: 0.08rem;
   background-color: var(--alert);
 }
-.submit-btn:focus {
+.submitBtn:focus,
+.modalBtn:focus {
   color: #fff;
 }
-/* .try-again styles dynamically-created warnings, see storeInfo() */
-.try-again {
+/* .tryAgain styles dynamically-created warnings, see storeInfo() */
+.tryAgain {
   margin-left: 6px;
   color: var(--alert);
 }
 
 /* MODAL */
-/* trim it up */
-.modal-dialog {
+.modalView {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.modal {
+  z-index: 1;
   max-width: 300px;
-  margin: 0 auto;
+  position: relative;
+  margin: 20% auto;
 }
-/* simplify and center it */
-.modal-header {
-  border-bottom: 0 none;
-}
-.modal-footer {
-  border-top: 0 none;
-}
-.modal-footer {
-  justify-content: center;
+.hide {
+  display: none;
 }
 
 /* FOOTER */
@@ -227,11 +221,15 @@ p {
 }
 /* let's have some fun */
 .footer a {
+  color: #fff;
+  text-decoration: none;
+  padding-bottom: 0.1rem;
   border-bottom: 2px solid var(--success);
   transition: margin 1s, font-size 1s, letter-spacing 1s;
 }
 .footer a:hover,
 .footer a:focus {
+  color: #fff;
   outline: none;
   border-bottom: 2px solid var(--alert);
   margin: 0 0.25rem;
@@ -256,47 +254,71 @@ span a:focus img {
 }
 
 /* MOBILE */
-@media (max-width: 575px) {
-  /* hero */
+/* phones & portait mini tablets */
+@media (max-width: 768px) {
+  /* global */
+  .container {
+    padding: 0 1rem;
+  }
+  .grid,
+  .grid2,
+  .grid3,
+  .grid4 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  /* header & nav */
   .showcase {
     height: 40vh;
   }
-  /* navbar adjustments */
+  .caption {
+    font-size: 1.25rem;
+    top: 95%;
+    margin-bottom: 1rem;
+  }
   .nav {
-    padding-top: 0.75rem;
+    margin-bottom: 1rem;
+    padding-top: 2.5rem;
   }
-  .navlink {
-    margin: 0 5px;
-  }
-  /* Card text alignment, all sections */
-  #aboutme,
-  #contact {
-    padding: 0;
-  }
-  .move-left {
-    margin: 0;
-  }
-  .cardTitle,
-  .cardSubtitle {
-    text-align: center;
-  }
-
-  /* Card Images */
-  .card-img-top {
+  /* card imgs */
+  .cardImg {
     width: 100%;
-    height: 50vw;
+    /* height: 50vw; */
     object-fit: cover;
   }
-
-  /* About selfie */
-  .card-body .profile-pic {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  /* about */
+  #aboutMe div p,
+  #selfie {
+    margin: 0 auto;
   }
-
-  /* About skills & Contact thank you cards */
-  .col-sm-4 {
-    padding-bottom: 20px;
+  #skills {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  #skills img {
+    margin: 0 auto;
+    padding: 0 0 1rem 1rem;
+  }
+  /* contact */
+  .submitBtn {
+    display: block;
+    margin: 0 auto;
+  }
+  .thankYou {
+    margin-top: 1.5rem;
+  }
+  .thankYou div {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  /* modal */
+  .modal {
+    margin: 80% auto;
   }
 }
+/* landscape tablets & small laptops */
+/* @media (min-width: 768px) and (max-width: 1350px) {
+  * {
+    display: none;
+  }
+} */
