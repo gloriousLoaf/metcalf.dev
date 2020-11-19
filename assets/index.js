@@ -39,11 +39,11 @@ const storeInfo = (e) => {
   // remove helper msgs in case of multiple clicks
   removeHelpers();
   // dom elems
-  const contactName = document.getElementById('contact-name').value;
-  const contactEmail = document.getElementById('contact-email').value;
-  const contactMsg = document.getElementById('contact-message').value;
+  const contactName = document.getElementById('contactName').value;
+  const contactEmail = document.getElementById('contactEmail').value;
+  const contactMsg = document.getElementById('contactMessage').value;
   const submit = document.getElementById('submit');
-  const email = document.getElementById('email-help');
+  const email = document.getElementById('emailHelp');
   // helper msgs: '<small class="tryAgain">(message here)</small>'
   const submitHelper = document.createElement('small');
   submitHelper.textContent = 'Please complete all fields.';

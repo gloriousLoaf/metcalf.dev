@@ -22,7 +22,7 @@ body {
   background-color: var(--light);
   min-height: 100vh;
   position: relative;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
 }
 
 /* SHOWCASE / HERO */
@@ -34,7 +34,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-
 .caption {
   position: relative;
   top: 85%;
@@ -45,9 +44,6 @@ body {
 /* NAVBAR, HOME & SECTION SCROLLING, CONTACT LINKS*/
 .nav {
   padding: 0.5rem 0;
-  justify-content: center;
-  position: relative;
-  top: 90%;
   box-shadow: 0 5px 4px 0px rgba(17, 138, 178, 0.4);
 }
 /* Hover Effects - Navbar, Card links, Section headers and 'home' scroll*/
@@ -143,6 +139,27 @@ body {
 }
 
 /* CONTACT SECTION */
+.contactForm {
+  display: grid;
+}
+.contactForm input,
+.contactForm textarea {
+  border: 1px solid;
+  border-radius: 0.25rem;
+}
+.contactForm label {
+  margin-bottom: 2px;
+}
+.contactForm input {
+  padding: 0.35rem 0 0.15rem 0.15rem;
+}
+.contactForm textarea {
+  padding: 0.15rem 0 0 0.15rem;
+  resize: vertical;
+}
+.thankYou {
+  align-self: baseline;
+}
 .submitBtn,
 .modalBtn {
   color: #fff;
@@ -250,20 +267,18 @@ span a:focus img {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
-  /* hero */
+  /* header & nav */
   .showcase {
     height: 40vh;
   }
   .caption {
     font-size: 1.25rem;
     top: 95%;
+    margin-bottom: 1rem;
   }
-  /* navbar adjustments */
   .nav {
-    padding-top: 2rem;
-  }
-  .navlink {
-    margin: 0 0.5rem;
+    margin-bottom: 1rem;
+    padding-top: 2.5rem;
   }
   /* card imgs */
   .cardImg {
@@ -283,6 +298,18 @@ span a:focus img {
   #skills img {
     margin: 0 auto;
     padding: 0 0 1rem 1rem;
+  }
+  /* contact */
+  .submitBtn {
+    display: block;
+    margin: 0 auto;
+  }
+  .thankYou {
+    margin-top: 1.5rem;
+  }
+  .thankYou div {
+    padding-top: 0;
+    padding-bottom: 0;
   }
   /* modal */
   .modal {

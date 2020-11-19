@@ -39,18 +39,18 @@
 <body>
 
     <!-- SHOWCASE / HERO -->
-    <header class="showcase txCenter mb5" id="home">
-        <div class="caption md">
-          Modern Design • Expressive Content
-        </div>
-
-      <!-- NAVBAR -->
-      <nav class="nav">
-          <a data-scroll href="#portfolio" class="navlink lead trapFocus">Portfolio</a>
-          <a data-scroll href="#about" class="navlink lead trapFocus">About Me</a>
-          <a data-scroll href="#contact" class="navlink lead trapFocus">Contact</a>
-      </nav>
+    <header class="showcase txCenter" id="home">
+      <div class="caption md">
+        Modern Design • Expressive Content
+      </div>
     </header>
+
+    <!-- NAVBAR -->
+    <nav class="nav txCenter">
+      <a data-scroll href="#portfolio" class="navlink lead trapFocus">Portfolio</a>
+      <a data-scroll href="#about" class="navlink lead trapFocus">About Me</a>
+      <a data-scroll href="#contact" class="navlink lead trapFocus">Contact</a>
+    </nav>
 
     <!-- PORTFOLIO -->
     <main class="container">
@@ -135,6 +135,7 @@
             <hr>
             <div class="grid grid3" id="skills">
               <ul class="ml3 p1">
+                <li>Certificate from UC Davis</li>
                 <li>MongoDB, Express, React, Node</li>
                 <li>HTML5, CSS3, JavaScript ES6+</li>
                 <li>MVC, ORM, Functional & OOP</li>
@@ -154,48 +155,54 @@
       <section aria-labelledby="contact">
         <h1 class="txCenter" id="contact"><span class="sectionHead">Contact</span></h1>
 
-        <div class="grid grid2 my4">
+        <div class="grid my4">
+          <!-- one card with subgrids -->
           <div class="card p1">
-            <p class="lead bold txCenter">Send Me a Message</p>
-            <p class="txCenter pb1">I will reply within 24 hours.</p>
-            <hr>
-            <form name="submit-to-google-sheet">
-              <div class="form-group">
-                <label for="contact-name">Name</label>
-                <input name="name" type="text" class="trapFocus" id="contact-name"
-                  placeholder="Nice to meet you.">
+            <div class="grid grid2">
+              <div>
+                <p class="lead bold txCenter">Send Me a Message</p>
+                <p class="txCenter pb1">I will reply within 24 hours.</p>
+                <hr>
+                <form name="submit-to-google-sheet">
+                  <div class="contactForm p1">
+                    <label for="contactName">Name</label>
+                    <input name="name" type="text" class="trapFocus mb1" id="contactName"
+                      placeholder="Nice to meet you.">
+                    <label for="contactEmail">Email</label>
+                    <input name="email" type="email" class="trapFocus" id="contactEmail"
+                      placeholder="username@somewhere.com">
+                    <small class="mb1" id="emailHelp">I will not share your
+                      info.</small>
+                    <label for="contactMessage">Message</label>
+                    <textarea name="message" class="trapFocus mb1" id="contactMessage"
+                      placeholder="How can we collaborate?"></textarea>
+                  </div>
+                  <!-- hide / show class for Modal added dynamically, see storeInfo() -->
+                  <button type="submit" class="submitBtn trapFocus ml1" id="submit">Submit</button>
+                </form>
               </div>
-              <div class="form-group">
-                <label for="contact-email">Email</label>
-                <input name="email" type="email" class="trapFocus" id="contact-email"
-                  placeholder="username@somewhere.com">
-                <small id="email-help">I will not share your
-                  info.</small>
+            
+              <!-- Thank you card -->
+              <div class="thankYou">
+                <p class="lead bold txCenter">Thank you for visiting.</p>
+                <p class="txCenter pb1">Let's start a conversation.</p>
+                <hr>
+                <div class="p1">
+                  <br>
+                  <p>Connect with me, view my resume, or just send me a message on <a class="bodyLink trapFocus" href="https://www.linkedin.com/in/david-codes/" target="_blank" rel="noopener">LinkedIn</a>.
+                  </p>
+                  <br>
+                  <p>View more of my repositories, plus checkout out my contribution vanity tiles on <a class="bodyLink trapFocus"
+                    href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">GitHub</a>.</p>
+                  <br>
+                  <p>I'm also on Twitter, mostly for the memes. DMs are open! <a class="bodyLink trapFocus" href="https://twitter.com/davidmcodes"
+                    target="_blank" rel="noopener">@davidmcodes</a>.</p>
+                  <br>
+                  <p>Did I mention my previous career as a sommelier? Follow me on Delectable <a class="bodyLink trapFocus"
+                    href="https://delectable.com/@davidmetcalf" target="_blank" rel="noopener">@davidmetcalf</a>.</p>
+                  <br>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="contact-message">Message</label>
-                <textarea name="message" class="thank-you trapFocus" id="contact-message"
-                   placeholder="How can we collaborate?"></textarea>
-              </div>
-              <!-- hide / show clas for Modal added dynamically, see storeInfo() -->
-              <button type="submit" class="submitBtn trapFocus" id="submit">Submit</button>
-            </form>
-          </div>
-          
-          <!-- Thank you card -->
-          <div class="card p1">
-            <p class="lead bold txCenter">Thank you for visiting.</p>
-            <p class="txCenter pb1">Let's start a conversation.</p>
-            <hr>
-            <div class="p1">
-              <p>Connect with me and view my resume on <a class="bodyLink trapFocus" href="https://www.linkedin.com/in/david-codes/" target="_blank" rel="noopener">LinkedIn</a>.
-              </p>
-              <br>
-              <p>View more of my work and repos on <a class="bodyLink trapFocus"
-                href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">GitHub</a>.</p>
-              <br>
-              <p>I'm also on Twitter <a class="bodyLink trapFocus" href="https://twitter.com/davidmcodes"
-                target="_blank" rel="noopener">@davidmcodes</a>.</p>
             </div>
           </div>
         </div>
