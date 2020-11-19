@@ -14,10 +14,10 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 /* maybe Safari will support this someday? */
-/* html {
-    --scroll-behavior: smooth;
-    scroll-behavior: smooth;
-} */
+html {
+  scroll-behavior: smooth;
+  --scroll-behavior: smooth;
+}
 body {
   background-color: var(--light);
   min-height: 100vh;
@@ -253,6 +253,13 @@ span a:focus img {
   }
 }
 
+/* no motion sickness please */
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    --scroll-behavior: smooth;
+  }
+}
 /* MOBILE */
 /* phones & portait mini tablets */
 @media (max-width: 768px) {
