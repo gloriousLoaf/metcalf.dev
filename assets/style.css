@@ -287,7 +287,7 @@ span a:focus img {
     object-fit: cover;
   }
   /* about */
-  #myName,
+  #aboutMe div p,
   #selfie {
     margin: 0 auto;
   }
