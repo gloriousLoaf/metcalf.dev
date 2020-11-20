@@ -5,6 +5,11 @@
   overflow: auto;
   padding: 0 10rem;
 }
+.subContainer {
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 2rem;
+}
 .flex {
   display: flex;
   justify-content: center;

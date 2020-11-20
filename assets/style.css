@@ -47,7 +47,7 @@ body {
   box-shadow: 0 5px 4px 0px rgba(17, 138, 178, 0.4);
 }
 /* Hover Effects - Navbar, Card links, Section headers and 'home' scroll*/
-.navlink {
+.navLink {
   color: var(--primary);
   font-weight: 600;
   text-decoration: none;
@@ -68,15 +68,15 @@ body {
   border-bottom: 2px solid var(--secondary);
 }
 /* transition - stretch */
-.navlink,
+.navLink,
 .sectionHead,
 .bodyLink {
   text-decoration: none;
   transition: letter-spacing 400ms;
 }
 /* hover & focus */
-.navlink:hover,
-.navlink:focus,
+.navLink:hover,
+.navLink:focus,
 .bodyLink:hover,
 .bodyLink:focus {
   outline: none;
@@ -86,8 +86,8 @@ body {
   border-bottom: 2px solid var(--alert);
 }
 /* decrease margin so hover doesn't distort size of elements */
-.navlink:hover,
-.navlink:focus {
+.navLink:hover,
+.navLink:focus {
   margin-bottom: -2px;
 }
 .scrollHome:hover,
@@ -127,7 +127,7 @@ body {
 }
 /* ABOUT SECTION */
 #aboutMe .card {
-  min-height: 365px;
+  min-height: 396px;
 }
 #selfie {
   max-height: 200px;
@@ -307,6 +307,11 @@ span a:focus img {
     padding: 0 0 1rem 1rem;
   }
   /* contact */
+  .subContainer {
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0;
+  }
   .submitBtn {
     display: block;
     margin: 0 auto;

@@ -47,9 +47,9 @@
 
     <!-- NAVBAR -->
     <nav class="nav txCenter">
-      <a data-scroll href="#portfolio" class="navlink lead trapFocus">Portfolio</a>
-      <a data-scroll href="#about" class="navlink lead trapFocus">About Me</a>
-      <a data-scroll href="#contact" class="navlink lead trapFocus">Contact</a>
+      <a data-scroll href="#portfolio" class="navLink lead trapFocus">Portfolio</a>
+      <a data-scroll href="#about" class="navLink lead trapFocus">About Me</a>
+      <a data-scroll href="#contact" class="navLink lead trapFocus">Contact</a>
     </nav>
 
     <!-- PORTFOLIO -->
@@ -156,57 +156,61 @@
         <h1 class="txCenter" id="contact"><span class="sectionHead">Contact</span></h1>
 
         <div class="grid my4">
-          <!-- one card with subgrids -->
+          <!-- one card with subgrid -->
           <div class="card p1">
             <div class="grid grid2">
               <div>
                 <p class="lead bold txCenter">Send Me a Message</p>
                 <p class="txCenter pb1">I will reply within 24 hours.</p>
+                <div class="subContainer">
                 <hr>
-                <form name="submit-to-google-sheet">
-                  <div class="contactForm p1">
-                    <label for="contactName">Name</label>
-                    <input name="name" type="text" class="trapFocus mb1" id="contactName"
-                      placeholder="Nice to meet you.">
-                    <label for="contactEmail">Email</label>
-                    <input name="email" type="email" class="trapFocus" id="contactEmail"
-                      placeholder="username@somewhere.com">
-                    <small class="mb1" id="emailHelp">I will not share your
-                      info.</small>
-                    <label for="contactMessage">Message</label>
-                    <textarea name="message" class="trapFocus mb1" id="contactMessage"
-                      placeholder="How can we collaborate?"></textarea>
-                  </div>
-                  <!-- hide / show class for Modal added dynamically, see storeInfo() -->
-                  <button type="submit" class="submitBtn trapFocus ml1" id="submit">Submit</button>
-                </form>
+                  <form name="submit-to-google-sheet">
+                    <div class="contactForm p1">
+                      <label for="contactName">Name</label>
+                      <input name="name" type="text" class="trapFocus mb1" id="contactName"
+                        placeholder="Nice to meet you.">
+                      <label for="contactEmail">Email</label>
+                      <input name="email" type="email" class="trapFocus" id="contactEmail"
+                        placeholder="username@somewhere.com">
+                      <small class="mb1" id="emailHelp">I will not share your
+                        info.</small>
+                      <label for="contactMessage">Message</label>
+                      <textarea name="message" class="trapFocus mb1" id="contactMessage"
+                        placeholder="How can we collaborate?"></textarea>
+                    </div>
+                    <!-- hide / show class for Modal added dynamically, see storeInfo() -->
+                    <button type="submit" class="submitBtn trapFocus ml1" id="submit">Submit</button>
+                  </form>
+                </div>
               </div>
             
               <!-- Thank you card -->
               <div class="thankYou">
                 <p class="lead bold txCenter">Thank you for visiting.</p>
                 <p class="txCenter pb1">Let's start a conversation.</p>
-                <hr>
-                <div class="p1">
-                  <br>
-                  <p>Connect with me, view my resume, or just send me a message on <a class="bodyLink trapFocus" href="https://www.linkedin.com/in/david-codes/" target="_blank" rel="noopener">LinkedIn</a>.
-                  </p>
-                  <br>
-                  <p>View more of my repositories, plus checkout out my contribution vanity tiles on <a class="bodyLink trapFocus"
-                    href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">GitHub</a>.</p>
-                  <br>
-                  <p>I'm also on Twitter, mostly for the memes. DMs are open! <a class="bodyLink trapFocus" href="https://twitter.com/davidmcodes"
-                    target="_blank" rel="noopener">@davidmcodes</a>.</p>
-                  <br>
-                  <p>Did I mention my previous career as a sommelier? Follow me on Delectable <a class="bodyLink trapFocus"
-                    href="https://delectable.com/@davidmetcalf" target="_blank" rel="noopener">@davidmetcalf</a>.</p>
-                  <br>
+                <div class="subContainer">
+                  <hr>
+                  <div class="p1">
+                    <br>
+                    <p>Connect and view my resume on <a class="bodyLink trapFocus" href="https://www.linkedin.com/in/david-codes/" target="_blank" rel="noopener">LinkedIn</a>.
+                    </p>
+                    <br>
+                    <p>View more of my repositories on <a class="bodyLink trapFocus"
+                      href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">GitHub</a>.</p>
+                    <br>
+                    <p>I'm also on Twitter, DMs are open! <a class="bodyLink trapFocus" href="https://twitter.com/davidmcodes"
+                      target="_blank" rel="noopener">@davidmcodes</a>.</p>
+                    <br>
+                    <p>Fun fact: I am a sommelier! Follow me on Delectable <a class="bodyLink trapFocus"
+                      href="https://delectable.com/@davidmetcalf" target="_blank" rel="noopener">@davidmetcalf</a>.</p>
+                    <br>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <p class="txCenter my4"><a href="#home" class="bodyLink scrollHome trapFocus">home</a></p>
+        <p class="txCenter my4"><a href="#home" class="navLink bodyLink scrollHome trapFocus">home</a></p>
       </section>
     </main>
 
