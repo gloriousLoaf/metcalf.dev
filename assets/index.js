@@ -1,3 +1,16 @@
+/* scroller */
+const navLinks = document.querySelectorAll('.navLink');
+// IIFE: apply listener, scroll to url #hash
+navLinks.forEach(elem => {
+  ((aTag) => {
+    elem.addEventListener('click', (e) => {
+      aTag.scrollIntoView({behavior: 'smooth'});
+      e.preventDefault();
+    })
+  })(document.querySelector(elem.hash));
+})
+
+
 /* email validator */
 const validator = (email) =>  {
   const valid = /\S+@\S+\.\S+/;
@@ -33,7 +46,7 @@ const modalToggle = () => {
 /* storeInfo() sends msg to Google Sheets & triggers modal */
 const storeInfo = (e) => {
   e.preventDefault();
-  // remove helper msgs in case of multiple clicks
+  // remove extra helper msgs in case of multiple clicks
   removeHelpers();
   // dom elems
   const contactName = document.getElementById('contactName').value;
@@ -65,27 +78,12 @@ const storeInfo = (e) => {
     // trigger modal & clear form
     modalToggle();
     form.reset();
-    // short timeout for API to run, the clear helpers
+    // short timeout for API to run, then clear helpers
     setTimeout(() => {
       removeHelpers();
     }, 200);
   };
 };
-
-/* scroll polyfill: www.chirp.com.au */
-window.addEventListener("DOMContentLoaded", function(e) {
-  var links = document.getElementsByTagName("A");
-  for(var i=0; i < links.length; i++) {
-    if(!links[i].hash) continue;
-    if(links[i].origin + links[i].pathname != self.location.href) continue;
-    (function(anchorPoint) {
-      links[i].addEventListener("click", function(e) {
-        anchorPoint.scrollIntoView(true);
-        e.preventDefault();
-      }, false);
-    })(document.getElementById(links[i].hash.replace(/#/, "")));
-  }
-}, false);
 
 /* listeners */
 submit.addEventListener('click', storeInfo);
