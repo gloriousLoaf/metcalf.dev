@@ -24,6 +24,11 @@ body {
   position: relative;
   padding-bottom: 50px;
 }
+/* h1's are used for refocusing after scrolling to anchor tags */
+header:focus,
+h1:focus {
+  outline: none;
+}
 
 /* SHOWCASE / HERO */
 .showcase {
