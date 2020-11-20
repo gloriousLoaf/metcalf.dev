@@ -1,21 +1,28 @@
-/* scroller */
+/* Scroller - .navLink nodelist of internal anchor tags */
 const navLinks = document.querySelectorAll('.navLink');
 // IIFE: apply listener, scroll to url #hash
 navLinks.forEach(elem => {
   ((aTag) => {
     elem.addEventListener('click', (e) => {
+      const hash = e.target.hash;
+      // refocus is always either header or h1 elem
+      const refocus = document.querySelector(hash);
+      refocus.style.outline = 'none';
       aTag.scrollIntoView({behavior: 'smooth'});
+      // time to scroll before moving focus
+      setTimeout(() => {
+        refocus.focus();
+      }, 600);
       e.preventDefault();
     })
   })(document.querySelector(elem.hash));
-})
-
+});
 
 /* email validator */
 const validator = (email) =>  {
   const valid = /\S+@\S+\.\S+/;
   return valid.test(email);
-}
+};
 
 /* Google Sheets API */
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzxivBPk8mDjOYPOqm53FndxzXHx4V-EufqCgyhRZpayYwc_aQ/exec';
@@ -25,7 +32,7 @@ const form = document.forms['submit-to-google-sheet'];
 const removeHelpers = () => {
   const tryAgain = document.querySelectorAll('.tryAgain');
   tryAgain ? tryAgain.forEach(e => e.remove()) : console.log('first try');
-}
+};
 
 /* Modal View */
 // dom elems

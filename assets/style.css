@@ -14,10 +14,10 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 /* maybe Safari will support this someday? */
-html {
+/* html {
   scroll-behavior: smooth;
   --scroll-behavior: smooth;
-}
+} */
 body {
   background-color: var(--light);
   min-height: 100vh;
