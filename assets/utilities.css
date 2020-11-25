@@ -72,17 +72,23 @@
 .txCenter {
   text-align: center;
 }
-.text-primary {
-  color: var(--primary-color);
+.txCenter {
+  text-align: center;
 }
-.text-secondary {
-  color: var(--secondary-color);
+.txPrimary {
+  color: var(--primary);
 }
-.text-dark {
-  color: var(--dark-color);
+.txSecondary {
+  color: var(--secondary);
 }
-.text-light {
-  color: var(--light-color);
+.txDark {
+  color: var(--dark);
+}
+.txLight {
+  color: var(--light);
+}
+.txAlert {
+  color: var(--alert);
 }
 
 /* CENTERING & BOX MODEL */
