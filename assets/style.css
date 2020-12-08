@@ -13,7 +13,7 @@
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-/* maybe Safari will support this someday? */
+/* handling scrolling with js until i work out browser nav */
 /* html {
   scroll-behavior: smooth;
   --scroll-behavior: smooth;
@@ -336,6 +336,11 @@ span a:focus img {
   .submitBtn {
     display: block;
     margin: 0 auto;
+  }
+  .submitBtn + small {
+    display: block;
+    margin-top: 0.5rem;
+    text-align: center;
   }
   .thankYou {
     margin-top: 1.5rem;
