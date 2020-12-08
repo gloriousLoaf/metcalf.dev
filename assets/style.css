@@ -337,6 +337,11 @@ span a:focus img {
     display: block;
     margin: 0 auto;
   }
+  .submitBtn + small {
+    display: block;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
   .thankYou {
     margin-top: 1.5rem;
   }
