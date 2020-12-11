@@ -75,10 +75,13 @@ h1:focus {
   border-bottom: 2px solid var(--secondary);
 }
 /* transition - stretch */
-.navLink,
-.bodyLink {
+.navLink {
   text-decoration: none;
   transition: letter-spacing 400ms;
+}
+.bodyLink {
+  text-decoration: none;
+  transition: font-style;
 }
 /* hover & focus */
 .navLink:hover,
@@ -88,15 +91,17 @@ h1:focus {
   outline: none;
   text-decoration: none;
   color: var(--dark);
-  letter-spacing: 0.15rem;
   border-bottom: 2px solid var(--alert);
 }
-/* decrease margin so hover doesn't distort size of elements */
 .navLink:hover,
 .navLink:focus {
   margin-bottom: -2px;
+  letter-spacing: 0.15rem;
 }
-
+.bodyLink:hover,
+.bodyLink:focus {
+  font-style: italic;
+}
 /* CARDS */
 .card {
   border: 2px solid var(--success);
