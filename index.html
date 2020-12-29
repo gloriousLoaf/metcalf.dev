@@ -29,6 +29,10 @@
     <link rel="apple-touch-icon" href="./favicon.png" sizes="120x120">
     <link rel="apple-touch-icon" href="./favicon.png" sizes="152x152">
     <link rel="apple-touch-icon" href="./favicon.png" sizes="180x180">
+    <!-- Google Font - Open Sans & Roboto Mono -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/utilities.css">
     <link rel="stylesheet" href="./assets/style.css">
@@ -47,9 +51,9 @@
 
     <!-- NAVBAR -->
     <nav class="nav txCenter">
-      <a data-scroll href="#portfolio" class="navLink lead trapFocus">Portfolio</a>
-      <a data-scroll href="#about" class="navLink lead trapFocus">About Me</a>
-      <a data-scroll href="#contact" class="navLink lead trapFocus">Contact</a>
+      <a href="#portfolio" class="navLink lead trapFocus">Portfolio</a>
+      <a href="#about" class="navLink lead trapFocus">About Me</a>
+      <a href="#contact" class="navLink lead trapFocus">Contact</a>
     </nav>
 
     <!-- PORTFOLIO -->
@@ -170,15 +174,15 @@
                   <form name="submit-to-google-sheet">
                     <div class="contactForm p1">
                       <label for="contactName">Name</label>
-                      <input name="name" type="text" class="trapFocus mb1" id="contactName"
+                      <input name="name" type="text" class="trapFocus mb1" id="contactName" required
                         placeholder="Nice to meet you.">
                       <label for="contactEmail">Email</label>
-                      <input name="email" type="email" class="trapFocus" id="contactEmail"
+                      <input name="email" type="email" class="trapFocus" id="contactEmail" required
                         placeholder="username@somewhere.com">
                       <small class="mb1" id="emailHelp">I will not share your
                         info.</small>
                       <label for="contactMessage">Message</label>
-                      <textarea name="message" class="trapFocus mb1" id="contactMessage"
+                      <textarea name="message" class="trapFocus mb1" id="contactMessage" required
                         placeholder="How can we collaborate?"></textarea>
                     </div>
                     <!-- hide / show class for Modal added dynamically, see storeInfo() -->
