@@ -1,61 +1,36 @@
-/* Scroller - .navLink nodelist of internal anchor tags */
-const navLinks = document.querySelectorAll('.navLink');
-// IIFE: apply listener, scroll to url #hash
-navLinks.forEach(elem => {
-  ((aTag) => {
-    elem.addEventListener('click', (e) => {
-      const hash = e.target.hash;
-      // refocus is always either header or h1 elem
-      const refocus = document.querySelector(hash);
-      refocus.style.outline = 'none';
-      aTag.scrollIntoView({behavior: 'smooth'});
-      // time to scroll before moving focus
-      setTimeout(() => {
-        refocus.focus();
-      }, 600);
-      e.preventDefault();
-    })
-  })(document.querySelector(elem.hash));
-});
-
 /* email validator */
-const validator = (email) =>  {
+const validator = (email) => {
   const valid = /\S+@\S+\.\S+/;
   return valid.test(email);
 };
-
 /* Google Sheets API */
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzxivBPk8mDjOYPOqm53FndxzXHx4V-EufqCgyhRZpayYwc_aQ/exec';
+const scriptURL =
+  'https://script.google.com/macros/s/AKfycbzxivBPk8mDjOYPOqm53FndxzXHx4V-EufqCgyhRZpayYwc_aQ/exec';
 const form = document.forms['submit-to-google-sheet'];
-
-/* remove helper msgs, see below */
+/* to cleanup helpers */
 const removeHelpers = () => {
   const tryAgain = document.querySelectorAll('.tryAgain');
-  tryAgain ? tryAgain.forEach(e => e.remove()) : console.log('first try');
+  tryAgain ? tryAgain.forEach((e) => e.remove()) : console.log('first try');
 };
-
 /* Modal View */
-// dom elems
 const modal = document.querySelector('.modalView');
 const modalBtn = document.querySelector('.modalBtn');
 const modalFocus = document.querySelector('.modalFocus');
 // nodelist of focusable elems to obscure while in modal view
 const trapList = document.querySelectorAll('.trapFocus');
 const trapFocus = Array.from(trapList);
-// hide or reveal modal, make other elems reachable or unreachable
+// hide/reveal modal, make other elems reachable/unreachable
 const modalToggle = () => {
   modal.classList.toggle('hide');
-  !trapFocus[0].hasAttribute('tabindex') ?
-    trapFocus.forEach(e => e.setAttribute('tabindex', '-1'))
-    : trapFocus.forEach(e => e.removeAttribute('tabindex'));
+  !trapFocus[0].hasAttribute('tabindex')
+    ? trapFocus.forEach((e) => e.setAttribute('tabindex', '-1'))
+    : trapFocus.forEach((e) => e.removeAttribute('tabindex'));
 };
-
 /* storeInfo() sends msg to Google Sheets & triggers modal */
 const storeInfo = (e) => {
   e.preventDefault();
-  // remove extra helper msgs in case of multiple clicks
+  // pre-cleanup helpers
   removeHelpers();
-  // dom elems
   const contactName = document.getElementById('contactName').value;
   const contactEmail = document.getElementById('contactEmail').value;
   const contactMsg = document.getElementById('contactMessage').value;
@@ -68,30 +43,24 @@ const storeInfo = (e) => {
   const emailHelper = document.createElement('small');
   emailHelper.textContent = 'Is this right?';
   emailHelper.classList = 'tryAgain xs';
-  // if anything is blank, add a msg to contact card
+  // validate, apply/remove helpers, hit API
   if (contactName === '' || contactEmail === '' || contactMsg === '') {
     submit.after(submitHelper);
-  }
-  // if validator() doesn't pass, add msgs
-  else if (!validator(contactEmail)) {
+  } else if (!validator(contactEmail)) {
     submit.after(submitHelper);
     email.append(emailHelper);
-  }
-  // once fields are verified, Google Sheets API
-  else {
+  } else {
     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
-    // trigger modal & clear form
+      .then((response) => console.log('Success!', response))
+      .catch((error) => console.error('Error!', error.message));
+    // trigger modal, clear form, clean up helpers
     modalToggle();
     form.reset();
-    // short timeout for API to run, then clear helpers
     setTimeout(() => {
       removeHelpers();
     }, 200);
-  };
+  }
 };
-
 /* listeners */
 submit.addEventListener('click', storeInfo);
 modalBtn.addEventListener('click', modalToggle);

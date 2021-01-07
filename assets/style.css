@@ -12,11 +12,10 @@
   margin: 0;
   padding: 0;
 }
-/* handling scrolling with js until i work out browser nav */
-/* html {
+html:focus-within {
   scroll-behavior: smooth;
   --scroll-behavior: smooth;
-} */
+}
 body {
   background-color: var(--light);
   min-height: 100vh;
@@ -41,7 +40,6 @@ header:focus,
 h1:focus {
   outline: none;
 }
-
 /* SHOWCASE / HERO */
 .showcase {
   height: 45vh;
@@ -58,7 +56,6 @@ h1:focus {
   color: var(--primary);
   font-weight: 600;
 }
-
 /* NAVBAR, HOME & SECTION SCROLLING, CONTACT LINKS*/
 .nav {
   padding: 0.5rem 0;
@@ -154,7 +151,6 @@ h1:focus {
 #skills {
   grid-template-columns: 2fr 1fr;
 }
-
 /* CONTACT SECTION */
 .contactForm {
   display: grid;
@@ -223,7 +219,6 @@ h1:focus {
 .hide {
   display: none;
 }
-
 /* FOOTER */
 .footer {
   padding: 1rem;
@@ -261,7 +256,6 @@ span:hover img,
 span a:focus img {
   animation: spinner 800ms 1 linear;
 }
-
 /* ANIMATIONS */
 @keyframes spinner {
   from {
@@ -275,7 +269,6 @@ span a:focus img {
   0% {
     transform: translateX(-100%);
   }
-
   100% {
     transform: translateX(0);
   }
@@ -294,10 +287,9 @@ span a:focus img {
     transform: translateY(0);
   }
 }
-
 /* no motion sickness please */
 @media screen and (prefers-reduced-motion: reduce) {
-  html {
+  html:focus-within {
     scroll-behavior: auto;
     --scroll-behavior: auto;
   }
