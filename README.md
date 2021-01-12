@@ -20,7 +20,7 @@
 
 ## 📝 Description
 To view my portfolio, please visit [metcalf.dev](https://metcalf.dev).
-This is a constantly updated and evolving portfolio, serving as an introduction to my work and progress in full stack development. This is written in **pure HTML5, CSS3 & vanilla JS**, plus a sweet smooth-scroll plugin from [Chris Ferdinandi](http://github.com/cferdinandi/smooth-scroll) (soon to be rewritten with ```scroll-behavior``` now that it has good browser support).
+This is a constantly updated and evolving portfolio, serving as an introduction to my work and progress in full stack development. This is written in **pure HTML5, CSS3 & vanilla JS**.
 <p>&nbsp;</p>
 
 ## 💾 Installation
@@ -35,7 +35,7 @@ Visitors to my site can view some select works from my portfolio; both the GitHu
 **MIT** • *(If you fork and recreate this, please be kind and rebrand your version!)*
 <p>&nbsp;</p>
 
-## ❔ Questions?
+## ❔ Questions
   * **David Metcalf**
   * **GitHub:** [gloriousLoaf](https://github.com/gloriousLoaf)
   * <hello@metcalf.dev>
