@@ -24,7 +24,7 @@ body {
   font-family: 'Roboto Slab', monospace;
 }
 /* font for nav, headers, card titles in About & Contact,
-  and Contact form placeholders, and footer */
+  plus Contact form placeholders, and footer */
 nav,
 h1,
 .caption,
@@ -130,7 +130,7 @@ p > a.bodyLink:focus {
 .imgFocus > img {
   transition: 250ms ease-in-out transform;
 }
-/* lift and stretch a bit on hover / focus */
+/* lift and stretch a bit on hover & focus */
 .imgFocus:focus > img {
   outline: 4px solid var(--alert);
   transform: translateY(-0.5rem) scaleX(1.02);
@@ -298,6 +298,7 @@ span a:focus img {
 }
 /* no motion sickness please */
 @media screen and (prefers-reduced-motion: reduce) {
+  html,
   html:focus-within {
     scroll-behavior: auto;
     --scroll-behavior: auto;
@@ -379,6 +380,6 @@ span a:focus img {
 /* landscape tablets & small laptops */
 /* @media (min-width: 768px) and (max-width: 1350px) {
   * {
-    display: none;
+    coming: soon;
   }
 } */
