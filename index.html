@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://metcalf.dev/assets/images/metcalfdev.png">
+    <meta property="og:image:secure_url" content="https://metcalf.dev/assets/images/metcalfdev.png">
+    <meta property="og:image:width" content="743">
+    <meta property="og:image:height" content="272">
+    <meta property="og:image:alt" content="'metcalf.dev' inside of a conceptual representation of cloud with purple to blue gradient.">
+    <meta property="og:image:type" content="image/png">
     <!-- FB OpenGraph Tags -->
     <meta name="title" property="og:title" content="David Metcalf, Web Developer">
-    <meta name="description" property="og:description" content="A frequently updated portfolio of my work, with contact form and info.">
-    <meta name="image" property="og:image" content="./assets/images/metcalfdev.png">
+    <meta name="description" property="og:description" content="A frequently updated portfolio of my work, with contact form and a brief bio. Thanks for visiting!">
+    <meta name="image" property="og:image" content="https://metcalf.dev/assets/images/metcalfdev.png">
     <meta name="url" property="og:url" content="https://metcalf.dev">
     <!-- Twitter Tags -->
-    <meta name="twitter:title" content="David Metcalf, Web Developer">
-    <meta name="twitter:description" content="A frequently updated portfolio of my work.">
-    <meta name="twitter:image" content="./assets/images/metcalfdev.png">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="David Metcalf, Web Developer">
+    <meta name="twitter:description" content="A frequently updated portfolio of my work, with contact form and a brief bio. Thanks for visiting!">
+    <meta name="twitter:image" content="https://metcalf.dev/assets/images/metcalfdev.png">
     <!-- Favicon: Desktops -->
     <link rel="icon" href="./favicon.png" sizes="16x16">
     <link rel="icon" href="./favicon.png" sizes="32x32">
@@ -32,6 +40,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://metcalf.dev">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/utilities.css">
     <link rel="stylesheet" href="./assets/style.css">
@@ -161,10 +170,10 @@
                     <div class="contactForm p1">
                       <label for="contactName">Name</label>
                       <input name="name" type="text" class="trapFocus mb1" id="contactName" required
-                        placeholder="Nice to meet you.">
+                        placeholder="Nice to meet you." inputmode="text">
                       <label for="contactEmail">Email</label>
                       <input name="email" type="email" class="trapFocus" id="contactEmail" required
-                        placeholder="username@somewhere.com">
+                        placeholder="username@somewhere.com" inputmode="email">
                       <small class="mb1" id="emailHelp">I will not share your
                         info.</small>
                       <label for="contactMessage">Message</label>
