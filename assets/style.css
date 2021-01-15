@@ -204,6 +204,11 @@ p > a.bodyLink:focus {
 .modalBtn:focus {
   color: #fff;
 }
+/* what could this hidden field be for?... */
+#labelLastName,
+#lastName {
+  display: none;
+}
 /* .tryAgain styles dynamically-created warnings, see storeInfo() */
 .tryAgain {
   margin-left: 6px;

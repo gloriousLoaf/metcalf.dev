@@ -25,6 +25,7 @@ const modalToggle = () => {
   !trapFocus[0].hasAttribute('tabindex')
     ? trapFocus.forEach((e) => e.setAttribute('tabindex', '-1'))
     : trapFocus.forEach((e) => e.removeAttribute('tabindex'));
+  modalFocus.focus();
 };
 /* storeInfo() sends msg to Google Sheets & triggers modal */
 const storeInfo = (e) => {
@@ -32,6 +33,7 @@ const storeInfo = (e) => {
   // pre-cleanup helpers
   removeHelpers();
   const contactName = document.getElementById('contactName').value;
+  const lastName = document.getElementById('lastName').value;
   const contactEmail = document.getElementById('contactEmail').value;
   const contactMsg = document.getElementById('contactMessage').value;
   const submit = document.getElementById('submit');
@@ -43,14 +45,21 @@ const storeInfo = (e) => {
   const emailHelper = document.createElement('small');
   emailHelper.textContent = 'Is this right?';
   emailHelper.classList = 'tryAgain xs';
-  // validate, apply/remove helpers, hit API
+  // validate, apply/remove helpers, check for lastName hit API
   if (contactName === '' || contactEmail === '' || contactMsg === '') {
     submit.after(submitHelper);
   } else if (!validator(contactEmail)) {
     submit.after(submitHelper);
     email.append(emailHelper);
+  } else if (lastName) {
+    // how did you fill out a hidden field?...
+    modalToggle();
+    form.reset();
+    setTimeout(() => {
+      removeHelpers();
+    }, 200);
   } else {
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    fetch(scriptURL, { method: 'POST', mode: 'cors', body: new FormData(form) })
       .then((response) => console.log('Success!', response))
       .catch((error) => console.error('Error!', error.message));
     // trigger modal, clear form, clean up helpers
