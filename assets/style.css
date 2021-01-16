@@ -206,7 +206,8 @@ p > a.bodyLink:focus {
 }
 /* what could this hidden field be for?... */
 #labelLastName,
-#lastName {
+#lastName,
+#sendToMe {
   display: none;
 }
 /* .tryAgain styles dynamically-created warnings, see storeInfo() */
