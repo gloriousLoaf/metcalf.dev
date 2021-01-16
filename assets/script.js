@@ -30,6 +30,8 @@ const modalToggle = () => {
 /* storeInfo() sends msg to Google Sheets & triggers modal */
 const storeInfo = (e) => {
   e.preventDefault();
+  // testing
+  console.log(form);
   // pre-cleanup helpers
   removeHelpers();
   const contactName = document.getElementById('contactName').value;
