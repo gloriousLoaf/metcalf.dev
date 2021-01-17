@@ -53,7 +53,6 @@ const storeInfo = (e) => {
     submit.after(submitHelper);
     email.append(emailHelper);
   } else if (lastName) {
-    // how did you fill out a hidden field?...
     modalToggle();
     form.reset();
     setTimeout(() => {

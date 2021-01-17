@@ -178,12 +178,10 @@ p > a.bodyLink:focus {
 .thankYou {
   align-self: baseline;
 }
-.submitBtn {
-  font-size: 1rem;
-  font-family: inherit;
-}
 .submitBtn,
 .modalBtn {
+  font-size: 1rem;
+  font-family: inherit;
   color: #fff;
   background-color: var(--primary);
   outline: none;
@@ -200,14 +198,8 @@ p > a.bodyLink:focus {
   letter-spacing: 0.08rem;
   background-color: var(--alert);
 }
-.submitBtn:focus,
-.modalBtn:focus {
-  color: #fff;
-}
-/* what could this hidden field be for?... */
 #labelLastName,
-#lastName,
-#sendToMe {
+#lastName {
   display: none;
 }
 /* .tryAgain styles dynamically-created warnings, see storeInfo() */
