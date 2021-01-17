@@ -5,7 +5,8 @@ const validator = (email) => {
 };
 /* Google Sheets API */
 const scriptURL =
-  'https://script.google.com/macros/s/AKfycbzxivBPk8mDjOYPOqm53FndxzXHx4V-EufqCgyhRZpayYwc_aQ/exec';
+  'https://script.google.com/macros/s/AKfycbzTAGlHnrDCOfTo_uVvXPDldwTjIWI2PDJ0Bu6bw8f5-4lCrb6u42fP/exec';
+
 const form = document.forms['submit-to-google-sheet'];
 /* to cleanup helpers */
 const removeHelpers = () => {
@@ -30,8 +31,6 @@ const modalToggle = () => {
 /* storeInfo() sends msg to Google Sheets & triggers modal */
 const storeInfo = (e) => {
   e.preventDefault();
-  // testing
-  console.log(form);
   // pre-cleanup helpers
   removeHelpers();
   const contactName = document.getElementById('contactName').value;
