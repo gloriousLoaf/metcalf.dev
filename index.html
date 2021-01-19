@@ -168,9 +168,6 @@
                 <hr>
                   <form name="submit-to-google-sheet">
                     <div class="contactForm p1">
-                      <label for="lastName" id="labelLastName">Last Name</label>
-                      <input name="name" type="text" class="trapFocus" id="lastName" tabindex="-1"
-                        placeholder="What is your last name?" autocomplete="off" aria-hidden="true" inputmode="text">
                       <label for="contactName">Name</label>
                       <input name="name" type="text" class="trapFocus mb1" id="contactName" required
                         placeholder="Nice to meet you." inputmode="text">
@@ -182,6 +179,9 @@
                       <label for="contactMessage">Message</label>
                       <textarea name="message" class="trapFocus mb1" id="contactMessage" required
                         placeholder="How can we collaborate?"></textarea>
+                      <label for="lastName" id="labelLastName">Last Name</label>
+                      <input name="name" type="text" class="trapFocus" id="lastName" tabindex="-1"
+                        placeholder="What is your last name?" autocomplete="off" aria-hidden="true" inputmode="text">
                     </div>
                     <!-- hide / show class for Modal added dynamically, see storeInfo() -->
                     <button type="submit" class="submitBtn trapFocus ml1" id="submit">Submit</button>
