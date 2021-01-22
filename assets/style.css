@@ -21,7 +21,7 @@ body {
   min-height: 100vh;
   position: relative;
   padding-bottom: 50px;
-  font-family: 'Nunito', monospace;
+  font-family: 'Nunito', sans-serif;
 }
 /* font for nav, headers, card titles in About & Contact,
   plus Contact form placeholders, and footer */
@@ -33,7 +33,7 @@ p.lead.bold.txCenter,
 .contactForm input,
 .contactForm textarea,
 footer {
-  font-family: 'Open Sans', monospace;
+  font-family: 'Open Sans', sans-serif;
 }
 /* h1's are used for refocusing after scrolling to anchor tags */
 header:focus,
