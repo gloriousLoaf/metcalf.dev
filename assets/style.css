@@ -33,7 +33,7 @@ p.lead.bold.txCenter,
 .contactForm input,
 .contactForm textarea,
 footer {
-  font-family: 'Heebo', monospace;
+  font-family: 'Open Sans', monospace;
 }
 /* h1's are used for refocusing after scrolling to anchor tags */
 header:focus,
