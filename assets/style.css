@@ -1,11 +1,11 @@
 /* GLOBAL */
 :root {
-  --primary: #073b4c;
-  --secondary: #118ab2;
+  --primary: #26547c;
+  --secondary: #17a2b8;
   --dark: #242423;
   --light: #fef9ef;
   --success: #06d6a0;
-  --alert: #ef476f;
+  --alert: #e75a7c;
 }
 * {
   box-sizing: border-box;
