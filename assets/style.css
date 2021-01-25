@@ -1,11 +1,10 @@
 /* GLOBAL */
 :root {
-  --primary: #26547c;
-  --secondary: #17a2b8;
-  --dark: #242423;
-  --light: #fef9ef;
-  --success: #06d6a0;
-  --alert: #e75a7c;
+  --primary: #1d3f5d;
+  --secondary: #45a29e;
+  --dark: #191b24;
+  --light: #fff8f0;
+  --alert: #ef3d36;
 }
 * {
   box-sizing: border-box;
@@ -21,92 +20,98 @@ body {
   min-height: 100vh;
   position: relative;
   padding-bottom: 50px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+input,
+textarea {
+  font-family: inherit;
 }
 /* font for nav, headers, card titles in About & Contact,
   plus Contact form placeholders, and footer */
-nav,
-h1,
-.caption,
-#aboutMe .md,
-p.lead.bold.txCenter,
-.contactForm input,
-.contactForm textarea,
-footer {
-  font-family: 'Open Sans', sans-serif;
+.subscript {
+  font-family: 'Lora', serif;
 }
-/* h1's are used for refocusing after scrolling to anchor tags */
-header:focus,
-h1:focus {
+a:focus,
+button {
   outline: none;
 }
-/* SHOWCASE / HERO */
-.showcase {
-  height: 45vh;
-  width: 100%;
-  background-image: url(./images/metcalfdev.svg);
-  background-size: 743px 272px;
-  background-repeat: no-repeat;
-  background-position: center;
-  animation: slideTop 850ms ease-in;
+
+/* HEADER & NAV */
+header {
+  border-top: 4rem solid var(--primary);
 }
-.caption {
-  position: relative;
-  top: 85%;
-  color: var(--primary);
-  font-weight: 600;
+#showcase {
+  grid-template-areas: 'port logo contact';
+  margin-top: 1rem;
 }
-/* NAVBAR, HOME & SECTION SCROLLING, CONTACT LINKS*/
-.nav {
-  padding: 0.5rem 0;
-  box-shadow: 0 5px 4px 0px rgba(17, 138, 178, 0.4);
-  animation: slideLeft 750ms ease-in;
+/* right align Portfolio link */
+#showcase nav:nth-child(2) {
+  text-align: right;
 }
-/* Hover Effects - Navbar, Card links, Section headers and 'home' scroll*/
+/* moving the grid around a bit. the markup is structured
+  to make the media query easier to flex around */
+#homeLink {
+  grid-area: logo;
+}
+#portLink {
+  grid-area: port;
+  text-align: right;
+}
+#contactLink {
+  grid-area: contact;
+}
+/* logo / home link */
+a img.logo {
+  display: flex;
+}
+a .logo:hover,
+a:focus img.logo {
+  transform: scale(0.9);
+}
+.logo {
+  height: 250px;
+  margin: 0 auto;
+  animation: rollIn 0.4s ease-in;
+  transition: all 0.3s ease;
+}
 .navLink {
-  color: var(--primary);
+  color: var(--dark);
   font-weight: 600;
   text-decoration: none;
-  margin: 0 0.75rem;
+  border-bottom: 2px solid var(--secondary);
+  margin: 0 1rem;
+  padding-bottom: 0.2rem;
+  transition: letter-spacing 0.4s;
+}
+/* hover & focus for links */
+.navLink:hover,
+.navLink:focus {
+  letter-spacing: 0.15rem;
+  font-weight: bold;
+  border-bottom: 3px solid var(--alert);
 }
 /* section headers */
 .sectionHead {
   color: var(--primary);
   font-size: 1.75rem;
   letter-spacing: 0.1rem;
-  border-bottom: 2px solid rgba(239, 71, 111, 0.6);
+  margin-top: 8rem;
+  border-bottom: 2px solid var(--alert);
 }
 /* repo, contact & home links */
 .bodyLink {
   color: var(--dark);
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
+  text-decoration: none;
   border-bottom: 2px solid var(--secondary);
 }
-/* transition - stretch */
-.navLink {
-  text-decoration: none;
-  transition: letter-spacing 400ms;
-}
-.bodyLink {
-  text-decoration: none;
-}
-/* hover & focus */
-.navLink:hover,
-.navLink:focus,
 .bodyLink:hover,
 .bodyLink:focus {
-  outline: none;
-  text-decoration: none;
-  color: var(--dark);
   border-bottom: 2px solid var(--alert);
 }
-.navLink:hover,
-.navLink:focus {
-  margin-bottom: -2px;
-  letter-spacing: 0.15rem;
-}
-/* p>small>a = "Repository" in portfolio,
-  p>a = contact links */
+/* p>small>a === "Repository" in portfolio,
+  p>a === contact links */
 p > small > a.bodyLink:hover,
 p > small > a.bodyLink:focus,
 p > a.bodyLink:hover,
@@ -119,18 +124,13 @@ p > a.bodyLink:focus {
   width: 100%;
   height: 23vh;
   object-fit: cover;
-  /* border-top-left-radius: 0.3rem;
-  border-top-right-radius: 0.3rem; */
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
 /* focus & hover for card images */
-.imgFocus:focus {
-  outline: none;
-}
 .cardImg,
 .imgFocus > img {
-  transition: 250ms ease-in-out transform;
+  transition: 0.25s ease-in-out transform;
 }
 /* lift and stretch a bit on hover & focus */
 .imgFocus:focus > img {
@@ -186,12 +186,10 @@ p > a.bodyLink:focus {
   font-family: inherit;
   color: #fff;
   background-color: var(--primary);
-  outline: none;
   padding: 0.5rem 1rem;
   border: 1px solid var(--secondary);
-  /* border-radius: 0.25rem; */
   border-radius: 2px;
-  transition: letter-spacing 400ms;
+  transition: letter-spacing 0.4s;
 }
 .submitBtn:hover,
 .submitBtn:focus,
@@ -237,7 +235,7 @@ p > a.bodyLink:focus {
   width: 100%;
   height: 4rem;
   text-align: center;
-  border-top: 2px solid var(--success);
+  border-top: 2px solid var(--secondary);
   color: #fff;
   background-color: var(--primary);
 }
@@ -246,25 +244,21 @@ p > a.bodyLink:focus {
   text-decoration: none;
   font-weight: lighter;
   padding-bottom: 0.1rem;
-  border-bottom: 2px solid var(--success);
+  border-bottom: 2px solid var(--secondary);
   transition: margin 1s, font-size 1s, letter-spacing 1s;
 }
 .footer a:hover,
 .footer a:focus {
   color: #fff;
-  outline: none;
   border-bottom: 2px solid var(--alert);
   margin: 0 0.25rem;
   font-size: 1.25rem;
   letter-spacing: 0.2rem;
 }
-/* spin, Octocat, spin!!! */
-span:focus {
-  outline: 0;
-}
+/* footer GH logo spin */
 span:hover img,
 span a:focus img {
-  animation: spinner 800ms 1 linear;
+  animation: spinner 0.8s 1 linear;
 }
 /* ANIMATIONS */
 @keyframes spinner {
@@ -275,29 +269,15 @@ span a:focus img {
     transform: rotate(-359deg);
   }
 }
-@keyframes slideLeft {
+@keyframes rollIn {
   0% {
-    transform: translateX(-100%);
+    transform: translateY(-100%) rotate(-90deg);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(0) rotate(0deg);
   }
 }
-@keyframes slideTop {
-  0% {
-    transform: translateY(-100%);
-  }
-  65% {
-    transform: translateY(0);
-  }
-  75% {
-    transform: translateY(-5%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-/* no motion sickness please */
+/* prevent smooth scroll-behavior */
 @media screen and (prefers-reduced-motion: reduce) {
   html,
   html:focus-within {
@@ -319,17 +299,27 @@ span a:focus img {
     grid-template-rows: 1fr;
   }
   /* header & nav */
-  .showcase {
-    height: 40vh;
+  #showcase {
+    grid-template-areas: 'logo port contact';
   }
-  .caption {
-    font-size: 1.25rem;
-    top: 95%;
-    margin-bottom: 1rem;
+  #homeLink {
+    grid-area: logo;
+  }
+  #portLink,
+  #contactLink {
+    grid-area: port;
+  }
+  #portLink {
+    margin-bottom: 4rem;
+  }
+  #contactLink {
+    margin-top: 4rem;
+  }
+  .logo {
+    height: 175px;
   }
   .nav {
     margin-bottom: 1rem;
-    padding-top: 2.5rem;
   }
   /* card imgs */
   .cardImg {
