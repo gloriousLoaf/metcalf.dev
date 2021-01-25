@@ -58,50 +58,81 @@
       <nav class="nav" id="portLink">
         <a href="portfolio.html" class="navLink lead trapFocus">Portfolio</a>
       </nav>
-      <nav class="nav" id="contactLink">
-        <a href="contact.html" class="navLink lead trapFocus">Contact</a>
-      </nav>
     </div>
   </header>
   <main class="container">
-    <!-- ABOUT ME -->
-    <div class="grid grid2 my4" id="aboutMe">
+  <!-- CONTACT -->
+    <div class="grid my4">
+      <!-- one card with subgrid -->
       <div class="card p1">
-        <p class="ml1 md bold">Welcome!</p>
-        <p class="ml1 pb1 subscript">to metcalf.dev</p>
-        <hr>
-        <!-- sub-grid, inside card -->
-        <div class="grid grid2 p1">
-          <img id="selfie" src="./assets/images/me.jpg" alt="David Metcalf">
-          <p>I am David, a MERN full stack web developer with a certificate from UC Davis Continuing &
-              Professional Education. I have managed sales teams, profits & losses, and marketing
-              campaigns. My background in customer service will contribute a unique skill set to
-              your development team.
-          </p>
+        <div class="grid grid2">
+          <div>
+            <p class="lead bold txCenter">Send Me a Message</p>
+            <p class="txCenter pb1 subscript">I will reply within 24 hours.</p>
+            <div class="txCenter txAlert">
+              <noscript>Please enable JavaScript to use this contact form.</noscript>
+            </div>
+            <div class="subContainer">
+            <hr>
+              <form name="submit-to-google-sheet">
+                <div class="contactForm p1">
+                  <label for="contactName">Name</label>
+                  <input name="name" type="text" class="trapFocus mb1" id="contactName" required
+                    placeholder="Nice to meet you." inputmode="text">
+                  <label for="contactEmail">Email</label>
+                  <input name="email" type="email" class="trapFocus" id="contactEmail" required
+                    placeholder="username@somewhere.com" inputmode="email">
+                  <small class="mb1" id="emailHelp">I will not share your
+                    info.</small>
+                  <label for="contactMessage">Message</label>
+                  <textarea name="message" class="trapFocus mb1" id="contactMessage" required
+                    placeholder="How can we collaborate?"></textarea>
+                  <label for="lastName" id="labelLastName">Last Name</label>
+                  <input name="name" type="text" class="trapFocus" id="lastName" tabindex="-1"
+                    placeholder="What is your last name?" autocomplete="off" aria-hidden="true" inputmode="text">
+                </div>
+                <!-- hide / show class for Modal added dynamically, see storeInfo() -->
+                <button type="submit" class="submitBtn trapFocus ml1" id="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+          <!-- Thank you card -->
+          <div class="thankYou">
+            <p class="lead bold txCenter">Thank you for visiting.</p>
+            <p class="txCenter pb1 subscript">Let's start a conversation.</p>
+            <div class="subContainer">
+              <hr>
+              <div class="p1">
+                <br>
+                <p>Connect and view my resume on <a class="bodyLink trapFocus" href="https://www.linkedin.com/in/david-codes/" target="_blank" rel="noopener">LinkedIn</a>.
+                </p>
+                <br>
+                <p>View more of my repositories on <a class="bodyLink trapFocus"
+                  href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">GitHub</a>.</p>
+                <br>
+                <p>I'm also on Twitter, DMs are open! <a class="bodyLink trapFocus" href="https://twitter.com/davidmcodes"
+                  target="_blank" rel="noopener">@davidmcodes</a>.</p>
+                <br>
+                <p>Fun fact: I am a sommelier! Follow me on Delectable <a class="bodyLink trapFocus"
+                  href="https://delectable.com/@davidmetcalf" target="_blank" rel="noopener">@davidmetcalf</a>.</p>
+                <br>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    <!-- Skills Card -->
-      <div class="card p1">
-        <p class="md bold txCenter">Full Stack Development</p>
-        <p class="txCenter pb1 subscript">Skills updated frequently.</p>
-        <hr>
-        <div class="grid grid3" id="skills">
-          <ul class="ml3 p1">
-            <li>Certificate from UC Davis</li>
-            <li>MongoDB, Express, React, Node</li>
-            <li>HTML5, CSS3, JavaScript ES6+</li>
-            <li>MVC, ORM, Functional & OOP</li>
-            <li>SQL & NoSQL Databases</li>
-            <li>Custom APIs</li>
-            <li>Git Version Control</li>
-            <li>PC & Mac Environments</li>
-            <li>Diverse career experience</li>
-          </ul>
-          <img src="./assets/images/badge.png" alt="UC Davis Full Stack Web Developer badge">
-      </div>
       </div>
     </div>
   </main>
+  <!-- Modal -->
+  <div class="modalView hide">
+    <div class="container">
+      <div class="modal card deadCenter p1">
+        <p class="cardTitle lead p1">Got it!</p>
+        <p class="p1">Thanks for reaching out.</p>
+        <button type="button" class="modalBtn modalFocus m1">Close</button>
+      </div>
+    </div>
+  </div>
   <!-- Footer -->
   <footer class="footer">
     <div class="txCenter">
@@ -111,5 +142,7 @@
         </span>
     </div>
   </footer>
+  <!-- script -->
+  <script src="./assets/script.js"></script>
 </body>
 </html>
