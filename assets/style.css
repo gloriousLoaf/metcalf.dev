@@ -44,10 +44,6 @@ header {
   grid-template-areas: 'port logo contact';
   margin-top: 1rem;
 }
-/* right align Portfolio link */
-#showcase nav:nth-child(2) {
-  text-align: right;
-}
 /* moving the grid around a bit. the markup is structured
   to make the media query easier to flex around */
 #homeLink {
@@ -59,6 +55,7 @@ header {
 }
 #contactLink {
   grid-area: contact;
+  text-align: left;
 }
 /* logo / home link */
 a img.logo {
@@ -314,6 +311,9 @@ span a:focus img {
   }
   #contactLink {
     margin-top: 4rem;
+  }
+  nav#homeLink + nav#contactLink {
+    transform: translateY(-57px);
   }
   .logo {
     height: 175px;
