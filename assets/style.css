@@ -28,6 +28,7 @@ textarea {
 }
 /* font for nav, headers, card titles in About & Contact,
   plus Contact form placeholders, and footer */
+.typography,
 .subscript {
   font-family: 'Lora', serif;
 }
@@ -37,9 +38,22 @@ button {
 }
 
 /* HEADER & NAV */
-header {
-  border-top: 4rem solid var(--primary);
+.typography {
+  color: var(--light);
+  background-color: var(--primary);
+  font-size: 1.5rem;
+  padding: 1rem;
+  padding-left: 9%;
 }
+.typography > span {
+  display: inline-block;
+}
+/* #typing {
+  font-size: 1.5rem;
+} */
+/* header {
+  border-top: 4rem solid var(--primary);
+} */
 #showcase {
   grid-template-areas: 'port logo contact';
   margin-top: 1rem;
