@@ -2,22 +2,18 @@
 const typing = document.getElementById('typing');
 let view = '';
 view = window.location.pathname.slice(1) || ' ';
-console.log(view);
 // create different arrays for each view
 let typeVals = [];
 switch (view) {
   case ' ':
   case 'index.html':
     typeVals.push('metcalf.dev', 'javascript', 'css', 'html', 'metcalf.dev');
-    console.log(typeVals);
     break;
   case 'portfolio.html':
     typeVals.push('mongodb', 'express', 'react', 'node', 'metcalf.dev');
-    console.log(typeVals);
     break;
   case 'contact.html':
     typeVals.push('whatup?');
-    console.log(typeVals);
     break;
 }
 /**
