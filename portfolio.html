@@ -50,12 +50,23 @@
   <!-- Header, Nav -->
   <div class="typography">
     <div>&lt; <span id="typing"></span> &#47; &gt;</div>
+    <div class="toggleContainer">
+      <input type="checkbox" id="lightDarkMode" class="toggle">
+      <label for="lightDarkMode" class="toggleLabel">
+        <div class="ball"></div>
+      </label>
+      <img src="./assets/images/sun.png" alt="Sun for light mode" id="sun">
+      <img src="./assets/images/moon.png" alt="Moon for dark mode" class="hide" id="moon">
+    </div>
   </div>
   <header class="container" id="home">
     <div class="grid grid3" id="showcase">
       <nav class="nav" id="homeLink">
-        <a href="index.html" class="trapFocus">
+        <a href="index.html" class="trapFocus" id="logo">
           <img src="./assets/images/logo.svg" alt="David Metcalf, Web Developer" class="logo">
+        </a>
+        <a href="index.html" class="trapFocus hide"id="logoDark">
+          <img src="./assets/images/logo-dark.svg" alt="David Metcalf, Web Developer" class="logo">
         </a>
       </nav>
       <nav class="nav" id="contactLink">
