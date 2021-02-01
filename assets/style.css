@@ -18,14 +18,6 @@ html:focus-within {
   scroll-behavior: smooth;
   background-color: var(--light);
 }
-html.dark {
-  background-color: var(--dark2);
-}
-.card.dark {
-  background-color: var(--dark);
-  box-shadow: 0 2px 10px rgba(13, 39, 80, 0.2);
-  filter: drop-shadow(8px 8px 0px rgba(13, 39, 80, 0.2));
-}
 body {
   min-height: 100vh;
   position: relative;
@@ -36,8 +28,6 @@ input,
 textarea {
   font-family: inherit;
 }
-/* font for nav, headers, card titles in About & Contact,
-  plus Contact form placeholders, and footer */
 .typography,
 .subscript {
   font-family: 'Lora', serif;
@@ -68,7 +58,7 @@ button {
   align-items: center;
   padding-right: 9%;
 }
-.toggle {
+#lightDarkMode {
   visibility: hidden;
 }
 .toggleLabel {
@@ -83,7 +73,7 @@ button {
 .toggle:checked {
   outline: none;
 }
-.toggle:checked + .toggleLabel {
+#lightDarkMode:checked + .toggleLabel {
   background-color: var(--secondary);
 }
 .ball {
@@ -98,15 +88,14 @@ button {
   justify-content: center;
   animation: slideOff 0.3s linear forwards;
 }
-.toggle:checked + .toggleLabel .ball {
+#lightDarkMode:checked + .toggleLabel .ball {
   animation: slideOn 0.3s linear forwards;
 }
-#sun {
-  max-width: 40px;
-}
+#sun,
 #moon {
   max-width: 40px;
 }
+/* Nav Grid */
 #showcase {
   grid-template-areas: 'port logo contact';
   margin-top: 1rem;
@@ -146,23 +135,12 @@ a:focus img.logo {
   padding-bottom: 0.2rem;
   transition: letter-spacing 0.4s;
 }
-.navLink.navLinkDark {
-  color: var(--white);
-}
 /* hover & focus for links */
 .navLink:hover,
 .navLink:focus {
   letter-spacing: 0.15rem;
   font-weight: bold;
   border-bottom: 3px solid var(--alert);
-}
-/* section headers */
-.sectionHead {
-  color: var(--primary);
-  font-size: 1.75rem;
-  letter-spacing: 0.1rem;
-  margin-top: 8rem;
-  border-bottom: 2px solid var(--alert);
 }
 /* repo, contact & home links */
 .bodyLink {
@@ -171,9 +149,6 @@ a:focus img.logo {
   font-weight: 600;
   text-decoration: none;
   border-bottom: 2px solid var(--secondary);
-}
-.bodyLink.bodyLinkDark {
-  color: var(--white);
 }
 .bodyLink:hover,
 .bodyLink:focus {
@@ -328,6 +303,20 @@ p > a.bodyLink:focus {
 span:hover img,
 span a:focus img {
   animation: spinner 0.8s 1 linear;
+}
+
+/* Dark Mode */
+html.dark {
+  color: var(--white);
+  background-color: var(--dark2);
+}
+html.dark a {
+  color: var(--white);
+}
+html.dark .card {
+  background-color: var(--dark);
+  box-shadow: 0 2px 10px rgba(13, 39, 80, 0.2);
+  filter: drop-shadow(8px 8px 0px rgba(13, 39, 80, 0.2));
 }
 /* ANIMATIONS */
 @keyframes spinner {

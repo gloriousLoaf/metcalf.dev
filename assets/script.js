@@ -95,51 +95,25 @@ const lightDark = document.getElementById('lightDarkMode');
 const logo = document.getElementById('logo');
 const logoDark = document.getElementById('logoDark');
 const html = document.querySelector('html');
-const text = document.getElementsByTagName('body')[0];
-const nav = Array.from(document.querySelectorAll('.navLink'));
-const body = Array.from(document.querySelectorAll('.bodyLink'));
-const cards = Array.from(document.getElementsByClassName('card'));
 
 /* unset white text & navLinks, light background */
 const lightMode = () => {
-  localStorage.setItem('dark theme', null);
+  localStorage.setItem('dark theme', 'off');
   themeToken = localStorage.getItem('dark theme');
-  console.log('called light, set token to false');
   logo.classList.remove('hide');
   logoDark.classList.add('hide');
   sun.classList.remove('hide');
   moon.classList.add('hide');
-  text.style.color = '';
-  nav.forEach((link) => {
-    link.classList.remove('navLinkDark');
-  });
-  body.forEach((link) => {
-    link.classList.remove('bodyLinkDark');
-  });
-  cards.forEach((card) => {
-    card.classList.remove('dark');
-  });
   html.classList.remove('dark');
 };
 /* white text & navLinks, black background, dark cards */
 const darkMode = () => {
-  localStorage.setItem('dark theme', 'enabled');
+  localStorage.setItem('dark theme', 'on');
   themeToken = localStorage.getItem('dark theme');
-  console.log('called dark, set token to null');
   logo.classList.add('hide');
   logoDark.classList.remove('hide');
   sun.classList.add('hide');
   moon.classList.remove('hide');
-  text.style.color = '#fff';
-  nav.forEach((link) => {
-    link.classList.add('navLinkDark');
-  });
-  body.forEach((link) => {
-    link.classList.add('bodyLinkDark');
-  });
-  cards.forEach((card) => {
-    card.classList.add('dark');
-  });
   html.classList.add('dark');
 };
 
@@ -150,9 +124,9 @@ const preferDark = () => {
   darkMode();
 };
 
-themeToken === 'enabled' && preferDark();
+themeToken === 'on' && preferDark();
 
 lightDark.addEventListener('click', () => {
   themeToken = localStorage.getItem('dark theme');
-  themeToken !== 'enabled' || themeToken === null ? darkMode() : lightMode();
+  themeToken !== 'on' || themeToken === 'off' ? darkMode() : lightMode();
 });
