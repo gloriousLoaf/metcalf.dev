@@ -176,14 +176,14 @@ p > a.bodyLink:focus {
 .imgFocus > img {
   transition: 0.25s ease-in-out transform;
 }
-/* lift and stretch a bit on hover & focus */
+/* lift a bit on hover & focus */
 .imgFocus:focus > img {
-  outline: 4px solid var(--alert);
-  transform: translateY(-0.5rem) scaleX(1.02);
+  outline: 3px solid var(--alert);
+  transform: translateY(-0.5rem);
 }
 .cardImg:hover {
-  outline: 4px solid var(--alert);
-  transform: translateY(-0.5rem) scaleX(1.02);
+  outline: 3px solid var(--alert);
+  transform: translateY(-0.5rem);
 }
 /* even-out size of cards for different laptop sizes */
 #portCards .card p:nth-child(2) {
@@ -315,9 +315,12 @@ html.dark a {
 }
 html.dark .card {
   background-color: var(--dark);
-  box-shadow: 0 2px 10px rgba(13, 39, 80, 0.2);
-  filter: drop-shadow(8px 8px 0px rgba(13, 39, 80, 0.2));
+  filter: drop-shadow(3px 3px 0px rgba(72, 194, 188, 0.6));
 }
+/* 
+  --primary: #1d3f5d;
+  --secondary: #45a29e;
+   */
 /* ANIMATIONS */
 @keyframes spinner {
   from {
