@@ -26,7 +26,7 @@ let message = typing.innerHTML;
 let mode = true;
 let delay = 500;
 let timeout;
-/* helpers for typer: updateText in dom, writer & deleter */
+/* updateText in dom, writer & deleter */
 const updateText = (txt) => {
   typing.innerHTML = txt;
 };
