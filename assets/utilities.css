@@ -22,7 +22,6 @@
   gap: 20px;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 .grid2 {
   grid-template-columns: repeat(2, 1fr);
