@@ -317,10 +317,7 @@ html.dark .card {
   background-color: var(--dark);
   filter: drop-shadow(3px 3px 0px rgba(72, 194, 188, 0.6));
 }
-/* 
-  --primary: #1d3f5d;
-  --secondary: #45a29e;
-   */
+
 /* ANIMATIONS */
 @keyframes spinner {
   from {
