@@ -123,10 +123,24 @@ const preferDark = () => {
   lightDark.checked = true;
   darkMode();
 };
-
 themeToken === 'on' && preferDark();
 
+/* check token and toggle dark or light mode, blur toggler */
 lightDark.addEventListener('click', () => {
   themeToken = localStorage.getItem('dark theme');
   themeToken !== 'on' || themeToken === 'off' ? darkMode() : lightMode();
+  lightDark.blur();
+});
+
+/* Hide / reveal helper for keyboard focus on focusin & blur. */
+const focusHelper = document.querySelector('.typography small');
+lightDark.addEventListener('focusin', () => {
+  focusHelper.classList.contains('hide')
+    ? focusHelper.classList.remove('hide')
+    : focusHelper.classList.add('hide');
+});
+lightDark.addEventListener('blur', () => {
+  !focusHelper.classList.contains('hide')
+    ? focusHelper.classList.add('hide')
+    : focusHelper.classList.remove('hide');
 });

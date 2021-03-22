@@ -1,4 +1,7 @@
 /* CUSTOM UTILITIES - David Metcalf, 2020 GitHub: @gloriousLoaf */
+.hide {
+  display: none;
+}
 /* Grid & Components */
 .container {
   margin: 0 auto;

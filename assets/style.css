@@ -33,6 +33,11 @@ textarea {
   font-family: 'Lora', serif;
   font-style: italic;
 }
+/* focus helper for dark mode toggle */
+.typography small {
+  font: 0.8rem 'Open Sans', sans-serif;
+  padding: 0 0 0.32rem 0;
+}
 a:focus,
 button {
   outline: none;
@@ -59,8 +64,13 @@ button {
   align-items: center;
   padding-right: 9%;
 }
+/* hide input check box, but add visible focus state */
 #lightDarkMode {
-  visibility: hidden;
+  position: relative;
+  left: 20px;
+}
+#lightDarkMode:focus + label > div {
+  border: 2px solid var(--alert);
 }
 .toggleLabel {
   display: inline-block;
@@ -70,6 +80,9 @@ button {
   background-color: #d0d0d0;
   border-radius: 50px;
   cursor: pointer;
+}
+.toggleLabel:focus {
+  outline: var(--alert);
 }
 .toggle:checked {
   outline: none;
@@ -92,9 +105,12 @@ button {
 #lightDarkMode:checked + .toggleLabel .ball {
   animation: slideOn 0.3s linear forwards;
 }
-#sun,
-#moon {
+#sun {
   max-width: 40px;
+}
+#moon {
+  max-width: 32px;
+  margin: 4px 0 4px;
 }
 /* Nav Grid */
 #showcase {
@@ -120,7 +136,7 @@ a img.logo {
 }
 a .logo:hover,
 a:focus img.logo {
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 .logo {
   height: 250px;
@@ -129,18 +145,16 @@ a:focus img.logo {
   transition: all 0.3s ease;
 }
 .navLink {
+  display: inline-block;
   color: var(--dark);
   font-weight: 600;
   text-decoration: none;
   margin: 0 1rem;
   padding-bottom: 0.2rem;
-  transition: letter-spacing 0.4s;
+  transition: all 0.05s ease;
 }
-/* hover & focus for links */
 .navLink:hover,
 .navLink:focus {
-  letter-spacing: 0.15rem;
-  font-weight: bold;
   border-bottom: 3px solid var(--alert);
 }
 /* repo, contact & home links */
@@ -234,24 +248,19 @@ p > a.bodyLink:focus {
   padding: 0.5rem 1rem;
   border: 1px solid var(--secondary);
   border-radius: 2px;
-  transition: letter-spacing 0.4s;
+  transition: all 0.3s ease;
 }
 .submitBtn:hover,
 .submitBtn:focus,
 .modalBtn:hover,
 .modalBtn:focus {
   cursor: pointer;
-  letter-spacing: 0.08rem;
+  transform: scale(0.95);
   background-color: var(--alert);
 }
 #labelLastName,
 #lastName {
   display: none;
-}
-/* .tryAgain styles dynamically-created warnings, see storeInfo() */
-.tryAgain {
-  margin-left: 6px;
-  color: var(--alert);
 }
 
 /* MODAL */
@@ -269,9 +278,7 @@ p > a.bodyLink:focus {
   position: relative;
   margin: 20% auto;
 }
-.hide {
-  display: none;
-}
+
 /* FOOTER */
 .footer {
   padding: 1rem;
@@ -366,7 +373,20 @@ html.dark .card {
   }
 }
 /* MOBILE */
-/* phones & portait mini tablets */
+/* standard tablets */
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+  .grid,
+  .grid2,
+  .grid3,
+  .grid4 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  header div.grid3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* phones & mini tablets */
 @media (max-width: 768px) {
   /* global */
   .container {
@@ -382,6 +402,9 @@ html.dark .card {
   /* header & nav */
   .toggleContainer {
     padding: 0;
+  }
+  .typography:first-child {
+    padding-left: 0.5rem;
   }
   #showcase {
     grid-template-areas: 'logo port contact';
@@ -399,6 +422,7 @@ html.dark .card {
   #contactLink {
     margin-top: 4rem;
   }
+  /* portfolio page, move 'Contact' up */
   nav#homeLink + nav#contactLink {
     transform: translateY(-57px);
   }
@@ -454,9 +478,3 @@ html.dark .card {
     margin: 80% auto;
   }
 }
-/* landscape tablets & small laptops */
-/* @media (min-width: 768px) and (max-width: 1350px) {
-  * {
-    coming: soon;
-  }
-} */

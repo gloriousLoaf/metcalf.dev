@@ -47,18 +47,20 @@
     <title>Welcome | Metcalf.dev</title>
 </head>
 <body>
-  <!-- Header, Nav -->
+  <!-- Header, Nav -->  
   <div class="typography">
-    <div>&lt; <span id="typing"></span> &#47; &gt;</div>
+    <div>&lt; <span id="typing"></span> &#47;&gt;</div>
     <div class="toggleContainer">
+      <small class="hide">[spacebar]</small>
       <input type="checkbox" id="lightDarkMode" class="toggle">
-      <label for="lightDarkMode" class="toggleLabel">
+      <label for="lightDarkMode" class="toggleLabel" id="ld2">
         <div class="ball"></div>
       </label>
       <img src="./assets/images/sun.png" alt="Sun for light mode" id="sun">
       <img src="./assets/images/moon.png" alt="Moon for dark mode" class="hide" id="moon">
     </div>
   </div>
+  
   <header class="container" id="home">
     <div class="grid grid3" id="showcase">
       <nav class="nav" id="homeLink">
