@@ -239,6 +239,9 @@ p > a.bodyLink:focus {
 .thankYou {
   align-self: baseline;
 }
+.thankYou .subContainer .p1 p {
+  padding: 0.75rem 0;
+}
 .submitBtn,
 .modalBtn {
   font-size: 1rem;
