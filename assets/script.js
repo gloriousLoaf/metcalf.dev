@@ -6,13 +6,13 @@ view = window.location.pathname.slice(1) || ' ';
 let typeVals = [];
 switch (view) {
   case ' ':
-  case 'index.html':
+  case 'index2.html':
     typeVals.push('metcalf.dev', 'javascript', 'css', 'html', 'metcalf.dev');
     break;
-  case 'portfolio.html':
+  case 'portfolio2.html':
     typeVals.push('mongodb', 'express', 'react', 'node', 'metcalf.dev');
     break;
-  case 'contact.html':
+  case 'contact2.html':
     typeVals.push('whatup?');
     break;
 }
