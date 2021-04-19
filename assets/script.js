@@ -73,16 +73,19 @@ const typer = () => {
 timeout = window.setTimeout(typer, delay);
 
 /* Theme Switcher */
-const themeBtn = document.getElementById('theme-btn');
 const box = document.querySelector('.box');
+const themeBtn = document.getElementById('theme-btn');
+const ghLogo = document.getElementById('gh-logo');
 
 const lightMode = () => {
   box.classList.remove('invert');
+  ghLogo.src = './assets/images/gh-dark.png';
   localStorage.setItem('dark theme', 'off');
 };
 
 const darkMode = () => {
   box.classList.add('invert');
+  ghLogo.src = './assets/images/gh-light.png';
   localStorage.setItem('dark theme', 'on');
 };
 
