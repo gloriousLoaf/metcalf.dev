@@ -1,0 +1,483 @@
+/* GLOBAL */
+:root {
+  --primary: #1d3f5d;
+  --secondary: #45a29e;
+  --dark: #191b24;
+  --dark2: #000;
+  --white: #fff;
+  --light: #fff8f0;
+  --alert: #ef3d36;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+html:focus-within {
+  scroll-behavior: smooth;
+  background-color: var(--light);
+}
+body {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 50px;
+  font-family: 'Open Sans', sans-serif;
+}
+input,
+textarea {
+  font-family: inherit;
+}
+.typography,
+.subscript {
+  font-family: 'Lora', serif;
+  font-style: italic;
+}
+/* focus helper for dark mode toggle */
+.typography small {
+  font: 0.8rem 'Open Sans', sans-serif;
+  padding: 0 0 0.32rem 0;
+}
+a:focus,
+button {
+  outline: none;
+}
+
+/* HEADER & NAV */
+.typography {
+  display: flex;
+  position: relative;
+  color: var(--light);
+  background-color: var(--primary);
+  font-size: 1.5rem;
+  padding: 1rem;
+  padding-left: 9%;
+}
+.typography > span {
+  display: inline-block;
+}
+/* light / dark mode toggle */
+.toggleContainer {
+  display: flex;
+  position: absolute;
+  right: 5px;
+  align-items: center;
+  padding-right: 9%;
+}
+/* hide input check box, but add visible focus state */
+#lightDarkMode {
+  position: relative;
+  left: 20px;
+}
+#lightDarkMode:focus + label > div {
+  border: 2px solid var(--alert);
+}
+.toggleLabel {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background-color: #d0d0d0;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.toggleLabel:focus {
+  outline: var(--alert);
+}
+.toggle:checked {
+  outline: none;
+}
+#lightDarkMode:checked + .toggleLabel {
+  background-color: var(--secondary);
+}
+.ball {
+  background-color: var(--white);
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  align-items: center;
+  justify-content: center;
+  animation: slideOff 0.3s linear forwards;
+}
+#lightDarkMode:checked + .toggleLabel .ball {
+  animation: slideOn 0.3s linear forwards;
+}
+#sun {
+  max-width: 40px;
+}
+#moon {
+  max-width: 32px;
+  margin: 4px 0 4px;
+}
+/* Nav Grid */
+#showcase {
+  grid-template-areas: 'port logo contact';
+  margin-top: 1rem;
+}
+/* moving the grid around a bit. the markup is structured
+  to make the media query easier to flex around */
+#homeLink {
+  grid-area: logo;
+}
+#portLink {
+  grid-area: port;
+  text-align: right;
+}
+#contactLink {
+  grid-area: contact;
+  text-align: left;
+}
+/* logo / home link */
+a img.logo {
+  display: flex;
+}
+a .logo:hover,
+a:focus img.logo {
+  transform: scale(0.95);
+}
+.logo {
+  height: 250px;
+  margin: 0 auto;
+  animation: rollIn 0.4s ease-in;
+  transition: all 0.3s ease;
+}
+.navLink {
+  display: inline-block;
+  color: var(--dark);
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 1rem;
+  padding-bottom: 0.2rem;
+  transition: all 0.05s ease;
+}
+.navLink:hover,
+.navLink:focus {
+  border-bottom: 3px solid var(--alert);
+}
+/* repo, contact & home links */
+.bodyLink {
+  color: var(--dark);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--secondary);
+}
+.bodyLink:hover,
+.bodyLink:focus {
+  border-bottom: 2px solid var(--alert);
+}
+/* p>small>a === "Repository" in portfolio,
+  p>a === contact links */
+p > small > a.bodyLink:hover,
+p > small > a.bodyLink:focus,
+p > a.bodyLink:hover,
+p > a.bodyLink:focus {
+  font-style: italic;
+}
+
+/* CARDS */
+.cardImg {
+  width: 100%;
+  height: 23vh;
+  object-fit: cover;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+/* focus & hover for card images */
+.cardImg,
+.imgFocus > img {
+  transition: 0.25s ease-in-out transform;
+}
+/* lift a bit on hover & focus */
+.imgFocus:focus > img {
+  outline: 3px solid var(--alert);
+  transform: translateY(-0.5rem);
+}
+.cardImg:hover {
+  outline: 3px solid var(--alert);
+  transform: translateY(-0.5rem);
+}
+/* even-out size of cards for different laptop sizes */
+#portCards .card p:nth-child(2) {
+  min-height: 5rem;
+}
+/* ABOUT SECTION */
+#aboutMe .card {
+  min-height: 396px;
+}
+#selfie {
+  max-height: 200px;
+  max-width: 200px;
+  border-radius: 50%;
+}
+/* Skills card */
+#skills {
+  grid-template-columns: 2fr 1fr;
+}
+/* CONTACT SECTION */
+.contactForm {
+  display: grid;
+}
+.contactForm input,
+.contactForm textarea {
+  border: 1px solid;
+  border-radius: 0.25rem;
+}
+.contactForm label {
+  margin-bottom: 2px;
+}
+.contactForm input {
+  padding: 0.35rem 0 0.15rem 0.15rem;
+}
+.contactForm textarea {
+  padding: 0.15rem 0 0 0.15rem;
+  resize: vertical;
+}
+.thankYou {
+  align-self: baseline;
+}
+.thankYou .subContainer .p1 p {
+  padding: 0.75rem 0;
+}
+.submitBtn,
+.modalBtn {
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--white);
+  background-color: var(--primary);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--secondary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.submitBtn:hover,
+.submitBtn:focus,
+.modalBtn:hover,
+.modalBtn:focus {
+  cursor: pointer;
+  transform: scale(0.95);
+  background-color: var(--alert);
+}
+#labelLastName,
+#lastName {
+  display: none;
+}
+
+/* MODAL */
+.modalView {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.modal {
+  z-index: 1;
+  max-width: 300px;
+  position: relative;
+  margin: 20% auto;
+}
+
+/* FOOTER */
+.footer {
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+  text-align: center;
+  border-top: 2px solid var(--secondary);
+  color: var(--white);
+  background-color: var(--primary);
+}
+.footer a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: lighter;
+  padding-bottom: 0.1rem;
+  border-bottom: 2px solid var(--secondary);
+  transition: margin 1s, font-size 1s, letter-spacing 1s;
+}
+.footer a:hover,
+.footer a:focus {
+  color: var(--white);
+  border-bottom: 2px solid var(--alert);
+  margin: 0 0.25rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.2rem;
+}
+/* footer GH logo spin */
+span:hover img,
+span a:focus img {
+  animation: spinner 0.8s 1 linear;
+}
+
+/* Dark Mode */
+html.dark {
+  color: var(--white);
+  background-color: var(--dark2);
+}
+html.dark a {
+  color: var(--white);
+}
+html.dark .card {
+  background-color: var(--dark);
+  filter: drop-shadow(3px 3px 0px rgba(72, 194, 188, 0.6));
+}
+
+/* ANIMATIONS */
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-359deg);
+  }
+}
+@keyframes rollIn {
+  0% {
+    transform: translateY(-100%) rotate(-90deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+@keyframes slideOn {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(15px) scale(1.1);
+  }
+  100% {
+    transform: translateX(30px) scale(1);
+  }
+}
+@keyframes slideOff {
+  0% {
+    transform: translateX(30px) scale(1);
+  }
+  50% {
+    transform: translateX(15px) scale(1.1);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+/* prevent smooth scroll-behavior */
+@media screen and (prefers-reduced-motion: reduce) {
+  html,
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}
+/* MOBILE */
+/* standard tablets */
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+  .grid,
+  .grid2,
+  .grid3,
+  .grid4 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  header div.grid3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* phones & mini tablets */
+@media (max-width: 768px) {
+  /* global */
+  .container {
+    padding: 0 1.5rem;
+  }
+  .grid,
+  .grid2,
+  .grid3,
+  .grid4 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  /* header & nav */
+  .toggleContainer {
+    padding: 0;
+  }
+  .typography:first-child {
+    padding-left: 0.5rem;
+  }
+  #showcase {
+    grid-template-areas: 'logo port contact';
+  }
+  #homeLink {
+    grid-area: logo;
+  }
+  #portLink,
+  #contactLink {
+    grid-area: port;
+  }
+  #portLink {
+    margin-bottom: 4rem;
+  }
+  #contactLink {
+    margin-top: 4rem;
+  }
+  /* portfolio page, move 'Contact' up */
+  nav#homeLink + nav#contactLink {
+    transform: translateY(-57px);
+  }
+  .logo {
+    height: 175px;
+  }
+  .nav {
+    margin-bottom: 1rem;
+  }
+  /* card imgs */
+  .cardImg {
+    width: 100%;
+    height: 50vw;
+    object-fit: cover;
+  }
+  /* about */
+  #aboutMe div p,
+  #selfie {
+    margin: 0 auto;
+  }
+  #skills {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  #skills img {
+    margin: 0 auto;
+    padding: 0 0 1rem 1rem;
+  }
+  /* contact */
+  .subContainer {
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0;
+  }
+  .submitBtn {
+    display: block;
+    margin: 0 auto;
+  }
+  .submitBtn + small {
+    display: block;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  .thankYou {
+    margin-top: 1.5rem;
+  }
+  .thankYou div {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  /* modal */
+  .modal {
+    margin: 80% auto;
+  }
+}

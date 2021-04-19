@@ -1,153 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://metcalf.dev/assets/images/logo.png">
-    <meta property="og:image:secure_url" content="https://metcalf.dev/assets/images/logo.png">
-    <meta property="og:image:width" content="743">
-    <meta property="og:image:height" content="272">
-    <meta property="og:image:alt" content="David Metcalf, Web Developer">
-    <meta property="og:image:type" content="image/png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://metcalf.dev/assets/images/logo.png"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://metcalf.dev/assets/images/logo.png"
+    />
+    <meta property="og:image:width" content="743" />
+    <meta property="og:image:height" content="272" />
+    <meta property="og:image:alt" content="David Metcalf, Web Developer" />
+    <meta property="og:image:type" content="image/png" />
     <!-- FB OpenGraph Tags -->
-    <meta name="title" property="og:title" content="David Metcalf, Web Developer">
-    <meta name="description" property="og:description" content="A frequently updated portfolio of my work, with contact form and a brief bio. Thanks for visiting!">
-    <meta name="image" property="og:image" content="https://metcalf.dev/assets/images/logo.png">
-    <meta name="url" property="og:url" content="https://metcalf.dev">
+    <meta
+      name="title"
+      property="og:title"
+      content="David Metcalf, Web Developer"
+    />
+    <meta
+      name="description"
+      property="og:description"
+      content="A frequently updated portfolio of my work, with contact form and a brief bio. Thanks for visiting!"
+    />
+    <meta
+      name="image"
+      property="og:image"
+      content="https://metcalf.dev/assets/images/logo.png"
+    />
+    <meta name="url" property="og:url" content="https://metcalf.dev" />
     <!-- Twitter Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="David Metcalf, Web Developer">
-    <meta name="twitter:description" content="A frequently updated portfolio of my work, with contact form and a brief bio. Thanks for visiting!">
-    <meta name="twitter:image" content="https://metcalf.dev/assets/images/logo.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="David Metcalf, Web Developer" />
+    <meta
+      name="twitter:description"
+      content="A frequently updated portfolio of my work, with contact form and a brief bio. Thanks for visiting!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://metcalf.dev/assets/images/logo.png"
+    />
     <!-- Favicon: Desktops -->
-    <link rel="icon" href="./favicon.png" sizes="16x16">
-    <link rel="icon" href="./favicon.png" sizes="32x32">
-    <link rel="icon" href="./favicon.png" sizes="57x57">
-    <link rel="icon" href="./favicon.png" sizes="76x76">
-    <link rel="icon" href="./favicon.png" sizes="96x96">
-    <link rel="icon" href="./favicon.png" sizes="128x128">
-    <link rel="icon" href="./favicon.png" sizes="192x192">
-    <link rel="icon" href="./favicon.png" sizes="228x228">
+    <link rel="icon" href="./favicon.png" sizes="16x16" />
+    <link rel="icon" href="./favicon.png" sizes="32x32" />
+    <link rel="icon" href="./favicon.png" sizes="57x57" />
+    <link rel="icon" href="./favicon.png" sizes="76x76" />
+    <link rel="icon" href="./favicon.png" sizes="96x96" />
+    <link rel="icon" href="./favicon.png" sizes="128x128" />
+    <link rel="icon" href="./favicon.png" sizes="192x192" />
+    <link rel="icon" href="./favicon.png" sizes="228x228" />
     <!-- Favicon: Android -->
-    <link rel="shortcut icon" sizes="196x196" href="./favicon.png">
+    <link rel="shortcut icon" sizes="196x196" href="./favicon.png" />
     <!-- Favicon: iOS -->
-    <link rel="apple-touch-icon" href="./favicon.png" sizes="120x120">
-    <link rel="apple-touch-icon" href="./favicon.png" sizes="152x152">
-    <link rel="apple-touch-icon" href="./favicon.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="./favicon.png" sizes="120x120" />
+    <link rel="apple-touch-icon" href="./favicon.png" sizes="152x152" />
+    <link rel="apple-touch-icon" href="./favicon.png" sizes="180x180" />
     <!-- Google Font - Open Sans & Roboto Mono -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
-    <link rel="canonical" href="https://metcalf.dev">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="canonical" href="https://metcalf.dev" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/utilities.css">
-    <link rel="stylesheet" href="./assets/style.css">
-    <title>Welcome | Metcalf.dev</title>
-</head>
-<body>
-  <!-- Header, Nav -->
-  <div class="typography">
-    <div>&lt; <span id="typing"></span> &#47;&gt;</div>
-    <div class="toggleContainer">
-      <small class="hide">[spacebar]</small>
-      <input type="checkbox" id="lightDarkMode" class="toggle">
-      <label for="lightDarkMode" class="toggleLabel">
-        <div class="ball"></div>
-      </label>
-      <img src="./assets/images/sun.png" alt="Sun for light mode" id="sun">
-      <img src="./assets/images/moon.png" alt="Moon for dark mode" class="hide" id="moon">
-    </div>
-  </div>
-  <header class="container" id="home">
-    <div class="grid grid3" id="showcase">
-      <nav class="nav" id="homeLink">
-        <a href="index.html" class="trapFocus" id="logo">
-          <img src="./assets/images/logo.svg" alt="David Metcalf, Web Developer" class="logo">
-        </a>
-        <a href="index.html" class="trapFocus hide"id="logoDark">
-          <img src="./assets/images/logo-dark.svg" alt="David Metcalf, Web Developer" class="logo">
-        </a>
-      </nav>
-      <nav class="nav" id="contactLink">
-        <a href="contact.html" class="navLink lead trapFocus">Contact</a>
-      </nav>
-    </div>
-  </header>
-  <main class="container">
-  <!-- Portfolio -->
-    <div class="grid grid4 my4" id="portCards">
-      <!-- CartMe -->
-      <div class="card">
-        <a class="imgFocus trapFocus" href="https://cart-me.herokuapp.com/" target="_blank" rel="noopener"><img
-          class="cardImg" src="./assets/images/cart-me.png" alt="Cart Me brand with orange line-drawing of a shopping cart."></a>
-        <div class="p1">
-          <p class="lead bold mb1">Cart•Me</p>
-          <p class="mb1">A MERN stack ecommerce app to shop, leave reviews and checkout with the PayPal Developers API.</p>
-          <p><small class="subscript">MERN, PayPal API - <a class="bodyLink trapFocus" href="https://github.com/gloriousLoaf/CartMe"
-            target="_blank" rel="noopener">Repository</a></small></p>
-        </div>
-      </div>
-      <!-- Emoji Runner - Project 2 -->
-      <div class="card">
-        <a class="imgFocus trapFocus" href="http://emoji-runner.herokuapp.com/" target="_blank" rel="noopener">
-          <img class="cardImg" src="./assets/images/emoji.png" alt="Emoji Runner with an emoji character."></a>
-        <div class="p1">
-          <p class="lead bold mb1">Emoji Runner</p>
-          <p class="mb1">A fun twist on the classic runner game, with secure user login and score tracking.</p>
-          <p><small class="subscript">P5JS, Express & MySQL - <a class="bodyLink trapFocus" href="https://github.com/gloriousLoaf/Emoji-Runner"
-            target="_blank" rel="noopener">Repository</a></small></p>
-        </div>
-      </div>
-      <!-- Covid-19 Tracker - Project 1 -->
-      <div class="card">
-        <a class="imgFocus trapFocus" href="https://gloriousloaf.github.io/Covid-19-Tracker/" target="_blank" rel="noopener">
-          <img class="cardImg" src="./assets/images/covid-map.png" alt="Covid-19 Tracker"></a>
-        <div class="p1">
-          <p class="lead bold mb1">Covid-19 Tracker</p>
-          <p class="mb1">Statistics, news and resources. Includes statewide testing information.</p>
-          <p><small class="subscript">jQuery & Multiple APIs - <a class="bodyLink trapFocus" href="https://github.com/gloriousLoaf/Covid-19-Tracker"
-            target="_blank" rel="noopener">Repository</a></small></p>
+    <!-- <link rel="stylesheet" href="./assets/utilities.css"> -->
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Portfolio | Metcalf.dev</title>
+  </head>
+  <body>
+    <div class="box">
+      <header>
+        <div>
+          <p>
+            &lt;
+            <span id="typing"></span>
+            &nbsp;&#47;&gt;
           </p>
+          <nav>
+            <ul>
+              <li>
+                <a href="index.html" class="lead trapFocus">About</a>
+              </li>
+              <li>
+                <a href="portfolio.html" class="current lead trapFocus"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="lead trapFocus">Contact</a>
+              </li>
+              <li><button id="theme-btn">Theme</button></li>
+            </ul>
+          </nav>
         </div>
-      </div>
-      <!-- Google Books -->
-      <div class="card">
-        <a class="imgFocus trapFocus" href="https://google-books-loaf.herokuapp.com/" target="_blank" rel="noopener"><img
-          class="cardImg" src="./assets/images/books.png" alt="Colorful spines of books on a shelf"></a>
-        <div class="p1">
-          <p class="lead bold mb1">Google Books</p>
-          <p class="mb1">A MERN stack app to find, save and remove books from your personal digital library.</p>
-          <p><small class="subscript">MERN, Google Books API - <a class="bodyLink trapFocus" href="https://github.com/gloriousLoaf/Google-Books-Search"
-            target="_blank" rel="noopener">Repository</a></small></p>
-        </div>
-      </div>
+      </header>
     </div>
-    <div class="grid my4" id="portSummary">
-      <div class="card p1 txCenter">
-        <h1 class="lead">Always building, always learning.</h1>
-        <p class="subscript p1">These works will continue to change.</p>
-        <div class="pb1">
-          <p>I have chosen to highlight a few of my apps here as a sample of my style and
-            skills. Thanks for checking them out! There are more projects in the works, and soon they
-            will be featured here. To view more of my work, checkout my
-             <a href="https://github.com/gloriousLoaf" target="_blank" class="bodyLink">GitHub</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </main>
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="txCenter">
-      <span>
-        <a class="bodyLink trapFocus" href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">
-          <img src="assets/images/github.png" alt="Github Octocat" aria-hidden="true" height="16px" width="16px"></img> gloriousLoaf</a>
-        </span>
-    </div>
-  </footer>
-  <!-- script -->
-  <script src="./assets/script.js"></script>
-</body>
+
+    <!-- script -->
+    <script src="./assets/script.js"></script>
+  </body>
 </html>
