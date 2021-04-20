@@ -1,0 +1,66 @@
+/* PORTFOLIO PAGE */
+h1 + p {
+  text-align: center;
+}
+
+h1 + p + div > div {
+  display: flex;
+  flex-direction: column;
+}
+
+div > a {
+  display: flex;
+  justify-content: center;
+}
+
+div > a,
+div > a > img {
+  transition: all 0.1s ease;
+}
+
+div > a > img:hover {
+  outline: 3px dotted var(--alert);
+  transform: scale(0.95);
+}
+
+div > a:focus {
+  outline: 3px dotted var(--alert);
+  transform: scale(0.95);
+}
+
+h1 + p + div > div > p:first-of-type {
+  font-size: 1.25rem;
+}
+
+h1 + p + div > div > p:last-of-type {
+  font-size: 0.9rem;
+}
+
+h1 + p + div > div > p:last-of-type a {
+  padding-bottom: 0.1rem;
+  border-bottom: 2px solid var(--secondary);
+}
+
+h1 + p + div > div > p:last-of-type a:hover,
+h1 + p + div > div > p:last-of-type a:focus {
+  font-weight: 600;
+  border-bottom: 2px solid var(--alert);
+}
+
+@media (min-width: 769px) {
+  h1 + p {
+    text-align: left;
+  }
+
+  h1 + p + div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+  }
+
+  div > a {
+    justify-content: left;
+  }
+}
