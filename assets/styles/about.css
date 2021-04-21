@@ -32,12 +32,12 @@ h2 + div {
   padding: 1rem 0;
 }
 
-h2 + div p strong {
-  border-bottom: 2px solid var(--alert);
+h2 + div > div {
+  margin-left: 1rem;
 }
 
-ul {
-  padding-left: 3rem;
+h2 + div p strong {
+  border-bottom: 2px solid var(--alert);
 }
 
 @media (min-width: 769px) {
@@ -58,5 +58,9 @@ ul {
   h2 + div {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  h2 + div > div {
+    margin-left: inherit;
   }
 }

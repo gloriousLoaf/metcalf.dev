@@ -23,11 +23,7 @@ div > a > img {
   height: auto;
 }
 
-div > a > img:hover {
-  outline: 3px dotted var(--alert);
-  transform: scale(0.95);
-}
-
+div > a:hover,
 div > a:focus {
   outline: 3px dotted var(--alert);
   transform: scale(0.95);
