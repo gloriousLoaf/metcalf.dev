@@ -44,9 +44,15 @@ p {
   padding: 0.5rem 0;
 }
 
-ul {
-  list-style-type: '>  ';
-  padding: 0 0 2rem 1.25rem;
+p a {
+  padding-bottom: 0.1rem;
+  border-bottom: 2px solid var(--secondary);
+}
+
+p a:hover,
+p a:focus {
+  font-weight: 600;
+  border-bottom: 2px solid var(--alert);
 }
 
 a,
@@ -55,6 +61,15 @@ button {
   border: none;
   text-decoration: none;
   transition: all 0.1s ease;
+}
+
+ul {
+  list-style-type: '>  ';
+  padding: 0 0 2rem 1.25rem;
+}
+
+form {
+  padding: 1rem 0;
 }
 
 button,
@@ -102,7 +117,7 @@ textarea {
 
 @media (min-width: 769px) {
   .card {
-    margin: 0;
+    margin: 0 0 1rem 0;
   }
 }
 
