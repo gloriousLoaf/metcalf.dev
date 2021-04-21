@@ -3,10 +3,6 @@ h1 + div > p {
   text-align: center;
 }
 
-/* h1 + div > p:first-of-type {
-  font-size: 1.25rem;
-} */
-
 label {
   margin-top: 0.5rem;
 }
