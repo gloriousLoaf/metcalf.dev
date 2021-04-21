@@ -2,7 +2,7 @@
 <h1 align="center">David Metcalf, Full Stack Developer</h1>
 <h3 align="center">A portfolio of my work with contact info.</h3>
 
-<p align="center"> <img src="https://avatars.githubusercontent.com/u/61023941?v=4" alt="Metcalf.dev" height="400"> </p>
+<p align="center"> <img src="https://github.com/gloriousLoaf/metcalf.dev/blob/main/assets/images/metcalfdev-twittercard.png" alt="metcalf.dev branding on a mint green color gradient." height="300"> </p>
 <p>&nbsp;</p>
 
 <p align="center"> <img src="https://img.shields.io/github/languages/count/gloriousLoaf/gloriousLoaf.github.io" alt="Development language count" /> <img src="https://img.shields.io/github/languages/top/gloriousLoaf/gloriousLoaf.github.io" alt="Development language stats" /> </p>
