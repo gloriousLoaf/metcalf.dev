@@ -1,153 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://metcalf.dev/assets/images/logo.png">
-    <meta property="og:image:secure_url" content="https://metcalf.dev/assets/images/logo.png">
-    <meta property="og:image:width" content="743">
-    <meta property="og:image:height" content="272">
-    <meta property="og:image:alt" content="David Metcalf, Web Developer">
-    <meta property="og:image:type" content="image/png">
-    <!-- FB OpenGraph Tags -->
-    <meta name="title" property="og:title" content="David Metcalf, Web Developer">
-    <meta name="description" property="og:description" content="A frequently updated portfolio of my work, with contact form and a brief bio. Thanks for visiting!">
-    <meta name="image" property="og:image" content="https://metcalf.dev/assets/images/logo.png">
-    <meta name="url" property="og:url" content="https://metcalf.dev">
-    <!-- Twitter Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="David Metcalf, Web Developer">
-    <meta name="twitter:description" content="A frequently updated portfolio of my work, with contact form and a brief bio. Thanks for visiting!">
-    <meta name="twitter:image" content="https://metcalf.dev/assets/images/logo.png">
-    <!-- Favicon: Desktops -->
-    <link rel="icon" href="./favicon.png" sizes="16x16">
-    <link rel="icon" href="./favicon.png" sizes="32x32">
-    <link rel="icon" href="./favicon.png" sizes="57x57">
-    <link rel="icon" href="./favicon.png" sizes="76x76">
-    <link rel="icon" href="./favicon.png" sizes="96x96">
-    <link rel="icon" href="./favicon.png" sizes="128x128">
-    <link rel="icon" href="./favicon.png" sizes="192x192">
-    <link rel="icon" href="./favicon.png" sizes="228x228">
-    <!-- Favicon: Android -->
-    <link rel="shortcut icon" sizes="196x196" href="./favicon.png">
-    <!-- Favicon: iOS -->
-    <link rel="apple-touch-icon" href="./favicon.png" sizes="120x120">
-    <link rel="apple-touch-icon" href="./favicon.png" sizes="152x152">
-    <link rel="apple-touch-icon" href="./favicon.png" sizes="180x180">
-    <!-- Google Font - Open Sans & Roboto Mono -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
-    <link rel="canonical" href="https://metcalf.dev">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/utilities.css">
-    <link rel="stylesheet" href="./assets/style.css">
-    <title>Welcome | Metcalf.dev</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://metcalf.dev/assets/images/logo.png" />
+  <meta property="og:image:secure_url" content="https://metcalf.dev/assets/images/logo.png" />
+  <meta property="og:image:width" content="743" />
+  <meta property="og:image:height" content="272" />
+  <meta property="og:image:alt" content="David Metcalf, Web Developer" />
+  <meta property="og:image:type" content="image/png" />
+  <!-- FB OpenGraph Tags -->
+  <meta name="title" property="og:title" content="David Metcalf, Web Developer" />
+  <meta name="description" property="og:description"
+    content="A frequently updated portfolio of my work, with contact form and a brief bio. Thanks for visiting!" />
+  <meta name="image" property="og:image" content="https://metcalf.dev/assets/images/logo.png" />
+  <meta name="url" property="og:url" content="https://metcalf.dev" />
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="David Metcalf, Web Developer" />
+  <meta name="twitter:description"
+    content="A frequently updated portfolio of my work, with contact form and a brief bio. Thanks for visiting!" />
+  <meta name="twitter:image" content="https://metcalf.dev/assets/images/logo.png" />
+  <link rel="canonical" href="https://metcalf.dev" />
+  <!-- Favicon: Desktops -->
+  <link rel="icon" href="./favicon.png" sizes="16x16" />
+  <link rel="icon" href="./favicon.png" sizes="32x32" />
+  <link rel="icon" href="./favicon.png" sizes="57x57" />
+  <link rel="icon" href="./favicon.png" sizes="76x76" />
+  <link rel="icon" href="./favicon.png" sizes="96x96" />
+  <link rel="icon" href="./favicon.png" sizes="128x128" />
+  <link rel="icon" href="./favicon.png" sizes="192x192" />
+  <link rel="icon" href="./favicon.png" sizes="228x228" />
+  <!-- Favicon: Android -->
+  <link rel="shortcut icon" sizes="196x196" href="./favicon.png" />
+  <!-- Favicon: iOS -->
+  <link rel="apple-touch-icon" href="./favicon.png" sizes="120x120" />
+  <link rel="apple-touch-icon" href="./favicon.png" sizes="152x152" />
+  <link rel="apple-touch-icon" href="./favicon.png" sizes="180x180" />
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
+  <!-- styles -->
+  <link rel="stylesheet" href="./assets/styles/global.css">
+  <link rel="stylesheet" href="./assets/styles/portfolio.css" />
+  <title>Portfolio | Metcalf.dev</title>
 </head>
+
 <body>
-  <!-- Header, Nav -->
-  <div class="typography">
-    <div>&lt; <span id="typing"></span> &#47;&gt;</div>
-    <div class="toggleContainer">
-      <small class="hide">[spacebar]</small>
-      <input type="checkbox" id="lightDarkMode" class="toggle">
-      <label for="lightDarkMode" class="toggleLabel">
-        <div class="ball"></div>
-      </label>
-      <img src="./assets/images/sun.png" alt="Sun for light mode" id="sun">
-      <img src="./assets/images/moon.png" alt="Moon for dark mode" class="hide" id="moon">
-    </div>
-  </div>
-  <header class="container" id="home">
-    <div class="grid grid3" id="showcase">
-      <nav class="nav" id="homeLink">
-        <a href="index.html" class="trapFocus" id="logo">
-          <img src="./assets/images/logo.svg" alt="David Metcalf, Web Developer" class="logo">
-        </a>
-        <a href="index.html" class="trapFocus hide"id="logoDark">
-          <img src="./assets/images/logo-dark.svg" alt="David Metcalf, Web Developer" class="logo">
-        </a>
-      </nav>
-      <nav class="nav" id="contactLink">
-        <a href="contact.html" class="navLink lead trapFocus">Contact</a>
-      </nav>
-    </div>
-  </header>
-  <main class="container">
-  <!-- Portfolio -->
-    <div class="grid grid4 my4" id="portCards">
-      <!-- CartMe -->
-      <div class="card">
-        <a class="imgFocus trapFocus" href="https://cart-me.herokuapp.com/" target="_blank" rel="noopener"><img
-          class="cardImg" src="./assets/images/cart-me.png" alt="Cart Me brand with orange line-drawing of a shopping cart."></a>
-        <div class="p1">
-          <p class="lead bold mb1">Cart•Me</p>
-          <p class="mb1">A MERN stack ecommerce app to shop, leave reviews and checkout with the PayPal Developers API.</p>
-          <p><small class="subscript">MERN, PayPal API - <a class="bodyLink trapFocus" href="https://github.com/gloriousLoaf/CartMe"
-            target="_blank" rel="noopener">Repository</a></small></p>
-        </div>
+  <div class="box">
+    <header>
+      <div>
+        <p>
+          &lt;
+          <span id="typing"></span>
+          &nbsp;&#47;&gt;
+        </p>
+        <nav>
+          <ul>
+            <li>
+              <a href="index.html">About</a>
+            </li>
+            <li>
+              <a href="portfolio.html" class="current">Portfolio</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+            <li><button id="theme-btn">Theme</button></li>
+          </ul>
+        </nav>
       </div>
-      <!-- Emoji Runner - Project 2 -->
-      <div class="card">
-        <a class="imgFocus trapFocus" href="http://emoji-runner.herokuapp.com/" target="_blank" rel="noopener">
-          <img class="cardImg" src="./assets/images/emoji.png" alt="Emoji Runner with an emoji character."></a>
-        <div class="p1">
-          <p class="lead bold mb1">Emoji Runner</p>
-          <p class="mb1">A fun twist on the classic runner game, with secure user login and score tracking.</p>
-          <p><small class="subscript">P5JS, Express & MySQL - <a class="bodyLink trapFocus" href="https://github.com/gloriousLoaf/Emoji-Runner"
-            target="_blank" rel="noopener">Repository</a></small></p>
+    </header>
+
+    <main>
+      <!-- Portfolio -->
+      <section aria-labelledby="portfolio">
+        <h1 id="portfolio">Portfolio</h1>
+        <p>Images link to live deployments.</p>
+        <div>
+          <!-- CartMe -->
+          <div class="card">
+            <a href="https://cart-me.herokuapp.com/" target="_blank" rel="noopener">
+              <img src="https://github.com/gloriousLoaf/images/blob/main/cartme.png?raw=true" loading="lazy"
+                alt="Cart Me brand with orange line-drawing of a shopping cart.">
+            </a>
+            <p>Cart•Me</p>
+            <p>A MERN stack ecommerce app to shop, leave reviews and checkout with the PayPal Developers
+              API.</p>
+            <p>MERN, PayPal API - <a href="https://github.com/gloriousLoaf/CartMe" target="_blank"
+                rel="noopener">Repository</a>
+            </p>
+          </div>
+          <!-- Emoji Runner - Project 2 -->
+          <div class="card">
+            <a href="http://emoji-runner.herokuapp.com/" target="_blank" rel="noopener">
+              <img src="https://github.com/gloriousLoaf/images/blob/main/emoji.png?raw=true" loading="lazy"
+                alt="Emoji Runner with an emoji character.">
+            </a>
+            <p>Emoji Runner</p>
+            <p>A fun twist on the classic runner game, with secure user login and score tracking. Link for
+              Emoji Runner Lite on landing page.</p>
+            <p>P5JS, Express & MySQL - <a href="https://github.com/gloriousLoaf/Emoji-Runner" target="_blank"
+                rel="noopener">Repository</a></p>
+          </div>
+          <!-- Covid-19 Tracker - Project 1 -->
+          <div class="card">
+            <a href="https://gloriousloaf.github.io/Covid-19-Tracker/" target="_blank" rel="noopener">
+              <img src="https://github.com/gloriousLoaf/images/blob/main/covid.png?raw=true" loading="lazy"
+                alt="Covid-19 Tracker">
+            </a>
+            <p>Covid-19 Tracker</p>
+            <p>Statistics, news and resources. Includes statewide testing information.</p>
+            <p>jQuery & Multiple APIs - <a href="https://github.com/gloriousLoaf/Covid-19-Tracker" target="_blank"
+                rel="noopener">Repository</a></p>
+          </div>
+          <!-- Google Books -->
+          <div class="card">
+            <a href="https://google-books-loaf.herokuapp.com/" target="_blank" rel="noopener">
+              <img src="https://github.com/gloriousLoaf/images/blob/main/books.png?raw=true" loading="lazy"
+                alt="Colorful spines of books on a shelf">
+            </a>
+            <p>Google Books</p>
+            <p>A MERN stack app to find, save and remove books from your personal digital library.</p>
+            <p>MERN, Google Books API - <a href="https://github.com/gloriousLoaf/Google-Books-Search" target="_blank"
+                rel="noopener">Repository</a></p>
+          </div>
         </div>
-      </div>
-      <!-- Covid-19 Tracker - Project 1 -->
-      <div class="card">
-        <a class="imgFocus trapFocus" href="https://gloriousloaf.github.io/Covid-19-Tracker/" target="_blank" rel="noopener">
-          <img class="cardImg" src="./assets/images/covid-map.png" alt="Covid-19 Tracker"></a>
-        <div class="p1">
-          <p class="lead bold mb1">Covid-19 Tracker</p>
-          <p class="mb1">Statistics, news and resources. Includes statewide testing information.</p>
-          <p><small class="subscript">jQuery & Multiple APIs - <a class="bodyLink trapFocus" href="https://github.com/gloriousLoaf/Covid-19-Tracker"
-            target="_blank" rel="noopener">Repository</a></small></p>
-          </p>
+      </section>
+
+      <section>
+        <div>
+          <h2>Always building, always learning.</h2>
+          <p>These works will continue to change.</p>
+          <div>
+            <p>I have chosen to highlight a few of my apps here as a sample of my style and
+              skills. Thanks for checking them out! There are more projects in the works, and soon they
+              will be featured here. To view more of my work, checkout my
+              <a href="https://github.com/gloriousLoaf" target="_blank">GitHub</a>.
+            </p>
+          </div>
         </div>
-      </div>
-      <!-- Google Books -->
-      <div class="card">
-        <a class="imgFocus trapFocus" href="https://google-books-loaf.herokuapp.com/" target="_blank" rel="noopener"><img
-          class="cardImg" src="./assets/images/books.png" alt="Colorful spines of books on a shelf"></a>
-        <div class="p1">
-          <p class="lead bold mb1">Google Books</p>
-          <p class="mb1">A MERN stack app to find, save and remove books from your personal digital library.</p>
-          <p><small class="subscript">MERN, Google Books API - <a class="bodyLink trapFocus" href="https://github.com/gloriousLoaf/Google-Books-Search"
-            target="_blank" rel="noopener">Repository</a></small></p>
-        </div>
-      </div>
-    </div>
-    <div class="grid my4" id="portSummary">
-      <div class="card p1 txCenter">
-        <h1 class="lead">Always building, always learning.</h1>
-        <p class="subscript p1">These works will continue to change.</p>
-        <div class="pb1">
-          <p>I have chosen to highlight a few of my apps here as a sample of my style and
-            skills. Thanks for checking them out! There are more projects in the works, and soon they
-            will be featured here. To view more of my work, checkout my
-             <a href="https://github.com/gloriousLoaf" target="_blank" class="bodyLink">GitHub</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </main>
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="txCenter">
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
       <span>
-        <a class="bodyLink trapFocus" href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">
-          <img src="assets/images/github.png" alt="Github Octocat" aria-hidden="true" height="16px" width="16px"></img> gloriousLoaf</a>
-        </span>
-    </div>
-  </footer>
+        <a href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">
+          <img id="gh-logo" src="./assets/images/gh-dark.png" alt="Github Octocat" aria-hidden="true">
+          gloriousLoaf</a>
+      </span>
+    </footer>
+
+  </div>
+
   <!-- script -->
-  <script src="./assets/script.js"></script>
+  <script src="./assets/scripts/script.js"></script>
 </body>
+
 </html>
