@@ -20,7 +20,7 @@ div > a > img {
 
 div > a > img {
   width: 15rem;
-  height: auto;
+  height: 15rem;
 }
 
 div > a:hover,
