@@ -127,6 +127,8 @@ textarea {
 }
 
 .card {
+  contain: content;
+  content-visibility: auto;
   margin: 1rem 0;
   padding: 1rem;
   background-clip: border-box;
