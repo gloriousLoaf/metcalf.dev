@@ -28,6 +28,13 @@
   --dark: #000;
   --dark2: #191b24;
   --light: #fff;
+  font-size: 87.5%;
+}
+/* scaling base font to 14px for tiny, ancient phones */
+@media (min-width: 322px) {
+  :root {
+    font-size: 100%;
+  }
 }
 
 * {
@@ -118,6 +125,11 @@ textarea {
 .box.invert {
   color: var(--light);
   background-color: var(--dark2);
+}
+
+.box.invert input,
+.box.invert textarea {
+  color: var(--dark);
 }
 
 @media (min-width: 769px) {

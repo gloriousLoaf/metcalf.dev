@@ -1,8 +1,7 @@
-/* Typography */
+/* Typing Effect */
 const typing = document.getElementById('typing');
-let view = '';
-view = window.location.pathname.slice(1) || ' ';
-let typeVals = [];
+const view = window.location.pathname.slice(1) || ' ';
+const typeVals = [];
 switch (view) {
   case ' ':
   case 'index.html':
@@ -22,6 +21,7 @@ let message = typing.innerHTML;
 let mode = true;
 let delay = 500;
 let timeout;
+
 const updateText = (txt) => {
   typing.innerHTML = txt;
 };
@@ -71,32 +71,3 @@ const typer = () => {
   timeout = window.setTimeout(typer, delay);
 };
 timeout = window.setTimeout(typer, delay);
-
-/* Theme Switcher */
-const box = document.querySelector('.box');
-const themeBtn = document.getElementById('theme-btn');
-const ghLogo = document.getElementById('gh-logo');
-
-const lightMode = () => {
-  box.classList.remove('invert');
-  ghLogo.src = './assets/images/gh-dark.png';
-  localStorage.setItem('dark theme', 'off');
-};
-
-const darkMode = () => {
-  box.classList.add('invert');
-  ghLogo.src = './assets/images/gh-light.png';
-  localStorage.setItem('dark theme', 'on');
-};
-
-let themeToken = localStorage.getItem('dark theme');
-const preferDark = () => {
-  darkMode();
-};
-
-themeToken === 'on' && preferDark();
-
-themeBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  box.classList.contains('invert') ? lightMode() : darkMode();
-});
