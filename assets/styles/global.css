@@ -118,10 +118,17 @@ textarea {
   background-color: var(--light);
 }
 
+@media (min-width: 769px) {
+  .box {
+    padding: 1rem 8rem;
+  }
+}
+
 .box * {
   color: inherit;
 }
 
+/* see theme.css for prefers-color-scheme: dark */
 .box.invert {
   color: var(--light);
   background-color: var(--dark2);
@@ -132,10 +139,12 @@ textarea {
   color: var(--dark);
 }
 
-@media (min-width: 769px) {
-  .box {
-    padding: 1rem 8rem;
-  }
+#gh-logo {
+  content: url('../images/gh-dark.png');
+}
+
+.box.invert #gh-logo {
+  content: url('../images/gh-light.png');
 }
 
 .card {

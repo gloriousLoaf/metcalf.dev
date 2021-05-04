@@ -1,0 +1,51 @@
+/* User Scheme Preference */
+@media (prefers-color-scheme: dark) {
+  .box {
+    color: var(--light);
+    background-color: var(--dark2);
+  }
+
+  .box.invert {
+    color: var(--dark);
+    background-color: var(--light);
+  }
+
+  #gh-logo {
+    content: url('../images/gh-light.png');
+  }
+
+  .box.invert #gh-logo {
+    content: url('../images/gh-dark.png');
+  }
+
+  /* cards */
+  .card {
+    border: 2px solid var(--primary);
+    box-shadow: var(--dark) 12px 12px 0px 0px;
+  }
+
+  .box.invert .card {
+    border: 2px solid var(--secondary);
+    box-shadow: var(--primary) 12px 12px 0px 0px;
+  }
+
+  input,
+  textarea {
+    color: var(--dark) !important;
+  }
+
+  /* contact form submit button */
+  section button {
+    border: 2px solid var(--primary);
+    background-color: var(--secondary);
+    box-shadow: var(--dark) 4px 4px 0px 0px;
+  }
+
+  .box.invert section button {
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--light);
+    border: 2px solid var(--secondary);
+    box-shadow: var(--primary) 4px 4px 0px 0px;
+  }
+}
