@@ -81,20 +81,3 @@ h1 + div + div p:first-of-type {
     text-align: left;
   }
 }
-
-/* User Scheme Preference - contact submit button*/
-/* @media (prefers-color-scheme: dark) {
-  section button {
-    border: 2px solid var(--primary);
-    background-color: var(--secondary);
-    box-shadow: var(--dark) 4px 4px 0px 0px;
-  }
-
-  .box.invert section button {
-    font-size: 1rem;
-    color: var(--white);
-    background-color: var(--light);
-    border: 2px solid var(--secondary);
-    box-shadow: var(--primary) 4px 4px 0px 0px;
-  }
-} */

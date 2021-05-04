@@ -10,14 +10,6 @@
     background-color: var(--light);
   }
 
-  #gh-logo {
-    content: url('../images/gh-light.png');
-  }
-
-  .box.invert #gh-logo {
-    content: url('../images/gh-dark.png');
-  }
-
   /* cards */
   .card {
     border: 2px solid var(--primary);
