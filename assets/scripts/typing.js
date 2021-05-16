@@ -7,7 +7,7 @@ switch (view) {
   case 'index.html':
     typeVals.push('metcalf.dev', 'javascript', 'css', 'html', 'metcalf.dev');
     break;
-  case 'portfolio.html':
+  case 'works.html':
     typeVals.push('mongodb', 'express', 'react', 'node', 'metcalf.dev');
     break;
   case 'contact.html':

@@ -1,5 +1,6 @@
 /* PORTFOLIO PAGE */
-h1 + p {
+h1 + p,
+h2 + p:first-of-type {
   text-align: center;
 }
 
@@ -37,8 +38,13 @@ h1 + p + div > div > p:last-of-type {
   font-size: 0.9rem;
 }
 
+h2 + p:first-of-type {
+  text-align: center;
+}
+
 @media (min-width: 769px) {
-  h1 + p {
+  h1 + p,
+  h2 + p:first-of-type {
     text-align: left;
   }
 
