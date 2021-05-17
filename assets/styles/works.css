@@ -38,10 +38,6 @@ h1 + p + div > div > p:last-of-type {
   font-size: 0.9rem;
 }
 
-h2 + p:first-of-type {
-  text-align: center;
-}
-
 @media (min-width: 769px) {
   h1 + p,
   h2 + p:first-of-type {
@@ -53,5 +49,9 @@ h2 + p:first-of-type {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1.5rem;
     row-gap: 1.5rem;
+  }
+
+  h2 + p + p {
+    max-width: 55%;
   }
 }

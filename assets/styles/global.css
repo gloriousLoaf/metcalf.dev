@@ -120,7 +120,7 @@ textarea {
 
 @media (min-width: 769px) {
   .box {
-    padding: 1rem 8rem;
+    padding: 1rem 10%;
   }
 }
 
