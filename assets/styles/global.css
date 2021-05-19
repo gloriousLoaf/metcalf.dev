@@ -45,7 +45,8 @@
 
 /* ELEMENTS */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', 'Verdana', 'Arial', sans-serif;
+  /* line-height: 1.6; */
 }
 
 main {
@@ -128,7 +129,7 @@ textarea {
   color: inherit;
 }
 
-/* see theme.css for prefers-color-scheme: dark */
+/* see scheme.css for prefers-color-scheme: dark */
 .box.invert {
   color: var(--light);
   background-color: var(--dark2);
