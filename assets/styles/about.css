@@ -14,12 +14,29 @@ section > div:nth-child(2) {
   grid-area: about;
 }
 
+/* selfie img */
 main img {
   border: 2px solid var(--secondary);
   border-radius: 50%;
   width: 20rem;
   height: 20rem;
   background-color: #5cfca7;
+  animation: img-scale 0.3s ease;
+}
+
+@keyframes img-scale {
+  0% {
+    transform: scale(0.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main img {
+    animation: none;
+  }
 }
 
 section + section {
