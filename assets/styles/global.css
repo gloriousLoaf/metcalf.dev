@@ -23,6 +23,7 @@
 /* GLOBAL */
 :root {
   --alert: #ef3d36;
+  --alert-desat: #ec5f5a;
   --primary: #1d3f5d;
   --secondary: #45a29e;
   --dark: #000;
@@ -37,13 +38,21 @@
   }
 }
 
+/* text selection styles */
+::selection {
+  background-color: var(--secondary);
+}
+.box.invert ::selection {
+  color: var(--dark);
+}
+
+/* ELEMENTS */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ELEMENTS */
 body {
   font-family: 'Poppings', 'Verdana', 'Arial', sans-serif;
   line-height: 1.6;
@@ -111,7 +120,11 @@ textarea {
 }
 
 /* UTILITIES */
-/* box: container */
+/**
+ * .box inspired by Every Layout: The Box
+ * by Heydon Pickering & Andy Bell
+ * https://every-layout.dev/layouts/box/
+ */
 .box {
   position: relative;
   min-height: 100vh;
@@ -124,7 +137,7 @@ textarea {
   color: inherit;
 }
 
-/* see theme.css for inversions prefers-color-scheme: dark */
+/* see theme.css for system-level inversions - prefers-color-scheme: dark */
 .box.invert {
   color: var(--light);
   background-color: var(--dark2);
