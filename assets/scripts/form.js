@@ -4,10 +4,16 @@ const validator = (email) => {
   return valid.test(email);
 };
 
-/* show confirmation */
+/* form & submission status card elements */
 const confirmCard = document.getElementById('confirm');
 const confirmFocus = document.querySelector('#confirm p');
+const confirmDetails = document.querySelector('#confirm p + p');
+const contactName = document.getElementById('contact-name');
+const contactEmail = document.getElementById('contact-email');
+const contactMsg = document.getElementById('contact-message');
+const lastName = document.getElementById('last-name');
 
+/* show confirmation */
 const confirmSubmission = () => {
   confirmCard.setAttribute('aria-hidden', 'false');
   confirmCard.style.display = 'block';
@@ -15,16 +21,13 @@ const confirmSubmission = () => {
   confirmFocus.focus();
 };
 
-/* hide confirmation */
-const contactName = document.getElementById('contact-name');
-const contactEmail = document.getElementById('contact-email');
-const contactMsg = document.getElementById('contact-message');
-const lastName = document.getElementById('last-name');
-
+/* hide confirmation - reset card values to default success */
 const hideSubmission = () => {
   confirmCard.setAttribute('aria-hidden', 'true');
   confirmCard.style.display = 'none';
   confirmFocus.tabIndex = '-1';
+  confirmFocus.textContent = 'Got it!';
+  confirmDetails.textContent = `Thanks for reaching out. I'll be in touch with you soon.`;
 };
 
 const formFields = [];
@@ -33,6 +36,13 @@ formFields.push(contactName, contactEmail, contactMsg, lastName);
 formFields.forEach((field) => {
   field.addEventListener('focus', hideSubmission);
 });
+
+/* error on submission - change card text for API error cases */
+const errorSubmission = () => {
+  confirmFocus.textContent = 'Sorry, something went wrong.';
+  confirmDetails.textContent =
+    'The database could not be reached, please try again.';
+};
 
 /* Google Sheets API */
 const scriptURL =
@@ -54,7 +64,10 @@ const storeInfo = (e) => {
   } else {
     fetch(scriptURL, { method: 'POST', mode: 'cors', body: new FormData(form) })
       .then((response) => console.log('Success!', response))
-      .catch((error) => console.error('Error!', error.message));
+      .catch((error) => {
+        console.error('Error!', error.message);
+        errorSubmission();
+      });
     confirmSubmission();
     e.preventDefault(); // prevents additional html validation after submit
     form.reset();
