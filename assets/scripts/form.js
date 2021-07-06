@@ -46,7 +46,7 @@ const errorSubmission = () => {
 
 /* Google Sheets API */
 const scriptURL =
-  'https://script.google.com/macros/s/AKfycbzTAGlHnrDCOfTo_uVvXPDldwTjIWI2PDJ0Bu6bw8f5-4lCrb6u42fP/exec';
+  'https://script.google.com/macros/s/AKfycbw-4FJDjXSkub1HxgiHToP6XKsUox7Zv0JoODnEE9G0YApPjeNXTwTXa0DTk3SW9T3Z/exec';
 const form = document.forms['submit-to-sheet'];
 
 const storeInfo = (e) => {
@@ -62,12 +62,14 @@ const storeInfo = (e) => {
     confirmSubmission();
     form.reset();
   } else {
-    fetch(scriptURL, { method: 'POST', mode: 'cors', body: new FormData(form) })
-      .then((response) => console.log('Success!', response))
-      .catch((error) => {
-        console.error('Error!', error.message);
-        errorSubmission();
-      });
+    fetch(scriptURL, {
+      method: 'POST',
+      mode: 'cors',
+      body: new FormData(form),
+    }).catch((error) => {
+      console.error('Error!', error.message);
+      errorSubmission();
+    });
     confirmSubmission();
     e.preventDefault(); // prevents additional html validation after submit
     form.reset();

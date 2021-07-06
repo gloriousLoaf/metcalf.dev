@@ -1,227 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:image"
-      content="https://metcalf.dev/assets/images/metcalfdev-twittercard.png"
-    />
-    <meta
-      property="og:image:secure_url"
-      content="https://metcalf.dev/assets/images/metcalfdev-twittercard.png"
-    />
-    <meta property="og:image:width" content="1600" />
-    <meta property="og:image:height" content="900" />
-    <meta property="og:image:alt" content="David Metcalf, Web Developer" />
-    <meta property="og:image:type" content="image/png" />
-    <!-- FB OpenGraph Tags -->
-    <meta
-      name="title"
-      property="og:title"
-      content="David Metcalf, Web Developer"
-    />
-    <meta
-      name="description"
-      property="og:description"
-      content="A frequently updated portfolio of my work, with contact form and a brief bio. Thanks for visiting!"
-    />
-    <meta
-      name="image"
-      property="og:image"
-      content="https://metcalf.dev/assets/images/metcalfdev-twittercard.png"
-    />
-    <meta name="url" property="og:url" content="https://metcalf.dev" />
-    <!-- Twitter Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="David Metcalf, Web Developer" />
-    <meta
-      name="twitter:description"
-      content="A frequently updated portfolio of my work, with contact form and a brief bio. Thanks for visiting!"
-    />
-    <meta
-      name="twitter:image"
-      content="https://metcalf.dev/assets/images/metcalfdev-twittercard.png"
-    />
-    <!-- Favicon: Desktops -->
-    <link rel="icon" href="./favicon.png" sizes="16x16" />
-    <link rel="icon" href="./favicon.png" sizes="32x32" />
-    <link rel="icon" href="./favicon.png" sizes="57x57" />
-    <link rel="icon" href="./favicon.png" sizes="76x76" />
-    <link rel="icon" href="./favicon.png" sizes="96x96" />
-    <link rel="icon" href="./favicon.png" sizes="128x128" />
-    <link rel="icon" href="./favicon.png" sizes="192x192" />
-    <link rel="icon" href="./favicon.png" sizes="228x228" />
-    <!-- Favicon: Android -->
-    <link rel="shortcut icon" sizes="196x196" href="./favicon.png" />
-    <!-- Favicon: iOS -->
-    <link rel="apple-touch-icon" href="./favicon.png" sizes="120x120" />
-    <link rel="apple-touch-icon" href="./favicon.png" sizes="152x152" />
-    <link rel="apple-touch-icon" href="./favicon.png" sizes="180x180" />
-    <!-- styles -->
-    <link rel="stylesheet" href="./assets/styles/global.css" />
-    <link rel="stylesheet" href="./assets/styles/contact.css" />
-    <link rel="stylesheet" href="./assets/styles/theme.css" />
-    <title>Contact | metcalf.dev</title>
-  </head>
 
-  <body>
-    <div class="box">
-      <header>
-        <div>
-          <p>
-            &lt;
-            <span id="typing"></span>
-            &nbsp;&#47;&gt;
-          </p>
-          <nav>
-            <ul>
-              <li>
-                <a href="index.html">About</a>
-              </li>
-              <li>
-                <a href="works.html">Works</a>
-              </li>
-              <li>
-                <a href="contact.html" class="current" aria-current="true"
-                  >Contact</a
-                >
-              </li>
-              <li><button id="theme-btn">Theme</button></li>
-            </ul>
-          </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://metcalf.dev/assets/images/metcalfdev-twittercard.png" />
+  <meta property="og:image:secure_url" content="https://metcalf.dev/assets/images/metcalfdev-twittercard.png" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="900" />
+  <meta property="og:image:alt" content="David Metcalf, Web Developer" />
+  <meta property="og:image:type" content="image/png" />
+  <!-- FB OpenGraph Tags -->
+  <meta name="title" property="og:title" content="David Metcalf, Web Developer" />
+  <meta name="description" property="og:description"
+    content="A frequently updated portfolio of my work, with contact form and a brief bio. Thanks for visiting!" />
+  <meta name="image" property="og:image" content="https://metcalf.dev/assets/images/metcalfdev-twittercard.png" />
+  <meta name="url" property="og:url" content="https://metcalf.dev" />
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="David Metcalf, Web Developer" />
+  <meta name="twitter:description"
+    content="A frequently updated portfolio of my work, with contact form and a brief bio. Thanks for visiting!" />
+  <meta name="twitter:image" content="https://metcalf.dev/assets/images/metcalfdev-twittercard.png" />
+  <!-- Favicon: Desktops -->
+  <link rel="icon" href="./favicon.png" sizes="16x16" />
+  <link rel="icon" href="./favicon.png" sizes="32x32" />
+  <link rel="icon" href="./favicon.png" sizes="57x57" />
+  <link rel="icon" href="./favicon.png" sizes="76x76" />
+  <link rel="icon" href="./favicon.png" sizes="96x96" />
+  <link rel="icon" href="./favicon.png" sizes="128x128" />
+  <link rel="icon" href="./favicon.png" sizes="192x192" />
+  <link rel="icon" href="./favicon.png" sizes="228x228" />
+  <!-- Favicon: Android -->
+  <link rel="shortcut icon" sizes="196x196" href="./favicon.png" />
+  <!-- Favicon: iOS -->
+  <link rel="apple-touch-icon" href="./favicon.png" sizes="120x120" />
+  <link rel="apple-touch-icon" href="./favicon.png" sizes="152x152" />
+  <link rel="apple-touch-icon" href="./favicon.png" sizes="180x180" />
+  <!-- styles -->
+  <link rel="stylesheet" href="./assets/styles/global.css" />
+  <link rel="stylesheet" href="./assets/styles/contact.css" />
+  <link rel="stylesheet" href="./assets/styles/theme.css" />
+  <title>Contact | metcalf.dev</title>
+</head>
+
+<body>
+  <div class="box">
+    <header>
+      <div>
+        <p>
+          &lt;
+          <span id="typing"></span>
+          &nbsp;&#47;&gt;
+        </p>
+        <nav>
+          <ul>
+            <li>
+              <a href="index.html">About</a>
+            </li>
+            <li>
+              <a href="works.html">Works</a>
+            </li>
+            <li>
+              <a href="contact.html" class="current" aria-current="true">Contact</a>
+            </li>
+            <li><button id="theme-btn">Theme</button></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Contact card -->
+      <section aria-labelledby="contact">
+        <h1 id="contact">Contact</h1>
+        <div class="card">
+          <p>Send me a message.</p>
+          <div>
+            <noscript>Please enable JavaScript to use this contact form.</noscript>
+          </div>
+          <form name="submit-to-sheet">
+            <label for="contact-name">Name</label>
+            <input name="name" type="text" id="contact-name" required placeholder="Nice to meet you."
+              inputmode="text" />
+            <label for="contact-email">Email - <small>this is not a mailing list</small></label>
+            <input name="email" type="email" id="contact-email" required placeholder="username@somewhere.com"
+              inputmode="email" />
+            <label for="contact-message">Message</label>
+            <textarea name="message" id="contact-message" required placeholder="How can we collaborate?"></textarea>
+            <label for="last-name" id="label-last-name">Last Name</label>
+            <input name="name" type="text" id="last-name" tabindex="-1" placeholder="What is your last name?"
+              autocomplete="off" aria-hidden="true" inputmode="text" />
+            <button type="submit" id="submit">Submit</button>
+          </form>
         </div>
-      </header>
+        <!-- Confirm submission -->
+        <div class="card" id="confirm" aria-hidden="true">
+          <p>Got it!</p>
+          <p>Thanks for reaching out. I'll be in touch with you soon.</p>
+        </div>
+      </section>
 
-      <main>
-        <!-- Contact card -->
-        <section aria-labelledby="contact">
-          <h1 id="contact">Contact</h1>
-          <div class="card">
-            <p>Send me a message.</p>
-            <div>
-              <noscript
-                >Please enable JavaScript to use this contact form.</noscript
-              >
-            </div>
-            <form name="submit-to-sheet">
-              <label for="contact-name">Name</label>
-              <input
-                name="name"
-                type="text"
-                id="contact-name"
-                required
-                placeholder="Nice to meet you."
-                inputmode="text"
-              />
-              <label for="contact-email">Email</label>
-              <input
-                name="email"
-                type="email"
-                id="contact-email"
-                required
-                placeholder="username@somewhere.com"
-                inputmode="email"
-              />
-              <p>(this is not a mailing list)</p>
-              <label for="contact-message">Message</label>
-              <textarea
-                name="message"
-                id="contact-message"
-                required
-                placeholder="How can we collaborate?"
-              ></textarea>
-              <label for="last-name" id="label-last-name">Last Name</label>
-              <input
-                name="name"
-                type="text"
-                id="last-name"
-                tabindex="-1"
-                placeholder="What is your last name?"
-                autocomplete="off"
-                aria-hidden="true"
-                inputmode="text"
-              />
-              <button type="submit" id="submit">Submit</button>
-            </form>
-          </div>
-          <!-- Confirm submission -->
-          <div class="card" id="confirm" aria-hidden="true">
-            <p>Got it!</p>
-            <p>Thanks for reaching out. I'll be in touch with you soon.</p>
-          </div>
-        </section>
+      <!-- Thank you card -->
+      <section>
+        <h2>Thank you for visiting.</h2>
+        <div class="card">
+          <p>
+            Connect with me on
+            <a href="https://www.linkedin.com/in/david-codes/" target="_blank" rel="noopener">LinkedIn</a>.
+          </p>
+          <p>
+            View more of my repositories on
+            <a href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">GitHub</a>.
+          </p>
+          <p>
+            Checkout my experience and skills on my
+            <a href="https://gloriousloaf.github.io/Metcalf-Resume/" target="_blank" rel="noopener">resume</a>.
+          </p>
+          <p>
+            I'm also on Twitter, DMs are open!
+            <a href="https://twitter.com/gloriousLoaf" target="_blank" rel="noopener">@gloriousLoaf</a>.
+          </p>
+          <p>
+            Follow my journey on
+            <a href="https://dev.to/gloriousloaf" target="_blank" rel="noopener">DEV</a>.
+          </p>
+        </div>
+      </section>
+    </main>
 
-        <!-- Thank you card -->
-        <section>
-          <h2>Thank you for visiting.</h2>
-          <div class="card">
-            <p>
-              Connect with me on
-              <a
-                href="https://www.linkedin.com/in/david-codes/"
-                target="_blank"
-                rel="noopener"
-                >LinkedIn</a
-              >.
-            </p>
-            <p>
-              View more of my repositories on
-              <a
-                href="https://github.com/gloriousLoaf"
-                target="_blank"
-                rel="noopener"
-                >GitHub</a
-              >.
-            </p>
-            <p>
-              Checkout my experience and skills on my
-              <a
-                href="https://gloriousloaf.github.io/Metcalf-Resume/"
-                target="_blank"
-                rel="noopener"
-                >resume</a
-              >.
-            </p>
-            <p>
-              I'm also on Twitter, DMs are open!
-              <a
-                href="https://twitter.com/davidmcodes"
-                target="_blank"
-                rel="noopener"
-                >@davidmcodes</a
-              >.
-            </p>
-            <p>
-              Follow my journey on
-              <a
-                href="https://dev.to/gloriousloaf"
-                target="_blank"
-                rel="noopener"
-                >DEV</a
-              >.
-            </p>
-          </div>
-        </section>
-      </main>
+    <!-- Footer -->
+    <footer>
+      <a href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">
+        @gloriousLoaf</a>
+    </footer>
+  </div>
 
-      <!-- Footer -->
-      <footer>
-        <a
-          href="https://github.com/gloriousLoaf"
-          target="_blank"
-          rel="noopener"
-        >
-          @gloriousLoaf</a
-        >
-      </footer>
-    </div>
+  <!-- script -->
+  <script src="./assets/scripts/typing.js"></script>
+  <script src="./assets/scripts/theme.js"></script>
+  <script src="./assets/scripts/form.js"></script>
+</body>
 
-    <!-- script -->
-    <script src="./assets/scripts/typing.js"></script>
-    <script src="./assets/scripts/theme.js"></script>
-    <script src="./assets/scripts/form.js"></script>
-  </body>
 </html>
