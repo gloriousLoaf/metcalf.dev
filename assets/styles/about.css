@@ -20,7 +20,7 @@ main img {
   border-radius: 50%;
   width: 20rem;
   height: 20rem;
-  background-color: #5cfca7;
+  background: linear-gradient(to bottom, #8dfdc1, #5cfca7 60%, #58aba8 80%);
   animation: img-scale 0.3s ease;
 }
 

@@ -1,25 +1,3 @@
-/* FONTS - thanks to: https://google-webfonts-helper.herokuapp.com/ */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local(''),
-    url('../fonts/poppins-v15-latin-regular.woff2') format('woff2'),
-    url('../fonts/poppins-v15-latin-regular.woff') format('woff'),
-    url('../fonts/poppins-v15-latin-regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local(''), url('../fonts/poppins-v15-latin-700.woff2') format('woff2'),
-    url('../fonts/poppins-v15-latin-700.woff') format('woff'),
-    url('../fonts/poppins-v15-latin-700.ttf') format('truetype');
-}
-
 /* GLOBAL */
 :root {
   --alert: #ef3d36;
@@ -54,7 +32,7 @@
 }
 
 body {
-  font-family: 'Poppings', 'Verdana', 'Arial', sans-serif;
+  font-family: 'Overpass', 'Verdana', 'Arial', sans-serif;
   line-height: 1.6;
 }
 
