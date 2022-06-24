@@ -1,83 +1,83 @@
 /* ABOUT PAGE */
 section {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-areas: 'about' 'headshot';
-  justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: 'about' 'headshot';
+    justify-items: center;
 }
 
 section > div:first-child {
-  grid-area: headshot;
+    grid-area: headshot;
 }
 
 section > div:nth-child(2) {
-  grid-area: about;
+    grid-area: about;
 }
 
 /* selfie img */
 main img {
-  border: 2px solid var(--secondary);
-  border-radius: 50%;
-  width: 20rem;
-  height: 20rem;
-  background: linear-gradient(to bottom, #8dfdc1, #5cfca7 60%, #58aba8 80%);
-  animation: img-scale 0.3s ease;
+    border: 2px solid var(--secondary);
+    border-radius: 50%;
+    width: 20rem;
+    height: 20rem;
+    background: linear-gradient(to bottom, #8dfdc1, #5cfca7 60%, #58aba8 80%);
+    animation: img-scale 0.3s ease;
 }
 
 @keyframes img-scale {
-  0% {
-    transform: scale(0.25);
-  }
-  100% {
-    transform: scale(1);
-  }
+    0% {
+        transform: scale(0.25);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  main img {
-    animation: none;
-  }
+    main img {
+        animation: none;
+    }
 }
 
 section + section {
-  display: block;
+    display: block;
 }
 
 h2 + div {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
 }
 
 h2 + div > div {
-  margin-left: 1rem;
+    margin-left: 1rem;
 }
 
 h2 + div p strong {
-  border-bottom: 2px solid var(--alert);
+    border-bottom: 2px solid var(--alert);
 }
 
 @media (min-width: 769px) {
-  section {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: 'about headshot';
-  }
+    section {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 'about headshot';
+    }
 
-  section > div:first-child {
-    grid-area: about;
-  }
+    section > div:first-child {
+        grid-area: about;
+    }
 
-  section > div:nth-child(2) {
-    grid-area: headshot;
-    justify-self: end;
-  }
+    section > div:nth-child(2) {
+        grid-area: headshot;
+        justify-self: end;
+    }
 
-  h2 + div {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+    h2 + div {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
-  h2 + div > div {
-    margin-left: inherit;
-  }
+    h2 + div > div {
+        margin-left: inherit;
+    }
 }
