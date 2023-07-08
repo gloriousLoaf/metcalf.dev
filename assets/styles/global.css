@@ -7,6 +7,7 @@
     --dark: #000;
     --dark2: #191b24;
     --light: #fff;
+    --light2: #d8d8da;
     font-size: 87.5%;
 }
 /* scaling base font to 14px for tiny, ancient phones */
@@ -32,7 +33,7 @@
 }
 
 body {
-    font-family: 'Overpass', 'Verdana', 'Arial', sans-serif;
+    font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
     line-height: 1.6;
 }
 
@@ -81,7 +82,7 @@ button {
 }
 
 ul {
-    list-style-type: '>  ';
+    list-style-type: ">  ";
     padding: 0 0 2rem 1.25rem;
 }
 
@@ -95,6 +96,7 @@ button,
 input,
 textarea {
     font-family: inherit;
+    border-radius: 2px;
 }
 
 /* UTILITIES */
@@ -117,13 +119,14 @@ textarea {
 
 /* see theme.css for system-level inversions - prefers-color-scheme: dark */
 .box.invert {
-    color: var(--light);
+    color: var(--light2);
     background-color: var(--dark2);
 }
 
 .box.invert input,
 .box.invert textarea {
     color: var(--dark);
+    background-color: var(--light2);
 }
 
 @media (min-width: 769px) {
@@ -142,6 +145,7 @@ textarea {
     border: 2px solid var(--secondary);
     box-shadow: var(--primary) 12px 12px 0px 0px;
     animation: card-lift 0.4s ease;
+    border-radius: 2px;
 }
 
 .box.invert .card {

@@ -1,7 +1,7 @@
 /* User Scheme Preference: System-level Dark inversions */
 @media (prefers-color-scheme: dark) {
     .box {
-        color: var(--light);
+        color: var(--light2);
         background-color: var(--dark2);
     }
 
@@ -21,9 +21,15 @@
         box-shadow: var(--primary) 12px 12px 0px 0px;
     }
 
+    .box.invert input,
+    .box.invert textarea {
+        background-color: var(--light);
+    }
+
     input,
     textarea {
         color: var(--dark) !important;
+        background-color: var(--light2);
     }
 
     /* contact form submit button */
