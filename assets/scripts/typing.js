@@ -1,6 +1,6 @@
 /* Typing Effect */
 const typing = document.getElementById('typing');
-const view = window.location.pathname.slice(1) || ' ';
+const view = window.location.pathname?.slice(1) || ' ';
 const typeVals = [];
 switch (view) {
     case ' ':
@@ -25,7 +25,7 @@ let idx = -1;
 let word = '';
 let message = typing.innerHTML;
 let mode = true;
-let delay = 750;
+let delay = 500;
 let timeout;
 
 const updateText = (txt) => {
@@ -60,7 +60,7 @@ const deleter = () => {
 };
 
 const typer = () => {
-    if (!message && typeVals.length) {
+    if (!message) {
         idx++;
         word = typeVals[idx];
         message = '';
