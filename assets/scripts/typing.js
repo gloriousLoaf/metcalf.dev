@@ -60,7 +60,7 @@ const deleter = () => {
 };
 
 const typer = () => {
-    if (!message) {
+    if (!message && typeVals.length) {
         idx++;
         word = typeVals[idx];
         message = '';
