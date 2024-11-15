@@ -46,7 +46,7 @@ section + section {
 h2 + div {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 1rem 0;
 }
 
@@ -71,11 +71,6 @@ h2 + div p strong {
     section > div:nth-child(2) {
         grid-area: headshot;
         justify-self: end;
-    }
-
-    h2 + div {
-        flex-direction: row;
-        justify-content: space-between;
     }
 
     h2 + div > div {
