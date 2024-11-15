@@ -46,6 +46,7 @@ section + section {
 h2 + div {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 1rem 0;
 }
