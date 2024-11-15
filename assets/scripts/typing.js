@@ -33,8 +33,8 @@ const updateText = (txt) => {
 };
 
 const writer = () => {
-    message += word.slice(0, 1);
-    word = word.substr(1);
+    message += word?.slice?.(0, 1);
+    word = word?.substring?.(1);
     updateText(message);
     if (!word.length && idx === typeVals.length - 1) {
         window.clearTimeout(timeout);
