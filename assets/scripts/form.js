@@ -46,7 +46,7 @@ const errorSubmission = () => {
 
 /* Google Sheets API */
 const scriptURL =
-    'https://script.google.com/macros/s/AKfycbw-4FJDjXSkub1HxgiHToP6XKsUox7Zv0JoODnEE9G0YApPjeNXTwTXa0DTk3SW9T3Z/exec';
+    'https://script.google.com/macros/s/1abEv5XyVIzYIMvB-o4p2lJ8QY8fEpNbMr-N94gsEsv_W7PH6peDoVtYi/exec';
 const form = document.forms['submit-to-sheet'];
 
 const storeInfo = (e) => {
