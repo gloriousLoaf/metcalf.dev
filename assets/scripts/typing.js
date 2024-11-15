@@ -25,7 +25,7 @@ let idx = -1;
 let word = '';
 let message = typing.innerHTML;
 let mode = true;
-let delay = 500;
+let delay = 750;
 let timeout;
 
 const updateText = (txt) => {
