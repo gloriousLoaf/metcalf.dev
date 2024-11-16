@@ -79,10 +79,8 @@
                 <h1 id="contact">Contact</h1>
                 <div class="card">
                     <p>Send me a message.</p>
-                    <div>
-                        <noscript>Please enable JavaScript to use this contact form.</noscript>
-                    </div>
-                    <form name="submit-to-sheet">
+
+                    <form action="https://formbold.com/s/ob1Wd" method="POST">
                         <label for="contact-name">Name</label>
                         <input name="name" type="text" id="contact-name" required placeholder="Nice to meet you."
                             inputmode="text" />
@@ -92,17 +90,8 @@
                         <label for="contact-message">Message</label>
                         <textarea name="message" id="contact-message" required
                             placeholder="How can we collaborate?"></textarea>
-                        <label for="last-name" id="label-last-name">Last Name</label>
-                        <input name="name" type="text" id="last-name" tabindex="-1"
-                            placeholder="What is your last name?" autocomplete="off" aria-hidden="true"
-                            inputmode="text" />
-                        <button type="submit" id="submit">Submit</button>
+                        <button type="submit">Submit</button>
                     </form>
-                </div>
-                <!-- Confirm submission -->
-                <div class="card" id="confirm" aria-hidden="true">
-                    <p>Got it!</p>
-                    <p>Thanks for reaching out. I'll be in touch with you soon.</p>
                 </div>
             </section>
 
@@ -141,7 +130,6 @@
     <!-- script -->
     <script src="./assets/scripts/typing.js"></script>
     <script src="./assets/scripts/theme.js"></script>
-    <script src="./assets/scripts/form.js"></script>
 </body>
 
 </html>
