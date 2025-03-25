@@ -51,7 +51,8 @@ h1 + p + div > div > p:last-of-type {
         row-gap: 1.5rem;
     }
 
+    h1 + p,
     h2 + p + p {
-        max-width: 55%;
+        max-width: 50%;
     }
 }
