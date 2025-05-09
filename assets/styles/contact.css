@@ -1,86 +1,86 @@
 /* CONTACT PAGE */
 h1 + div > p {
-    text-align: center;
+  text-align: center;
 }
 
 label {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 input {
-    padding: 0.5rem;
-    border: 1px solid;
-    font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid;
+  font-size: 1rem;
 }
 
 textarea {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    resize: vertical;
-    border: 1px solid;
-    font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  resize: vertical;
+  border: 1px solid;
+  font-size: 1rem;
 }
 
 input:focus,
 textarea:focus {
-    outline: 2px solid var(--secondary);
+  outline: 2px solid var(--secondary);
 }
 
 label:last-of-type,
 input:last-of-type {
-    display: none;
+  display: none;
 }
 
 form p {
-    font-size: 0.75rem;
+  font-size: 0.75rem;
 }
 
 section button {
-    font-size: 1rem;
-    color: var(--white);
-    background-color: inherit;
-    width: min-content;
-    padding: 0.5rem 1rem;
-    border: 2px solid var(--secondary);
-    box-shadow: var(--primary) 4px 4px 0px 0px;
-    transition: all 0.3s ease;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: inherit;
+  width: min-content;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--secondary);
+  box-shadow: var(--primary) 4px 4px 0px 0px;
+  transition: all 0.3s ease;
 }
 
 .box.invert section button {
-    border: 2px solid var(--primary);
-    background-color: var(--secondary);
-    box-shadow: var(--dark) 4px 4px 0px 0px;
+  border: 2px solid var(--primary);
+  background-color: var(--secondary);
+  box-shadow: var(--dark) 4px 4px 0px 0px;
 }
 
 section button:hover,
 section button:focus,
 .box.invert section button:hover,
 .box.invert section button:focus {
-    cursor: pointer;
-    transform: translate(4px, 4px);
-    box-shadow: none;
+  cursor: pointer;
+  transform: translate(4px, 4px);
+  box-shadow: none;
 }
 
 /* 'Got it!' dynamic card, see form.js */
 h1 + div + div {
-    display: none;
+  display: none;
 }
 
 h1 + div + div p:first-of-type {
-    outline: none;
-    font-size: 1.25rem;
-    font-weight: 600;
+  outline: none;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 @media (min-width: 769px) {
-    main {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 1.5rem;
-        row-gap: 1.5rem;
-    }
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+  }
 
-    h1 + div > p {
-        text-align: left;
-    }
+  h1 + div > p {
+    text-align: left;
+  }
 }

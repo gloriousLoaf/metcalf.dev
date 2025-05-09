@@ -1,102 +1,103 @@
 /* GLOBAL */
 :root {
-    --alert: #ef3d36;
-    --alert-desat: #ec5f5a;
-    --primary: #1d3f5d;
-    --secondary: #45a29e;
-    --dark: #000;
-    --dark2: #191b24;
-    --light: #fff;
-    --light2: #d8d8da;
-    font-size: 87.5%;
+  --alert: #ef3d36;
+  --alert-desat: #ec5f5a;
+  --primary: #1d3f5d;
+  --secondary: #45a29e;
+  --dark: #000;
+  --dark2: #191b24;
+  --light: #fff;
+  --light2: #d8d8da;
+  font-size: 87.5%;
 }
 /* scaling base font to 14px for tiny, ancient phones */
 @media (min-width: 322px) {
-    :root {
-        font-size: 100%;
-    }
+  :root {
+    font-size: 100%;
+  }
 }
 
 /* text selection styles */
 ::selection {
-    background-color: var(--secondary);
+  background-color: var(--secondary);
 }
 .box.invert ::selection {
-    color: var(--dark);
+  color: var(--dark);
 }
 
 /* ELEMENTS */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
-    line-height: 1.6;
+  font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+    sans-serif;
+  line-height: 1.6;
 }
 
 main {
-    padding: 2rem 0;
+  padding: 2rem 0;
 }
 
 section {
-    margin: 1rem 0 2rem;
+  margin: 1rem 0 2rem;
 }
 
 h1,
 h2 {
-    padding: 0.75rem 0;
-    text-align: center;
+  padding: 0.75rem 0;
+  text-align: center;
 }
 
 @media (min-width: 769px) {
-    h1,
-    h2 {
-        text-align: left;
-    }
+  h1,
+  h2 {
+    text-align: left;
+  }
 }
 
 p {
-    padding: 0.5rem 0;
+  padding: 0.5rem 0;
 }
 
 p a {
-    padding-bottom: 0.1rem;
-    border-bottom: 2px solid var(--secondary);
+  padding-bottom: 0.1rem;
+  border-bottom: 2px solid var(--secondary);
 }
 
 p a:hover,
 p a:focus {
-    font-weight: 600;
-    border-bottom: 2px solid var(--alert);
+  font-weight: 600;
+  border-bottom: 2px solid var(--alert);
 }
 
 a,
 button {
-    outline: none;
-    border: none;
-    text-decoration: none;
-    transition: all 0.1s ease;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.1s ease;
 }
 
 ul {
-    list-style-type: ">  ";
-    padding: 0 0 2rem 1.25rem;
+  list-style-type: ">  ";
+  padding: 0 0 2rem 1.25rem;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 button,
 input,
 textarea {
-    font-family: inherit;
-    border-radius: 2px;
+  font-family: inherit;
+  border-radius: 2px;
 }
 
 /* UTILITIES */
@@ -106,184 +107,184 @@ textarea {
  * https://every-layout.dev/layouts/box/
  */
 .box {
-    position: relative;
-    min-height: 100vh;
-    padding: 1rem;
-    color: var(--dark);
-    background-color: var(--light);
+  position: relative;
+  min-height: 100vh;
+  padding: 1rem;
+  color: var(--dark);
+  background-color: var(--light);
 }
 
 .box * {
-    color: inherit;
+  color: inherit;
 }
 
 /* see theme.css for system-level inversions - prefers-color-scheme: dark */
 .box.invert {
-    color: var(--light2);
-    background-color: var(--dark2);
+  color: var(--light2);
+  background-color: var(--dark2);
 }
 
 .box.invert input,
 .box.invert textarea {
-    color: var(--dark);
-    background-color: var(--light2);
+  color: var(--dark);
+  background-color: var(--light2);
 }
 
 @media (min-width: 769px) {
-    .box {
-        padding: 1rem 10%;
-    }
+  .box {
+    padding: 1rem 10%;
+  }
 }
 
 /* card */
 .card {
-    contain: content;
-    content-visibility: auto;
-    width: 100%;
-    margin: 1rem 0;
-    padding: 1rem;
-    background-clip: border-box;
-    border: 2px solid var(--secondary);
-    box-shadow: var(--primary) 12px 12px 0px 0px;
-    animation: card-lift 0.4s ease;
-    border-radius: 2px;
+  contain: content;
+  content-visibility: auto;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-clip: border-box;
+  border: 2px solid var(--secondary);
+  box-shadow: var(--primary) 12px 12px 0px 0px;
+  animation: card-lift 0.4s ease;
+  border-radius: 2px;
 }
 
 .box.invert .card {
-    border: 2px solid var(--primary);
-    box-shadow: var(--dark) 12px 12px 0px 0px;
-    animation: card-lift-invert 0.4s ease;
+  border: 2px solid var(--primary);
+  box-shadow: var(--dark) 12px 12px 0px 0px;
+  animation: card-lift-invert 0.4s ease;
 }
 
 @keyframes card-lift {
-    0% {
-        box-shadow: none;
-        transform: translateX(12px) translateY(12px);
-    }
-    100% {
-        box-shadow: var(--primary) 12px 12px 0px 0px;
-        transform: translateX(0px) translateY(0px);
-    }
+  0% {
+    box-shadow: none;
+    transform: translateX(12px) translateY(12px);
+  }
+  100% {
+    box-shadow: var(--primary) 12px 12px 0px 0px;
+    transform: translateX(0px) translateY(0px);
+  }
 }
 
 @keyframes card-lift-invert {
-    0% {
-        box-shadow: none;
-        transform: translateX(12px) translateY(12px);
-    }
-    100% {
-        box-shadow: var(--dark) 12px 12px 0px 0px;
-        transform: translateX(0px) translateY(0px);
-    }
+  0% {
+    box-shadow: none;
+    transform: translateX(12px) translateY(12px);
+  }
+  100% {
+    box-shadow: var(--dark) 12px 12px 0px 0px;
+    transform: translateX(0px) translateY(0px);
+  }
 }
 
 @media (min-width: 769px) {
-    .card {
-        margin: 0 0 1rem 0;
-    }
+  .card {
+    margin: 0 0 1rem 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .card,
-    .box.invert .card {
-        animation: none;
-    }
+  .card,
+  .box.invert .card {
+    animation: none;
+  }
 }
 
 /* HEADER & NAV */
 header {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 header > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header nav,
 header p {
-    padding: 0 0 0.5rem 0;
-    padding: 0.5rem 0;
+  padding: 0 0 0.5rem 0;
+  padding: 0.5rem 0;
 }
 
 nav ul {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-    padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 0;
 }
 
 nav li {
-    padding: 0 0.5rem;
+  padding: 0 0.5rem;
 }
 
 nav li a:hover,
 nav li a:focus {
-    border-bottom: 3px solid var(--alert);
+  border-bottom: 3px solid var(--alert);
 }
 
 nav .current {
-    border-bottom: 3px solid var(--secondary);
+  border-bottom: 3px solid var(--secondary);
 }
 
 nav li button {
-    cursor: pointer;
-    font-size: inherit;
-    background-color: transparent;
-    border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-size: inherit;
+  background-color: transparent;
+  border-bottom: 3px solid transparent;
 }
 
 nav li button:hover,
 nav li button:focus {
-    outline: none;
-    border-bottom: 3px solid var(--alert);
+  outline: none;
+  border-bottom: 3px solid var(--alert);
 }
 
 @media (min-width: 769px) {
-    header > div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+  header > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 /* FOOTER */
 footer {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 4rem;
-    text-align: center;
-    padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 4rem;
+  text-align: center;
+  padding: 1rem;
 }
 
 footer a {
-    display: inline-block;
-    padding-bottom: 0.1rem;
-    border-bottom: 2px solid var(--secondary);
-    transition: all 0.5s ease;
+  display: inline-block;
+  padding-bottom: 0.1rem;
+  border-bottom: 2px solid var(--secondary);
+  transition: all 0.5s ease;
 }
 
 footer a:hover,
 footer a:focus {
-    font-weight: 600;
-    border-bottom: 2px solid var(--alert);
-    margin: 0 0.25rem;
-    letter-spacing: 0.08rem;
-    animation: wiggle 0.5s linear;
+  font-weight: 600;
+  border-bottom: 2px solid var(--alert);
+  margin: 0 0.25rem;
+  letter-spacing: 0.08rem;
+  animation: wiggle 0.5s linear;
 }
 
 @keyframes wiggle {
-    0%,
-    40%,
-    100% {
-        transform: rotateZ(-2deg);
-    }
-    20%,
-    60%,
-    80% {
-        transform: rotateZ(2deg);
-    }
+  0%,
+  40%,
+  100% {
+    transform: rotateZ(-2deg);
+  }
+  20%,
+  60%,
+  80% {
+    transform: rotateZ(2deg);
+  }
 }

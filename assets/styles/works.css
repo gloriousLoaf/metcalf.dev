@@ -1,58 +1,58 @@
 /* PORTFOLIO PAGE */
 h1 + p,
 h2 + p:first-of-type {
-    text-align: center;
+  text-align: center;
 }
 
 h1 + p + div > div {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 div > a {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 div > a,
 div > a > img {
-    transition: all 0.1s ease;
+  transition: all 0.1s ease;
 }
 
 div > a > img {
-    width: 15rem;
-    height: 15rem;
+  width: 15rem;
+  height: 15rem;
 }
 
 div > a:hover,
 div > a:focus {
-    outline: 3px dotted var(--alert);
-    transform: scale(0.95);
+  outline: 3px dotted var(--alert);
+  transform: scale(0.95);
 }
 
 h1 + p + div > div > p:first-of-type {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 h1 + p + div > div > p:last-of-type {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 @media (min-width: 769px) {
-    h1 + p,
-    h2 + p:first-of-type {
-        text-align: left;
-    }
+  h1 + p,
+  h2 + p:first-of-type {
+    text-align: left;
+  }
 
-    h1 + p + div {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 1.5rem;
-        row-gap: 1.5rem;
-    }
+  h1 + p + div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+  }
 
-    h1 + p,
-    h2 + p + p {
-        max-width: 50%;
-    }
+  h1 + p,
+  h2 + p + p {
+    max-width: 50%;
+  }
 }
