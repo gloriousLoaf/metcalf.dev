@@ -30,7 +30,8 @@ div > a:focus {
   transform: scale(0.95);
 }
 
-h1 + p + div > div > p:first-of-type {
+h1 + p + div > div > p:first-of-type,
+section:nth-of-type(2) > div > .card > p:first-of-type {
   font-size: 1.25rem;
 }
 
@@ -49,6 +50,10 @@ h1 + p + div > div > p:last-of-type {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1.5rem;
     row-gap: 1.5rem;
+  }
+
+  section:nth-of-type(2) > div > .card {
+    width: 50%;
   }
 
   /* h1 + p, */
