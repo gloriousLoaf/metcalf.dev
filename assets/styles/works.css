@@ -24,10 +24,11 @@ div > a > img {
   height: 15rem;
 }
 
-div > a:hover,
-div > a:focus {
-  outline: 3px dotted var(--alert);
+div > a:hover > img,
+div > a:focus > img {
+  outline: 2px dotted var(--alert);
   transform: scale(0.95);
+  border-radius: 0.25rem;
 }
 
 h1 + p + div > div > p:first-of-type,
