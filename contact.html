@@ -97,15 +97,25 @@
                         <input name="name" type="text" id="last-name" tabindex="-1"
                             placeholder="What is your last name?" autocomplete="off" aria-hidden="true"
                             inputmode="text" />
-                        <button type="submit" id="submit">Submit</button>
+                        <button type="submit" id="submit">
+                            <span class="button-text">Submit</span>
+                            <span class="button-loader" aria-hidden="true">
+                                <span class="loader-dot"></span>
+                                <span class="loader-dot"></span>
+                                <span class="loader-dot"></span>
+                            </span>
+                        </button>
                     </form>
                 </div>
 
                 <!-- Confirm submission -->
-                <div class="card" id="confirm" aria-hidden="true">
-                    <p>Got it!</p>
-                    <p>Thanks for reaching out. I'll be in touch with you soon.</p>
-                </div>
+                <dialog id="confirm-dialog" aria-hidden="true">
+                    <div class="card">
+                        <p id="confirm-title">Got it!</p>
+                        <p id="confirm-message">Thanks for reaching out. I'll be in touch with you soon.</p>
+                        <button id="close-dialog" aria-label="Close dialog">Close</button>
+                    </div>
+                </dialog>
             </section>
 
             <!-- Thank you card -->

@@ -288,3 +288,122 @@ footer a:focus {
     transform: rotateZ(2deg);
   }
 }
+
+/* dialog */
+dialog {
+  padding: 0;
+  border: none;
+  background: transparent;
+  width: min(422px, 90%);
+  margin: auto;
+  display: none; /* Hide by default */
+}
+
+dialog[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+}
+
+/* More specific selector to override card animation */
+dialog > .card {
+  margin: 0;
+  animation: none !important;
+  box-shadow: var(--primary) 12px 12px 0px 0px;
+  background-color: var(--light);
+  width: 100%;
+}
+
+.box.invert dialog > .card {
+  box-shadow: var(--dark) 12px 12px 0px 0px;
+  background-color: var(--dark2);
+}
+
+dialog #close-dialog {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary);
+  color: var(--light);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+dialog #close-dialog:hover,
+dialog #close-dialog:focus {
+  background-color: var(--alert);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  dialog::backdrop {
+    backdrop-filter: none;
+  }
+}
+
+/* Loading state */
+#submit {
+  position: relative;
+  min-height: 2.5rem;
+}
+
+#submit.loading {
+  cursor: wait;
+}
+
+#submit .button-text {
+  display: inline-block;
+  transition: opacity 0.2s ease;
+}
+
+#submit.loading .button-text {
+  opacity: 0;
+}
+
+#submit .button-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+#submit.loading .button-loader {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.loader-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: currentColor;
+  border-radius: 50%;
+  animation: loader-bounce 0.6s infinite;
+}
+
+.loader-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loader-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes loader-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader-dot {
+    animation: none;
+  }
+}

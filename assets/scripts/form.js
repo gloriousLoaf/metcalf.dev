@@ -4,81 +4,107 @@ const validator = (email) => {
   return valid.test(email);
 };
 
-/* form & submission status card elements */
+/* form & dialog elements */
 const form = document.forms["submit-to-sheet"];
-const confirmCard = document.getElementById("confirm");
-const confirmFocus = document.querySelector("#confirm p");
-const confirmDetails = document.querySelector("#confirm p + p");
+const dialog = document.getElementById("confirm-dialog");
+const confirmTitle = document.getElementById("confirm-title");
+const confirmMessage = document.getElementById("confirm-message");
+const closeDialog = document.getElementById("close-dialog");
 const contactName = document.getElementById("contact-name");
 const contactEmail = document.getElementById("contact-email");
 const contactMsg = document.getElementById("contact-message");
 const lastName = document.getElementById("last-name");
+const submitButton = document.getElementById("submit");
 
 /* show confirmation */
 const confirmSubmission = () => {
-  confirmCard.setAttribute("aria-hidden", "false");
-  confirmCard.style.display = "block";
-  confirmFocus.tabIndex = "0";
-  confirmFocus.focus();
+  dialog.removeAttribute("aria-hidden");
+  dialog.showModal();
+  // Prevent the close button from getting focus
+  closeDialog.blur();
 };
 
-/* hide confirmation - reset card values to default success */
+/* hide confirmation */
 const hideSubmission = () => {
-  confirmCard.setAttribute("aria-hidden", "true");
-  confirmCard.style.display = "none";
-  confirmFocus.tabIndex = "-1";
-  confirmFocus.textContent = "Got it!";
-  confirmDetails.textContent = `Thanks for reaching out. I'll be in touch with you soon.`;
+  dialog.setAttribute("aria-hidden", "true");
+  dialog.close();
 };
 
-const formFields = [];
-formFields.push(form, contactName, contactEmail, contactMsg, lastName);
-
-formFields.forEach((field) => {
-  field.addEventListener("focus", hideSubmission);
-});
-
-/* error on submission - change card text for server error cases */
+/* error on submission - change dialog text for server error cases */
 const errorSubmission = () => {
-  confirmFocus.textContent = "Sorry, something went wrong.";
-  confirmDetails.textContent =
+  confirmTitle.textContent = "Sorry, something went wrong.";
+  confirmMessage.textContent =
     "The database could not be reached, please try again.";
 };
 
 /* form submission */
 const scriptURL = "https://formbold.com/s/ob1Wd";
 
-const storeInfo = (e) => {
+const setLoading = (isLoading) => {
+  submitButton.classList.toggle("loading", isLoading);
+  submitButton.disabled = isLoading;
+};
+
+const storeInfo = async (e) => {
+  e.preventDefault();
+  // basic validation
   if (
     contactName.value === "" ||
     contactEmail.value === "" ||
     contactMsg.value === ""
   ) {
     return;
-  } else if (!validator(contactEmail.value)) {
+  }
+  // email validation
+  if (!validator(contactEmail.value)) {
     return;
-  } else if (lastName.value) {
+  }
+  // nah
+  if (lastName.value) {
     confirmSubmission();
-    e.preventDefault(); // prevents additional html validation after submit
     form.reset();
-  } else {
-    fetch(scriptURL, {
+    return;
+  }
+
+  try {
+    setLoading(true);
+    const response = await fetch(scriptURL, {
       method: "POST",
       mode: "cors",
       body: new FormData(form),
-    })
-      .then((res) => {
-        if (!res.ok) errorSubmission(); // handle 4xx, 5xx errors
-      })
-      .catch((error) => {
-        console.error("Error!", error.message);
-        errorSubmission();
-      });
+    });
+    // handle 4xx, 5xx errors
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    // only show success dialog after successful submission
     confirmSubmission();
-    e.preventDefault(); // prevent validation
     form.reset();
+  } catch (error) {
+    console.error("Error!", error.message);
+    errorSubmission();
+    confirmSubmission();
+  } finally {
+    setLoading(false);
   }
 };
 
-const submit = document.getElementById("submit");
-submit.addEventListener("click", storeInfo);
+submitButton.addEventListener("click", storeInfo);
+
+// close dialog when clicking the close button
+closeDialog.addEventListener("click", () => {
+  dialog.close();
+});
+
+// close dialog when clicking outside
+dialog.addEventListener("click", (e) => {
+  const dialogDimensions = dialog.getBoundingClientRect();
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    dialog.close();
+  }
+});

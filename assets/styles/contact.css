@@ -9,21 +9,42 @@ label {
 
 input {
   padding: 0.5rem;
-  border: 1px solid;
+  border: 1px solid var(--secondary);
   font-size: 1rem;
+  background-color: var(--light);
+  color: var(--dark);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 textarea {
   margin-bottom: 1rem;
   padding: 0.5rem;
   resize: vertical;
-  border: 1px solid;
+  border: 1px solid var(--secondary);
   font-size: 1rem;
+  background-color: var(--light);
+  color: var(--dark);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 input:focus,
 textarea:focus {
-  outline: 2px solid var(--secondary);
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 2px var(--secondary);
+}
+
+.box.invert input,
+.box.invert textarea {
+  background-color: var(--dark);
+  color: var(--light2);
+  border-color: var(--primary);
+}
+
+.box.invert input:focus,
+.box.invert textarea:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 2px var(--secondary);
 }
 
 label:last-of-type,
