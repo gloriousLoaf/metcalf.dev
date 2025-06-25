@@ -99,6 +99,7 @@ div > a:focus > .image-container > img {
 section[aria-labelledby="please-to-begin"] > div > div.card > p:first-of-type,
 section[aria-labelledby="portfolio"] > div > div.card > p:first-of-type {
   font-size: 1.25rem;
+  font-weight: 600;
 }
 
 h1 + p + div > div > p:last-of-type {
