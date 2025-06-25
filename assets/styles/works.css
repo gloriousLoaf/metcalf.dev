@@ -1,24 +1,45 @@
 /* PORTFOLIO PAGE */
-h1 + p,
-h2 + p:first-of-type {
-  text-align: center;
+/* Beyond This Page */
+section[aria-labelledby="beyond-this-page"] > div > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-h1 + p + div > div {
+h1 a {
+  padding-bottom: 0.1rem;
+  border-bottom: 2px solid var(--secondary);
+}
+
+h1 a:hover,
+h1 a:focus {
+  color: var(--secondary);
+  border-bottom: 2px solid var(--alert);
+}
+
+.box.invert h1 a:hover,
+.box.invert h1 a:focus {
+  border-bottom: 2px solid var(--alert-desat);
+}
+
+/* Generic Card */
+div.card {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
 
-div > a {
+div.card > a {
   display: flex;
   justify-content: center;
 }
 
-div > a,
-div > a > img {
+div.card > a,
+div.card > a > img {
   transition: all 0.1s ease;
 }
 
+/* Image Container, Skeleton, Loading */
 .image-container {
   position: relative;
   width: 15rem;
@@ -74,8 +95,9 @@ div > a:focus > .image-container > img {
   transform: scale(0.95);
 }
 
-h1 + p + div > div > p:first-of-type,
-section:nth-of-type(2) > div > .card > p:first-of-type {
+/* Please To Begin & Portfolio Cards */
+section[aria-labelledby="please-to-begin"] > div > div.card > p:first-of-type,
+section[aria-labelledby="portfolio"] > div > div.card > p:first-of-type {
   font-size: 1.25rem;
 }
 
@@ -83,25 +105,16 @@ h1 + p + div > div > p:last-of-type {
   font-size: 0.9rem;
 }
 
+/* Grid Layout */
 @media (min-width: 769px) {
-  h1 + p,
-  h2 + p:first-of-type {
-    text-align: left;
-  }
-
-  h1 + p + div {
+  section[aria-labelledby="portfolio"] > div {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1.5rem;
     row-gap: 1.5rem;
   }
 
-  section:nth-of-type(2) > div > .card {
+  section[aria-labelledby="please-to-begin"] > div > .card {
     width: 50%;
-  }
-
-  /* h1 + p, */
-  h2 + p + p {
-    max-width: 55%;
   }
 }

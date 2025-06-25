@@ -1,6 +1,6 @@
 /* CONTACT PAGE */
 h1 + div > p {
-  text-align: center;
+  font-weight: 600;
 }
 
 label {
