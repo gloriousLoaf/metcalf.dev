@@ -1,73 +1,60 @@
 /* Typing Effect */
 const typing = document.getElementById("typing");
 const view = window.location.pathname?.slice(1) || " ";
-const typeVals = [];
+let typeVal = "";
+
 switch (view) {
   case " ":
   case "index.html":
-    typeVals.push("metcalf.dev", "javascript", "css", "html", "metcalf.dev");
+    typeVal = "metcalf.dev";
     break;
   case "works.html":
-    typeVals.push("mongodb", "express", "react", "node", "metcalf.dev");
+    typeVal = "metcalf.dev";
     break;
   case "contact.html":
-    typeVals.push("whatup?");
+    typeVal = "whatup?";
     break;
 }
 
-let idx = -1;
-let word = "";
-let message = typing.innerHTML;
-let mode = true;
-let delay = 500;
-let timeout;
+// Check if user prefers reduced motion
+if (
+  window.matchMedia &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
+  // Just display the text immediately without animation
+  typing.innerHTML = typeVal;
+} else {
+  // Run the typing animation
+  let currentIndex = 0;
 
-const updateText = (txt) => {
-  typing.innerHTML = txt;
-};
+  const updateText = (txt) => {
+    typing.innerHTML = txt;
+  };
 
-const writer = () => {
-  message += word?.slice?.(0, 1);
-  word = word?.substring?.(1);
-  updateText(message);
-  if (!word.length && idx === typeVals.length - 1) {
-    window.clearTimeout(timeout);
-    return;
-  }
-  if (!word.length) {
-    mode = false;
-    delay = 1000;
-  } else {
-    delay = 30 + Math.round(Math.random() * 50);
-  }
-};
+  const typeText = () => {
+    if (currentIndex < typeVal.length) {
+      updateText(typeVal.slice(0, currentIndex + 1));
+      currentIndex++;
 
-const deleter = () => {
-  message = message.slice(0, -1);
-  updateText(message);
-  if (!message.length) {
-    mode = true;
-    delay = 750;
-  } else {
-    delay = 30 + Math.round(Math.random() * 100);
-  }
-};
+      // Add stuttering effect with occasional longer pauses
+      let delay;
+      const random = Math.random();
 
-const typer = () => {
-  if (!message) {
-    idx++;
-    word = typeVals[idx];
-    message = "";
-    mode = true;
-  }
-  switch (mode) {
-    case true:
-      writer();
-      break;
-    case false:
-      deleter();
-      break;
-  }
-  timeout = window.setTimeout(typer, delay);
-};
-timeout = window.setTimeout(typer, delay);
+      if (random < 0.1) {
+        // 10% chance of a longer pause (150-300ms) - like a hesitation
+        delay = 150 + Math.round(Math.random() * 150);
+      } else if (random < 0.2) {
+        // 10% chance of a medium pause (80-150ms) - like a brief pause
+        delay = 80 + Math.round(Math.random() * 70);
+      } else {
+        // 80% chance of normal typing speed (40-100ms)
+        delay = 40 + Math.round(Math.random() * 60);
+      }
+
+      setTimeout(typeText, delay);
+    }
+  };
+
+  // Start typing effect with initial delay
+  setTimeout(typeText, 500);
+}
