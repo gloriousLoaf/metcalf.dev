@@ -1,24 +1,32 @@
 /* PORTFOLIO PAGE */
 /* Beyond This Page */
-section[aria-labelledby="beyond-this-page"] > div > div {
+section[aria-labelledby="beyond-this-page"]
+  > div
+  > div#beyond-this-page-header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-h1 a {
+/* Header Links - BTP & PTB */
+h1 a,
+h2 a {
   padding-bottom: 0.1rem;
   border-bottom: 2px solid var(--secondary);
 }
 
 h1 a:hover,
-h1 a:focus {
+h1 a:focus,
+h2 a:hover,
+h2 a:focus {
   color: var(--secondary);
   border-bottom: 2px solid var(--alert);
 }
 
 .box.invert h1 a:hover,
-.box.invert h1 a:focus {
+.box.invert h1 a:focus,
+.box.invert h2 a:hover,
+.box.invert h2 a:focus {
   border-bottom: 2px solid var(--alert-desat);
 }
 
@@ -27,16 +35,27 @@ div.card {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
 }
 
 div.card > a {
   display: flex;
   justify-content: center;
+  margin: 0 auto;
+  width: min-content;
 }
 
-div.card > a,
-div.card > a > img {
-  transition: all 0.1s ease;
+div > a > .image-container > img {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 0.25rem;
+}
+
+div > a:hover > .image-container > img,
+div > a:focus > .image-container > img {
+  outline: 2px dotted var(--alert);
+  transform: scale(0.95);
+  transition: all 0.3s ease-in-out;
 }
 
 /* Image Container, Skeleton, Loading */
@@ -83,19 +102,8 @@ div.card > a > img {
   opacity: 1;
 }
 
-div > a > .image-container > img {
-  width: 15rem;
-  height: 15rem;
-  border-radius: 0.25rem;
-}
-
-div > a:hover > .image-container > img,
-div > a:focus > .image-container > img {
-  outline: 2px dotted var(--alert);
-  transform: scale(0.95);
-}
-
 /* Please To Begin & Portfolio Cards */
+section[aria-labelledby="beyond-this-page"] > div > div.card > p:first-of-type,
 section[aria-labelledby="please-to-begin"] > div > div.card > p:first-of-type,
 section[aria-labelledby="portfolio"] > div > div.card > p:first-of-type {
   font-size: 1.25rem;
@@ -115,7 +123,8 @@ h1 + p + div > div > p:last-of-type {
     row-gap: 1.5rem;
   }
 
-  section[aria-labelledby="please-to-begin"] > div > .card {
+  section[aria-labelledby="please-to-begin"] > div > .card,
+  section[aria-labelledby="beyond-this-page"] > div > .card {
     width: 50%;
   }
 }
