@@ -15,6 +15,11 @@ h2 a {
   border-bottom: 2px solid var(--secondary);
 }
 
+h1,
+h2 {
+  font-size: 1.5rem;
+}
+
 h1 a:hover,
 h1 a:focus,
 h2 a:hover,
@@ -116,6 +121,13 @@ h1 + p + div > div > p:last-of-type {
 
 /* Grid Layout */
 @media (min-width: 769px) {
+  section[aria-labelledby="btp-ptb"] {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+  }
+
   section[aria-labelledby="portfolio"] > div {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -123,8 +135,8 @@ h1 + p + div > div > p:last-of-type {
     row-gap: 1.5rem;
   }
 
-  section[aria-labelledby="please-to-begin"] > div > .card,
+  /* section[aria-labelledby="please-to-begin"] > div > .card,
   section[aria-labelledby="beyond-this-page"] > div > .card {
     width: 50%;
-  }
+  } */
 }
