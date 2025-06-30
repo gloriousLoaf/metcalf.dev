@@ -48,23 +48,28 @@ p {
   padding: 0.5rem 0;
 }
 
-p a {
+/* UNIFIED LINK STYLING */
+a {
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.1s ease;
+  color: inherit;
   padding-bottom: 0.1rem;
   border-bottom: 2px solid var(--secondary);
 }
 
-p a:hover,
-p a:focus {
+a:hover,
+a:focus {
   color: var(--secondary);
   border-bottom: 2px solid var(--alert);
 }
 
-.box.invert p a:hover,
-.box.invert p a:focus {
+.box.invert a:hover,
+.box.invert a:focus {
   border-bottom: 2px solid var(--alert-desat);
 }
 
-a,
 button {
   outline: none;
   border: none;
@@ -209,9 +214,19 @@ nav li {
   padding: 0 0.5rem;
 }
 
+nav li a {
+  border-bottom: 2px solid transparent;
+}
+
 nav li a:hover,
 nav li a:focus {
+  color: var(--secondary);
   border-bottom: 3px solid var(--alert);
+}
+
+.box.invert nav li a:hover,
+.box.invert nav li a:focus {
+  border-bottom: 3px solid var(--alert-desat);
 }
 
 nav .current {
@@ -223,12 +238,20 @@ nav li button {
   font-size: inherit;
   background-color: transparent;
   border-bottom: 3px solid transparent;
+  color: inherit;
+  border-radius: 0;
 }
 
 nav li button:hover,
 nav li button:focus {
   outline: none;
+  color: var(--secondary);
   border-bottom: 3px solid var(--alert);
+}
+
+.box.invert nav li button:hover,
+.box.invert nav li button:focus {
+  border-bottom: 3px solid var(--alert-desat);
 }
 
 @media (min-width: 769px) {
@@ -255,15 +278,22 @@ footer a {
   padding-bottom: 0.1rem;
   border-bottom: 2px solid var(--secondary);
   transition: all 0.5s ease;
+  color: inherit;
 }
 
 footer a:hover,
 footer a:focus {
+  color: var(--secondary);
   font-weight: 600;
   border-bottom: 2px solid var(--alert);
   margin: 0 0.25rem;
   letter-spacing: 0.08rem;
   animation: wiggle 0.5s linear;
+}
+
+.box.invert footer a:hover,
+.box.invert footer a:focus {
+  border-bottom: 2px solid var(--alert-desat);
 }
 
 @keyframes wiggle {

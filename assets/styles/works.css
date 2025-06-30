@@ -1,38 +1,29 @@
 /* PORTFOLIO PAGE */
-/* Beyond This Page */
-section[aria-labelledby="beyond-this-page"]
-  > div
-  > div#beyond-this-page-header {
+/* Featured Projects Grid */
+.featured-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Featured Card Titles */
+.featured-card .card-title,
+.card .card-title {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.featured-card .card-title img {
+  flex-shrink: 0;
 }
 
 /* Header Links - BTP & PTB */
-h1 a,
-h2 a {
-  padding-bottom: 0.1rem;
-  border-bottom: 2px solid var(--secondary);
-}
-
 h1,
 h2 {
   font-size: 1.5rem;
-}
-
-h1 a:hover,
-h1 a:focus,
-h2 a:hover,
-h2 a:focus {
-  color: var(--secondary);
-  border-bottom: 2px solid var(--alert);
-}
-
-.box.invert h1 a:hover,
-.box.invert h1 a:focus,
-.box.invert h2 a:hover,
-.box.invert h2 a:focus {
-  border-bottom: 2px solid var(--alert-desat);
 }
 
 /* Generic Card */
@@ -50,17 +41,10 @@ div.card > a {
   width: min-content;
 }
 
-div > a > .image-container > img {
+.image-container > img {
   width: 15rem;
   height: 15rem;
   border-radius: 0.25rem;
-}
-
-div > a:hover > .image-container > img,
-div > a:focus > .image-container > img {
-  outline: 2px dotted var(--alert);
-  transform: scale(0.95);
-  transition: all 0.3s ease-in-out;
 }
 
 /* Image Container, Skeleton, Loading */
@@ -68,14 +52,18 @@ div > a:focus > .image-container > img {
   position: relative;
   width: 15rem;
   height: 15rem;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .skeleton {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15rem;
+  height: 15rem;
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
   animation: loading 1.5s infinite;
@@ -108,9 +96,8 @@ div > a:focus > .image-container > img {
 }
 
 /* Please To Begin & Portfolio Cards */
-section[aria-labelledby="beyond-this-page"] > div > div.card > p:first-of-type,
-section[aria-labelledby="please-to-begin"] > div > div.card > p:first-of-type,
-section[aria-labelledby="portfolio"] > div > div.card > p:first-of-type {
+.featured-card .card-title,
+.card .card-title {
   font-size: 1.25rem;
   font-weight: 600;
 }
@@ -121,11 +108,13 @@ h1 + p + div > div > p:last-of-type {
 
 /* Grid Layout */
 @media (min-width: 769px) {
-  section[aria-labelledby="btp-ptb"] {
+  .featured-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1.5rem;
     row-gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
   }
 
   section[aria-labelledby="portfolio"] > div {
@@ -133,10 +122,23 @@ h1 + p + div > div > p:last-of-type {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1.5rem;
     row-gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
   }
 
-  /* section[aria-labelledby="please-to-begin"] > div > .card,
-  section[aria-labelledby="beyond-this-page"] > div > .card {
-    width: 50%;
-  } */
+  /* Ensure grid items don't exceed container width */
+  .featured-grid > .card,
+  section[aria-labelledby="portfolio"] > div > .card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0; /* Allow shrinking */
+  }
+
+  /* Force grid items to respect container bounds */
+  .featured-grid > .card > div,
+  section[aria-labelledby="portfolio"] > div > .card > div {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
 }

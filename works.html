@@ -74,62 +74,45 @@
         </header>
 
         <main>
-            <!-- BTP & PTB -->
-            <section aria-labelledby="btp-ptb">
-                <!-- Beyond This Page -->
-                <section aria-labelledby="beyond-this-page">
-                    <div>
-                        <div id="beyond-this-page-header">
-                            <h1 id="beyond-this-page">
-                                <a href="https://beyondthis.page">
-                                    Beyond This Page
-                                </a>
-                            </h1>
+            <!-- Featured Projects -->
+            <section aria-labelledby="featured-projects">
+                <h1 id="featured-projects">Featured Projects</h1>
+                <div class="featured-grid">
+                    <!-- Beyond This Page -->
+                    <div class="card featured-card">
+                        <div class="image-container">
+                            <div class="skeleton"></div>
+                            <img src="/assets/images/btp.webp" loading="lazy" class="loading"
+                                alt="A close-up of a worn and battered public utility box, with a simple hand-drawn face that appears anxious. The effect is of a robot, uncertain of its purpose.">
+                        </div>
+                        <p class="card-title">
+                            <a href="https://beyondthis.page" target="_blank" rel="noopener">
+                                Beyond This Page
+                            </a>
                             <img src="/assets/images/beyond_this_page.svg"
                                 alt="Beyond This Page logo features a dark teal circular line, bisected by an earthy terra cotta red stripe."
                                 aria-hidden="true" width="48" height="48" />
-                        </div>
-                        <div class="card">
-                            <a href="https://beyondthis.page" target="_blank" rel="noopener">
-                                <div class="image-container">
-                                    <div class="skeleton"></div>
-                                    <img src="/assets/images/btp.webp" loading="lazy" class="loading"
-                                        alt="A close-up of a worn and battered public utility box, with a simple hand-drawn face that appears anxious. The effect is of a robot, uncertain of its purpose.">
-                                </div>
-                            </a>
-                            <p>Beyond This Page</p>
-                            <p>
-                                <a href="https://beyondthis.page">This new project</a> is still taking shape. Pardon the
-                                mess.
-                            </p>
-                        </div>
+                        </p>
+                        <p>
+                            This new project is still taking shape. Pardon the mess.
+                        </p>
                     </div>
-                </section>
 
-                <!-- Please To Begin -->
-                <section aria-labelledby="please-to-begin">
-                    <div>
-                        <h2 id="please-to-begin">
+                    <!-- Please To Begin -->
+                    <div class="card featured-card">
+                        <div class="image-container">
+                            <div class="skeleton"></div>
+                            <img src="/assets/images/jim_metcalf.webp" loading="lazy" class="loading" alt="Jim Metcalf">
+                        </div>
+                        <p class="card-title">
                             <a href="https://www.pleasetobegin.com/" target="_blank" rel="noopener">
                                 Please To Begin
                             </a>
-                        </h2>
-                        <div class="card">
-                            <a href="https://www.pleasetobegin.com/" target="_blank" rel="noopener">
-                                <div class="image-container">
-                                    <div class="skeleton"></div>
-                                    <img src="/assets/images/jim_metcalf.webp" loading="lazy" class="loading"
-                                        alt="Jim Metcalf">
-                                </div>
-                            </a>
-                            <p>Please To Begin</p>
-                            <p>A tribute to my late grandfather, Journalist and Poet <a
-                                    href="https://www.pleasetobegin.com/" target="_blank" rel="noopener">Jim
-                                    Metcalf</a>.
-                            </p>
-                        </div>
+                        </p>
+                        <p>A tribute to my late grandfather, Journalist and Poet Jim Metcalf.
+                        </p>
                     </div>
-                </section>
+                </div>
             </section>
 
             <!-- Portfolio -->
@@ -138,14 +121,16 @@
                 <div>
                     <!-- Writistry -->
                     <div class="card">
-                        <a href="https://writistry.metcalf.dev/" target="_blank" rel="noopener">
-                            <div class="image-container">
-                                <div class="skeleton"></div>
-                                <img src="/assets/images/writistry.webp" loading="lazy" class="loading"
-                                    alt="Link to Writistry app in a new tab; social blogging with markdown. Features an anguled sharpened pencil, ready to write.">
-                            </div>
-                        </a>
-                        <p>Writistry</p>
+                        <div class="image-container">
+                            <div class="skeleton"></div>
+                            <img src="/assets/images/writistry.webp" loading="lazy" class="loading"
+                                alt="Link to Writistry app in a new tab; social blogging with markdown. Features an anguled sharpened pencil, ready to write.">
+                        </div>
+                        <p class="card-title">
+                            <a href="https://writistry.metcalf.dev/" target="_blank" rel="noopener">
+                                Writistry
+                            </a>
+                        </p>
                         <p>Social blogging with Markdown support. Save your favorite community posts to your reading
                             list.</p>
                         <p>MERN, Redux, Markdown - <a href="https://github.com/gloriousLoaf/Writisry" target="_blank"
@@ -154,14 +139,16 @@
                     </div>
                     <!-- CartMe -->
                     <div class="card">
-                        <a href="https://cartme.metcalf.dev/" target="_blank" rel="noopener">
-                            <div class="image-container">
-                                <div class="skeleton"></div>
-                                <img src="/assets/images/cartme.webp" loading="lazy" class="loading"
-                                    alt="Link to Cart Me app in new tab; figural line-drawing of an orange shopping cart.">
-                            </div>
-                        </a>
-                        <p>Cart•Me</p>
+                        <div class="image-container">
+                            <div class="skeleton"></div>
+                            <img src="/assets/images/cartme.webp" loading="lazy" class="loading"
+                                alt="Link to Cart Me app in new tab; figural line-drawing of an orange shopping cart.">
+                        </div>
+                        <p class="card-title">
+                            <a href="https://cartme.metcalf.dev/" target="_blank" rel="noopener">
+                                Cart•Me
+                            </a>
+                        </p>
                         <p>A MERN stack ecommerce app to shop, leave reviews and checkout with the PayPal Developers
                             API.</p>
                         <p>MERN, Redux, APIs - <a href="https://github.com/gloriousLoaf/CartMe" target="_blank"
@@ -170,14 +157,16 @@
                     </div>
                     <!-- Emoji Runner Lite -->
                     <div class="card">
-                        <a href="https://gloriousloaf.github.io/Emoji-Runner-Lite/" target="_blank" rel="noopener">
-                            <div class="image-container">
-                                <div class="skeleton"></div>
-                                <img src="/assets/images/emoji.webp" loading="lazy" class="loading"
-                                    alt="Emoji Runner with an emoji character.">
-                            </div>
-                        </a>
-                        <p>Emoji Runner Lite</p>
+                        <div class="image-container">
+                            <div class="skeleton"></div>
+                            <img src="/assets/images/emoji.webp" loading="lazy" class="loading"
+                                alt="Emoji Runner with an emoji character.">
+                        </div>
+                        <p class="card-title">
+                            <a href="https://gloriousloaf.github.io/Emoji-Runner-Lite/" target="_blank" rel="noopener">
+                                Emoji Runner Lite
+                            </a>
+                        </p>
                         <p>A desktop twist on the classic runner game with score tracking. Original game
                             linked on landing page.</p>
                         <p>P5JS, Express & MySQL - <a href="https://github.com/gloriousLoaf/Emoji-Runner-Lite"
@@ -185,14 +174,15 @@
                     </div>
                     <!-- Covid-19 Tracker -->
                     <div class="card">
-                        <a href="https://gloriousloaf.github.io/Covid-19-Tracker/" target="_blank" rel="noopener">
-                            <div class="image-container">
-                                <div class="skeleton"></div>
-                                <img src="/assets/images/covid.webp" loading="lazy" class="loading"
-                                    alt="Covid-19 Tracker">
-                            </div>
-                        </a>
-                        <p>Covid-19 Tracker</p>
+                        <div class="image-container">
+                            <div class="skeleton"></div>
+                            <img src="/assets/images/covid.webp" loading="lazy" class="loading" alt="Covid-19 Tracker">
+                        </div>
+                        <p class="card-title">
+                            <a href="https://gloriousloaf.github.io/Covid-19-Tracker/" target="_blank" rel="noopener">
+                                Covid-19 Tracker
+                            </a>
+                        </p>
                         <p>Interactive map, statistics, news and resources. Includes local center testing information.
                         </p>
                         <p>jQuery, Mapbox, APIs - <a href="https://github.com/gloriousLoaf/Covid-19-Tracker"
