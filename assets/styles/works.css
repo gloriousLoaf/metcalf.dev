@@ -117,26 +117,15 @@ h1 + p + div > div > p:last-of-type {
     max-width: 100%;
   }
 
-  section[aria-labelledby="portfolio"] > div {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1.5rem;
-    row-gap: 1.5rem;
-    width: 100%;
-    max-width: 100%;
-  }
-
   /* Ensure grid items don't exceed container width */
-  .featured-grid > .card,
-  section[aria-labelledby="portfolio"] > div > .card {
+  .featured-grid > .card {
     width: 100%;
     max-width: 100%;
     min-width: 0; /* Allow shrinking */
   }
 
   /* Force grid items to respect container bounds */
-  .featured-grid > .card > div,
-  section[aria-labelledby="portfolio"] > div > .card > div {
+  .featured-grid > .card > div {
     width: 100%;
     max-width: 100%;
     overflow: hidden;
