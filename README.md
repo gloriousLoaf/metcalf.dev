@@ -11,6 +11,7 @@
 - [Description](#-description)
 - [Installation](#-installation)
 - [Usage](#-usage)
+- [Contact Form](#-contact-form)
 - [License](#-license)
 - [Questions](#-questions)
 <p>&nbsp;</p>
@@ -35,6 +36,15 @@ If you are interested, feel free to clone this repo and use it for inspiration i
 ## 📲 Usage
 
 Visitors to my site can view some select works from my portfolio; both the GitHub repositories and deployed sites. There is a short bio section to introduce myself. And finally there is a contact form to allow visitors to quickly send my an email without leaving the site. Additionally there are links to view my LinkedIn, GitHub and Twitter, or access me via email in their preferred method.
+
+<p>&nbsp;</p>
+
+## 📬 Contact Form
+
+The contact form posts to a Cloudflare Pages Function, [`functions/api/contact.js`](functions/api/contact.js). It drops honeypot submissions, checks the fields, and forwards them to Formbold, so the Formbold form ID never ships to the browser. There is still no build step: Pages picks up the `functions/` folder on its own.
+
+- **Setup:** in the Pages project, add a secret named `FORMBOLD_FORM_ID` under Settings → Variables and Secrets, for both Production and Preview.
+- **Local testing (optional):** put `FORMBOLD_FORM_ID=...` in a `.dev.vars` file (gitignored) and run `npx wrangler pages dev .` from the repo root.
 
 <p>&nbsp;</p>
 

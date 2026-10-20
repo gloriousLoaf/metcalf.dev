@@ -33,7 +33,8 @@ const errorSubmission = () => {
 };
 
 /* form submission */
-const scriptURL = "https://formbold.com/s/ob1Wd";
+// Cloudflare Pages Function, see functions/api/contact.js
+const scriptURL = "/api/contact";
 
 const setLoading = (isLoading) => {
   submitButton.classList.toggle("loading", isLoading);
@@ -57,7 +58,6 @@ const storeInfo = async (e) => {
     setLoading(true);
     const response = await fetch(scriptURL, {
       method: "POST",
-      mode: "cors",
       body: new FormData(form),
     });
     // handle 4xx, 5xx errors
