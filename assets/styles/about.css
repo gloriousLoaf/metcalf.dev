@@ -14,13 +14,13 @@ section > div:nth-child(2) {
   grid-area: about;
 }
 
-/* selfie img */
+/* selfie img - multiplied over the container's gradient, so the white
+ * backdrop turns teal and the shadows stay dark */
 main img {
-  border: 2px solid var(--secondary);
   border-radius: 50%;
   width: 20rem;
   height: 20rem;
-  background: linear-gradient(to bottom, #8dfdc1, #5cfca7 60%, #58aba8 80%);
+  mix-blend-mode: multiply;
   animation: img-scale 0.3s ease;
 }
 
@@ -83,6 +83,10 @@ h2 + div p strong {
   position: relative;
   width: 320px;
   height: 320px;
+  border-radius: 50%;
+  isolation: isolate;
+  background: var(--portrait);
+  box-shadow: 0 0 0 2px var(--secondary);
 }
 
 .skeleton {

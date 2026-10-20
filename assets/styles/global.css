@@ -5,7 +5,7 @@
   --primary: #1d3f5d;
   --secondary: #45a29e;
   --dark: #000;
-  --dark2: #191b24;
+  --dark2: #14171f;
   --light: #fff;
   --light2: #d8d8da;
   --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono",
@@ -22,6 +22,10 @@
   --button: var(--secondary);
   --skeleton: #22252f;
   --skeleton-shine: #2c303c;
+  --surface: #171c26;
+  --glow: rgb(69 162 158 / 0.13);
+  --pool: rgb(29 63 93 / 0.5);
+  --portrait: linear-gradient(to bottom, #8dfdc1, #45a29e 65%, #1d3f5d);
 }
 
 :root[data-theme="light"] {
@@ -35,6 +39,10 @@
   --button: transparent;
   --skeleton: #f0f0f0;
   --skeleton-shine: #e0e0e0;
+  --surface: var(--light);
+  --glow: rgb(69 162 158 / 0.08);
+  --pool: rgb(29 63 93 / 0.06);
+  --portrait: linear-gradient(to bottom, #8dfdc1, #5cfca7 60%, #58aba8 80%);
 }
 
 /* text selection styles */
@@ -69,6 +77,77 @@ body {
 @media (min-width: 769px) {
   body {
     padding: 1rem 10%;
+  }
+}
+
+/* ATMOSPHERE */
+/* a soft band of light at the slash's angle, and a navy pool below */
+body::before {
+  content: "";
+  position: fixed;
+  top: -10lvh;
+  left: -25%;
+  width: 150%;
+  height: 120lvh;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      107deg,
+      transparent 18%,
+      var(--glow) 32%,
+      transparent 46%
+    ),
+    radial-gradient(ellipse at 30% 115%, var(--pool), transparent 60%);
+  animation: drift 90s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(-8%);
+  }
+  to {
+    transform: translateX(8%);
+  }
+}
+
+/* page to page: a quick crossfade, main rises in */
+@view-transition {
+  navigation: auto;
+}
+
+main {
+  view-transition-name: main;
+}
+
+::view-transition-old(main) {
+  animation: 0.15s ease-in both vt-out;
+}
+
+::view-transition-new(main) {
+  animation: 0.3s ease-out both vt-in;
+}
+
+@keyframes vt-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
+
+  @view-transition {
+    navigation: none;
   }
 }
 
@@ -158,6 +237,7 @@ textarea {
   padding: 1rem;
   background-clip: border-box;
   border: 2px solid var(--line);
+  background-color: var(--surface);
   box-shadow: var(--shadow) 12px 12px 0px 0px;
   animation: card-lift 0.4s ease;
   border-radius: 6px;
