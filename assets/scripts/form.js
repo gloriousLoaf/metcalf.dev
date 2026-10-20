@@ -1,20 +1,15 @@
-/* email validator */
-const validator = (email) => {
-  const valid = /\S+@\S+\.\S+/;
-  return valid.test(email);
-};
-
 /* form & dialog elements */
 const form = document.forms["submit-to-sheet"];
 const dialog = document.getElementById("confirm-dialog");
 const confirmTitle = document.getElementById("confirm-title");
 const confirmMessage = document.getElementById("confirm-message");
 const closeDialog = document.getElementById("close-dialog");
-const contactName = document.getElementById("contact-name");
-const contactEmail = document.getElementById("contact-email");
-const contactMsg = document.getElementById("contact-message");
 const lastName = document.getElementById("last-name");
 const submitButton = document.getElementById("submit");
+
+/* dialog copy for a successful submission, restored before each send */
+const successTitle = confirmTitle.textContent;
+const successMessage = confirmMessage.textContent;
 
 /* show confirmation */
 const confirmSubmission = () => {
@@ -38,27 +33,20 @@ const errorSubmission = () => {
 };
 
 /* form submission */
-const scriptURL = "https://formbold.com/s/ob1Wd";
+// Cloudflare Pages Function, see functions/api/contact.js
+const scriptURL = "/api/contact";
 
 const setLoading = (isLoading) => {
   submitButton.classList.toggle("loading", isLoading);
   submitButton.disabled = isLoading;
 };
 
+// the submit event only fires once the browser's own validation passes
+// (required fields, and the email pattern in contact.html)
 const storeInfo = async (e) => {
   e.preventDefault();
-  // basic validation
-  if (
-    contactName.value === "" ||
-    contactEmail.value === "" ||
-    contactMsg.value === ""
-  ) {
-    return;
-  }
-  // email validation
-  if (!validator(contactEmail.value)) {
-    return;
-  }
+  confirmTitle.textContent = successTitle;
+  confirmMessage.textContent = successMessage;
   // nah
   if (lastName.value) {
     confirmSubmission();
@@ -70,7 +58,6 @@ const storeInfo = async (e) => {
     setLoading(true);
     const response = await fetch(scriptURL, {
       method: "POST",
-      mode: "cors",
       body: new FormData(form),
     });
     // handle 4xx, 5xx errors
@@ -89,7 +76,7 @@ const storeInfo = async (e) => {
   }
 };
 
-submitButton.addEventListener("click", storeInfo);
+form.addEventListener("submit", storeInfo);
 
 // close dialog when clicking the close button
 closeDialog.addEventListener("click", () => {

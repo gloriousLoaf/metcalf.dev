@@ -11,7 +11,7 @@
     <meta property="og:image:width" content="1600" />
     <meta property="og:image:height" content="900" />
     <meta property="og:image:alt" content="David Metcalf, Web Developer" />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:type" content="image/webp" />
     <meta name="theme-color" content="#025D5D" />
     <!-- FB OpenGraph Tags -->
     <meta name="title" property="og:title" content="David Metcalf, Web Developer" />
@@ -40,115 +40,120 @@
     <link rel="apple-touch-icon" href="./favicon.png" sizes="120x120" />
     <link rel="apple-touch-icon" href="./favicon.png" sizes="152x152" />
     <link rel="apple-touch-icon" href="./favicon.png" sizes="180x180" />
+    <!-- theme: set before first paint, see assets/scripts/theme.js -->
+    <script>try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; } catch { }</script>
     <!-- styles -->
     <link rel="stylesheet" href="./assets/styles/global.css" />
     <link rel="stylesheet" href="./assets/styles/contact.css" />
-    <link rel="stylesheet" href="./assets/styles/theme.css" />
     <title>Contact | metcalf.dev</title>
 </head>
 
 <body>
-    <div class="box">
-        <header>
-            <div>
-                <p>
-                    &lt;
-                    <span id="typing"></span>
-                    &nbsp;&#47;&gt;
-                </p>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="index.html">About</a>
-                        </li>
-                        <li>
-                            <a href="works.html">Works</a>
-                        </li>
-                        <li>
-                            <a href="contact.html" class="current" aria-current="true">Contact</a>
-                        </li>
-                        <li><button id="theme-btn">Theme</button></li>
-                    </ul>
-                </nav>
+    <header>
+        <div>
+            <p>
+                <svg viewBox="0 0 10 20" aria-hidden="true">
+                    <path d="M8 3 2 10l6 7" pathLength="1" />
+                </svg>
+                <span id="typing"></span>
+                <svg viewBox="0 0 22 20" aria-hidden="true">
+                    <path d="M4 18 9 2" pathLength="1" />
+                    <path d="m14 3 6 7-6 7" pathLength="1" />
+                </svg>
+            </p>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">About</a>
+                    </li>
+                    <li>
+                        <a href="works.html">Works</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" aria-current="page">Contact</a>
+                    </li>
+                    <li><button id="theme-btn">Theme</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Contact card -->
+        <section aria-labelledby="contact">
+            <h1 id="contact">Contact</h1>
+            <div class="card">
+                <p>Send me a message.</p>
+                <div>
+                    <noscript>Please enable JavaScript to use this contact form.</noscript>
+                </div>
+
+                <form name="submit-to-sheet">
+                    <label for="contact-name">Name</label>
+                    <input name="name" type="text" id="contact-name" required placeholder="Nice to meet you."
+                        inputmode="text" />
+                    <label for="contact-email">Email - <small>this is not a mailing list</small></label>
+                    <input name="email" type="email" id="contact-email" required pattern="\S+@\S+\.\S+"
+                        title="An email address, like username@somewhere.com"
+                        placeholder="username@somewhere.com" inputmode="email" />
+                    <label for="contact-message">Message</label>
+                    <textarea name="message" id="contact-message" required
+                        placeholder="How can we collaborate?"></textarea>
+                    <label for="last-name" id="label-last-name">Last Name</label>
+                    <input name="last_name" type="text" id="last-name" tabindex="-1"
+                        placeholder="What is your last name?" autocomplete="off" aria-hidden="true"
+                        inputmode="text" />
+                    <button type="submit" id="submit">
+                        <span class="button-text">Submit</span>
+                        <span class="button-loader" aria-hidden="true">
+                            <span class="loader-dot"></span>
+                            <span class="loader-dot"></span>
+                            <span class="loader-dot"></span>
+                        </span>
+                    </button>
+                </form>
             </div>
-        </header>
 
-        <main>
-            <!-- Contact card -->
-            <section aria-labelledby="contact">
-                <h1 id="contact">Contact</h1>
+            <!-- Confirm submission -->
+            <dialog id="confirm-dialog" aria-hidden="true">
                 <div class="card">
-                    <p>Send me a message.</p>
-                    <div>
-                        <noscript>Please enable JavaScript to use this contact form.</noscript>
-                    </div>
-
-                    <form name="submit-to-sheet">
-                        <label for="contact-name">Name</label>
-                        <input name="name" type="text" id="contact-name" required placeholder="Nice to meet you."
-                            inputmode="text" />
-                        <label for="contact-email">Email - <small>this is not a mailing list</small></label>
-                        <input name="email" type="email" id="contact-email" required
-                            placeholder="username@somewhere.com" inputmode="email" />
-                        <label for="contact-message">Message</label>
-                        <textarea name="message" id="contact-message" required
-                            placeholder="How can we collaborate?"></textarea>
-                        <label for="last-name" id="label-last-name">Last Name</label>
-                        <input name="name" type="text" id="last-name" tabindex="-1"
-                            placeholder="What is your last name?" autocomplete="off" aria-hidden="true"
-                            inputmode="text" />
-                        <button type="submit" id="submit">
-                            <span class="button-text">Submit</span>
-                            <span class="button-loader" aria-hidden="true">
-                                <span class="loader-dot"></span>
-                                <span class="loader-dot"></span>
-                                <span class="loader-dot"></span>
-                            </span>
-                        </button>
-                    </form>
+                    <p id="confirm-title">Got it!</p>
+                    <p id="confirm-message">Thanks for reaching out. I'll be in touch with you soon.</p>
+                    <button id="close-dialog" aria-label="Close dialog">Close</button>
                 </div>
+            </dialog>
+        </section>
 
-                <!-- Confirm submission -->
-                <dialog id="confirm-dialog" aria-hidden="true">
-                    <div class="card">
-                        <p id="confirm-title">Got it!</p>
-                        <p id="confirm-message">Thanks for reaching out. I'll be in touch with you soon.</p>
-                        <button id="close-dialog" aria-label="Close dialog">Close</button>
-                    </div>
-                </dialog>
-            </section>
+        <!-- Thank you card -->
+        <section>
+            <h2>Thank you for visiting.</h2>
+            <div class="card">
+                <p>
+                    Connect with me on
+                    <a href="https://www.linkedin.com/in/david-codes/" target="_blank" rel="noopener">LinkedIn</a>.
+                </p>
+                <p>
+                    View more of my repositories on
+                    <a href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">GitHub</a>.
+                </p>
+                <p>
+                    Check out my experience and skills on my
+                    <a href="https://gloriousloaf.github.io/Metcalf-Resume/" target="_blank"
+                        rel="noopener">resume</a>.
+                </p>
+                <p>
+                    Into wine? Check out what I am tasting on
+                    <a href="https://delectable.com/@davidmetcalf" target="_blank" rel="noopener">Delectable</a>.
+                </p>
+            </div>
+        </section>
+    </main>
 
-            <!-- Thank you card -->
-            <section>
-                <h2>Thank you for visiting.</h2>
-                <div class="card">
-                    <p>
-                        Connect with me on
-                        <a href="https://www.linkedin.com/in/david-codes/" target="_blank" rel="noopener">LinkedIn</a>.
-                    </p>
-                    <p>
-                        View more of my repositories on
-                        <a href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">GitHub</a>.
-                    </p>
-                    <p>
-                        Checkout my experience and skills on my
-                        <a href="https://gloriousloaf.github.io/Metcalf-Resume/" target="_blank"
-                            rel="noopener">resume</a>.
-                    </p>
-                    <p>
-                        Into wine? Check out what I am tasting on
-                        <a href="https://delectable.com/@davidmetcalf" target="_blank" rel="noopener">Delectable</a>.
-                    </p>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer>
-            <a href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">
-                @gloriousLoaf</a>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <a href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">
+            @gloriousLoaf</a>
+    </footer>
 
     <!-- scripts -->
     <script src="./assets/scripts/typing.js"></script>

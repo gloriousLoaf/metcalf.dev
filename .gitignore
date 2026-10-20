@@ -1,1 +1,4 @@
 *.DS_Store
+# local secrets for `wrangler pages dev`
+.dev.vars
+.wrangler/

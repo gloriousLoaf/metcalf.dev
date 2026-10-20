@@ -11,7 +11,7 @@
     <meta property="og:image:width" content="1600" />
     <meta property="og:image:height" content="900" />
     <meta property="og:image:alt" content="David Metcalf, Software Engineer" />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:type" content="image/webp" />
     <meta name="theme-color" content="#025D5D" />
     <!-- FB OpenGraph Tags -->
     <meta name="title" property="og:title" content="David Metcalf, Software Engineer" />
@@ -25,7 +25,7 @@
     <meta name="twitter:description"
         content="A frequently updated portfolio of my work, with contact form and a brief bio. Thanks for visiting!" />
     <meta name="twitter:image" content="https://metcalf.dev/assets/images/metcalfdev-twittercard.webp" />
-    <link rel="canonical" href="https://metcalf.dev/index.html" />
+    <link rel="canonical" href="https://metcalf.dev/" />
     <!-- Favicon: Desktops -->
     <link rel="icon" href="./favicon.png" sizes="16x16" />
     <link rel="icon" href="./favicon.png" sizes="32x32" />
@@ -41,138 +41,142 @@
     <link rel="apple-touch-icon" href="./favicon.png" sizes="120x120" />
     <link rel="apple-touch-icon" href="./favicon.png" sizes="152x152" />
     <link rel="apple-touch-icon" href="./favicon.png" sizes="180x180" />
+    <!-- theme: set before first paint, see assets/scripts/theme.js -->
+    <script>try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; } catch { }</script>
     <!-- styles -->
     <link rel="stylesheet" href="./assets/styles/global.css" />
     <link rel="stylesheet" href="./assets/styles/about.css" />
-    <link rel="stylesheet" href="./assets/styles/theme.css" />
     <title>About | metcalf.dev</title>
 </head>
 
 <body>
-    <div class="box">
-        <header>
+    <header>
+        <div>
+            <p>
+                <svg viewBox="0 0 10 20" aria-hidden="true">
+                    <path d="M8 3 2 10l6 7" pathLength="1" />
+                </svg>
+                <span id="typing"></span>
+                <svg viewBox="0 0 22 20" aria-hidden="true">
+                    <path d="M4 18 9 2" pathLength="1" />
+                    <path d="m14 3 6 7-6 7" pathLength="1" />
+                </svg>
+            </p>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html" aria-current="page">About</a>
+                    </li>
+                    <li>
+                        <a href="works.html">Works</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li><button id="theme-btn">Theme</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Welcome -->
+        <section aria-labelledby="welcome">
             <div>
+                <h1 id="welcome">Welcome</h1>
                 <p>
-                    &lt;
-                    <span id="typing"></span>
-                    &nbsp;&#47;&gt;
+                    I'm David Metcalf. Thanks for dropping by my corner of the web!
                 </p>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="index.html" class="current" aria-current="true">About</a>
-                        </li>
-                        <li>
-                            <a href="works.html">Works</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">Contact</a>
-                        </li>
-                        <li><button id="theme-btn">Theme</button></li>
-                    </ul>
-                </nav>
+                <p>
+                    I am a full stack software engineer based in Sacramento, California, with a focus on
+                    <strong>modern, scalable, and accessible frontends</strong>.
+                </p>
+                <p>
+                    My career has spanned tech, sales, and service. I started in restaurants and worked my way up to
+                    running wine programs as a sommelier, and managing a boutique winery. I bring that user-centric
+                    approach to every project I work on.
+                </p>
+                <p>
+                    Check out some works from my <a href="works.html">portfolio</a>.
+                </p>
+                <p>
+                    Ready to <a href="contact.html">start a conversation</a>?
+                </p>
             </div>
-        </header>
 
-        <main>
-            <!-- Welcome -->
-            <section aria-labelledby="welcome">
+            <div>
+                <div class="image-container">
+                    <div class="skeleton"></div>
+                    <img src="./assets/images/loaf.webp" class="loading"
+                        alt="David Metcalf headshot on teal-green color gradient background" width="320px"
+                        height="320px" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section aria-labelledby="skills">
+            <h2 id="skills">Skills</h2>
+            <div class="card">
                 <div>
-                    <h1 id="welcome">Welcome</h1>
-                    <p>
-                        I'm David Metcalf. Thanks for dropping by my corner of the web!
-                    </p>
-                    <p>
-                        I am a full stack software engineer based in Sacramento, California, with a focus on
-                        <strong>modern, scalable, and accessible frontends</strong>.
-                    </p>
-                    <p>
-                        My career has spanned tech, sales, and service. I started in restaurants and worked my way up to
-                        running wine programs as a sommelier, and managing a boutique winery. I bring that user-centric
-                        approach to every project I work on.
-                    </p>
-                    <p>
-                        Checkout some works from my <a href="works.html">portfolio</a>.
-                    </p>
-                    <p>
-                        Ready to <a href="contact.html">start a conversation</a>?
-                    </p>
+                    <p><strong>Frontend:</strong></p>
+                    <ul>
+                        <li>TypeScript</li>
+                        <li>JS ES6+</li>
+                        <li>React</li>
+                        <li>Astro</li>
+                        <li>Svelte</li>
+                    </ul>
                 </div>
-
                 <div>
-                    <div class="image-container">
-                        <div class="skeleton"></div>
-                        <img src="./assets/images/loaf.webp" class="loading"
-                            alt="David Metcalf headshot on teal-green color gradient background" width="320px"
-                            height="320px" />
-                    </div>
+                    <p><strong>Backend:</strong></p>
+                    <ul>
+                        <li>Node</li>
+                        <li>Python</li>
+                        <li>MongoDB</li>
+                        <li>Django</li>
+                        <li>SQL</li>
+                    </ul>
                 </div>
-            </section>
-
-            <!-- Skills -->
-            <section aria-labelledby="skills">
-                <h2 id="skills">Skills</h2>
-                <div class="card">
-                    <div>
-                        <p><strong>Frontend:</strong></p>
-                        <ul>
-                            <li>TypeScript</li>
-                            <li>JS ES6+</li>
-                            <li>React</li>
-                            <li>Astro</li>
-                            <li>Svelte</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <p><strong>Backend:</strong></p>
-                        <ul>
-                            <li>Node</li>
-                            <li>Python</li>
-                            <li>MongoDB</li>
-                            <li>Django</li>
-                            <li>SQL</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <p><strong>Style:</strong></p>
-                        <ul>
-                            <li>CSS3</li>
-                            <li>Sass</li>
-                            <li>Grid & Flex</li>
-                            <li>Tailwind</li>
-                            <li>Bootstrap</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <p><strong>UI:</strong></p>
-                        <ul>
-                            <li>Figma</li>
-                            <li>Storybook</li>
-                            <li>Miro</li>
-                            <li>Canva</li>
-                            <li>DevTools</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <p><strong>Concepts:</strong></p>
-                        <ul>
-                            <li>A11y</li>
-                            <li>OOP & Functional</li>
-                            <li>Data Structures</li>
-                            <li>MVC</li>
-                            <li>ORM</li>
-                        </ul>
-                    </div>
+                <div>
+                    <p><strong>Style:</strong></p>
+                    <ul>
+                        <li>CSS3</li>
+                        <li>Sass</li>
+                        <li>Grid & Flex</li>
+                        <li>Tailwind</li>
+                        <li>Bootstrap</li>
+                    </ul>
                 </div>
-            </section>
-        </main>
+                <div>
+                    <p><strong>UI:</strong></p>
+                    <ul>
+                        <li>Figma</li>
+                        <li>Storybook</li>
+                        <li>Miro</li>
+                        <li>Canva</li>
+                        <li>DevTools</li>
+                    </ul>
+                </div>
+                <div>
+                    <p><strong>Concepts:</strong></p>
+                    <ul>
+                        <li>A11y</li>
+                        <li>OOP & Functional</li>
+                        <li>Data Structures</li>
+                        <li>MVC</li>
+                        <li>ORM</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        <!-- Footer -->
-        <footer>
-            <a href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">
-                @gloriousLoaf</a>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <a href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">
+            @gloriousLoaf</a>
+    </footer>
 
     <!-- scripts -->
     <script src="./assets/scripts/typing.js"></script>
