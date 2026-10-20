@@ -85,9 +85,11 @@ body {
 body::before {
   content: "";
   position: fixed;
+  top: -10%;
   top: -10lvh;
   left: -25%;
   width: 150%;
+  height: 120%;
   height: 120lvh;
   z-index: -1;
   pointer-events: none;
@@ -328,7 +330,7 @@ header p {
 }
 
 header svg {
-  width: auto;
+  width: 0.55em;
   height: 1.1em;
   vertical-align: -0.2em;
   overflow: visible;
@@ -341,6 +343,10 @@ header svg {
 
 header svg path {
   animation: draw 0.3s ease-out both;
+}
+
+header svg + span + svg {
+  width: 1.21em;
 }
 
 header svg + span + svg path:first-child {
