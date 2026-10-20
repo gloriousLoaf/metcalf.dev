@@ -18,6 +18,8 @@
   --hover-line: var(--alert-desat);
   --field: var(--dark);
   --button: var(--secondary);
+  --skeleton: #22252f;
+  --skeleton-shine: #2c303c;
 }
 
 :root[data-theme="light"] {
@@ -29,6 +31,8 @@
   --hover-line: var(--alert);
   --field: var(--light);
   --button: transparent;
+  --skeleton: #f0f0f0;
+  --skeleton-shine: #e0e0e0;
 }
 
 /* text selection styles */
@@ -160,6 +164,50 @@ textarea {
 
 @media (prefers-reduced-motion: reduce) {
   .card {
+    animation: none;
+  }
+}
+
+/* image skeletons, see imageLoader.js - shape and size set per page */
+.skeleton {
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    var(--skeleton) 25%,
+    var(--skeleton-shine) 50%,
+    var(--skeleton) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.skeleton.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.loading {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.loading.loaded {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
     animation: none;
   }
 }

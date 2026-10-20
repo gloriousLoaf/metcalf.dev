@@ -11,7 +11,7 @@
     <meta property="og:image:width" content="1600" />
     <meta property="og:image:height" content="900" />
     <meta property="og:image:alt" content="David Metcalf, Web Developer" />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:type" content="image/webp" />
     <meta name="theme-color" content="#025D5D" />
     <!-- FB OpenGraph Tags -->
     <meta name="title" property="og:title" content="David Metcalf, Web Developer" />
@@ -88,13 +88,14 @@
                     <input name="name" type="text" id="contact-name" required placeholder="Nice to meet you."
                         inputmode="text" />
                     <label for="contact-email">Email - <small>this is not a mailing list</small></label>
-                    <input name="email" type="email" id="contact-email" required
+                    <input name="email" type="email" id="contact-email" required pattern="\S+@\S+\.\S+"
+                        title="An email address, like username@somewhere.com"
                         placeholder="username@somewhere.com" inputmode="email" />
                     <label for="contact-message">Message</label>
                     <textarea name="message" id="contact-message" required
                         placeholder="How can we collaborate?"></textarea>
                     <label for="last-name" id="label-last-name">Last Name</label>
-                    <input name="name" type="text" id="last-name" tabindex="-1"
+                    <input name="last_name" type="text" id="last-name" tabindex="-1"
                         placeholder="What is your last name?" autocomplete="off" aria-hidden="true"
                         inputmode="text" />
                     <button type="submit" id="submit">
@@ -131,7 +132,7 @@
                     <a href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">GitHub</a>.
                 </p>
                 <p>
-                    Checkout my experience and skills on my
+                    Check out my experience and skills on my
                     <a href="https://gloriousloaf.github.io/Metcalf-Resume/" target="_blank"
                         rel="noopener">resume</a>.
                 </p>

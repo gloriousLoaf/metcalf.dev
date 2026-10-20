@@ -60,17 +60,6 @@ section button:focus {
   box-shadow: none;
 }
 
-/* 'Got it!' dynamic card, see form.js */
-h1 + div + div {
-  display: none;
-}
-
-h1 + div + div p:first-of-type {
-  outline: none;
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
 @media (min-width: 769px) {
   main {
     display: grid;

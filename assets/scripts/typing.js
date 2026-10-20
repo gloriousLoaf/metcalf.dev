@@ -1,17 +1,17 @@
 /* Typing Effect */
 const typing = document.getElementById("typing");
-const view = window.location.pathname?.slice(1) || " ";
+// "/contact.html" and "/contact" (Cloudflare's pretty URL) both become "contact"
+const view = window.location.pathname.replace(/^\/|\.html$|\/$/g, "") || "index";
 let typeVal = "";
 
 switch (view) {
-  case " ":
-  case "index.html":
+  case "index":
     typeVal = "metcalf.dev";
     break;
-  case "works.html":
+  case "works":
     typeVal = "metcalf.dev";
     break;
-  case "contact.html":
+  case "contact":
     typeVal = "whatup?";
     break;
 }
