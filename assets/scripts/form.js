@@ -33,7 +33,7 @@ const errorSubmission = () => {
 };
 
 /* form submission */
-// Cloudflare Pages Function, see functions/api/contact.js
+// Cloudflare Pages Function - see functions/api/contact.js
 const scriptURL = "/api/contact";
 
 const setLoading = (isLoading) => {
