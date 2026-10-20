@@ -8,14 +8,33 @@
   --dark2: #191b24;
   --light: #fff;
   --light2: #d8d8da;
+
+  /* theme tokens - dark first, see the inline script in each <head> */
+  color-scheme: dark;
+  --bg: var(--dark2);
+  --fg: var(--light2);
+  --line: var(--primary);
+  --shadow: var(--dark);
+  --hover-line: var(--alert-desat);
+  --field: var(--dark);
+  --button: var(--secondary);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: var(--light);
+  --fg: var(--dark);
+  --line: var(--secondary);
+  --shadow: var(--primary);
+  --hover-line: var(--alert);
+  --field: var(--light);
+  --button: transparent;
 }
 
 /* text selection styles */
 ::selection {
-  background-color: var(--secondary);
-}
-.box.invert ::selection {
   color: var(--dark);
+  background-color: var(--secondary);
 }
 
 /* ELEMENTS */
@@ -25,10 +44,26 @@
   padding: 0;
 }
 
+/**
+ * body as the box, inspired by Every Layout: The Box
+ * by Heydon Pickering & Andy Bell
+ * https://every-layout.dev/layouts/box/
+ */
 body {
+  position: relative;
+  min-height: 100vh;
+  padding: 1rem;
   font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
     sans-serif;
   line-height: 1.6;
+  color: var(--fg);
+  background-color: var(--bg);
+}
+
+@media (min-width: 769px) {
+  body {
+    padding: 1rem 10%;
+  }
 }
 
 main {
@@ -62,12 +97,7 @@ a {
 a:hover,
 a:focus {
   color: var(--secondary);
-  border-bottom: 2px solid var(--alert);
-}
-
-.box.invert a:hover,
-.box.invert a:focus {
-  border-bottom: 2px solid var(--alert-desat);
+  border-bottom: 2px solid var(--hover-line);
 }
 
 button {
@@ -75,6 +105,7 @@ button {
   border: none;
   text-decoration: none;
   transition: all 0.1s ease;
+  color: inherit;
 }
 
 ul {
@@ -96,41 +127,6 @@ textarea {
 }
 
 /* UTILITIES */
-/**
- * .box inspired by Every Layout: The Box
- * by Heydon Pickering & Andy Bell
- * https://every-layout.dev/layouts/box/
- */
-.box {
-  position: relative;
-  min-height: 100vh;
-  padding: 1rem;
-  color: var(--dark);
-  background-color: var(--light);
-}
-
-.box * {
-  color: inherit;
-}
-
-/* see theme.css for system-level inversions - prefers-color-scheme: dark */
-.box.invert {
-  color: var(--light2);
-  background-color: var(--dark2);
-}
-
-.box.invert input,
-.box.invert textarea {
-  color: var(--dark);
-  background-color: var(--light2);
-}
-
-@media (min-width: 769px) {
-  .box {
-    padding: 1rem 10%;
-  }
-}
-
 /* card */
 .card {
   contain: content;
@@ -139,16 +135,10 @@ textarea {
   margin: 1rem 0;
   padding: 1rem;
   background-clip: border-box;
-  border: 2px solid var(--secondary);
-  box-shadow: var(--primary) 12px 12px 0px 0px;
+  border: 2px solid var(--line);
+  box-shadow: var(--shadow) 12px 12px 0px 0px;
   animation: card-lift 0.4s ease;
   border-radius: 6px;
-}
-
-.box.invert .card {
-  border: 2px solid var(--primary);
-  box-shadow: var(--dark) 12px 12px 0px 0px;
-  animation: card-lift-invert 0.4s ease;
 }
 
 @keyframes card-lift {
@@ -157,18 +147,7 @@ textarea {
     transform: translateX(12px) translateY(12px);
   }
   100% {
-    box-shadow: var(--primary) 12px 12px 0px 0px;
-    transform: translateX(0px) translateY(0px);
-  }
-}
-
-@keyframes card-lift-invert {
-  0% {
-    box-shadow: none;
-    transform: translateX(12px) translateY(12px);
-  }
-  100% {
-    box-shadow: var(--dark) 12px 12px 0px 0px;
+    box-shadow: var(--shadow) 12px 12px 0px 0px;
     transform: translateX(0px) translateY(0px);
   }
 }
@@ -180,8 +159,7 @@ textarea {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card,
-  .box.invert .card {
+  .card {
     animation: none;
   }
 }
@@ -199,7 +177,6 @@ header > div {
 
 header nav,
 header p {
-  padding: 0 0 0.5rem 0;
   padding: 0.5rem 0;
 }
 
@@ -221,15 +198,10 @@ nav li a {
 nav li a:hover,
 nav li a:focus {
   color: var(--secondary);
-  border-bottom: 3px solid var(--alert);
+  border-bottom: 3px solid var(--hover-line);
 }
 
-.box.invert nav li a:hover,
-.box.invert nav li a:focus {
-  border-bottom: 3px solid var(--alert-desat);
-}
-
-nav .current {
+nav [aria-current="page"] {
   border-bottom: 3px solid var(--secondary);
 }
 
@@ -238,7 +210,6 @@ nav li button {
   font-size: inherit;
   background-color: transparent;
   border-bottom: 3px solid transparent;
-  color: inherit;
   border-radius: 0;
 }
 
@@ -246,12 +217,7 @@ nav li button:hover,
 nav li button:focus {
   outline: none;
   color: var(--secondary);
-  border-bottom: 3px solid var(--alert);
-}
-
-.box.invert nav li button:hover,
-.box.invert nav li button:focus {
-  border-bottom: 3px solid var(--alert-desat);
+  border-bottom: 3px solid var(--hover-line);
 }
 
 @media (min-width: 769px) {
@@ -285,15 +251,10 @@ footer a:hover,
 footer a:focus {
   color: var(--secondary);
   font-weight: 600;
-  border-bottom: 2px solid var(--alert);
+  border-bottom: 2px solid var(--hover-line);
   margin: 0 0.25rem;
   letter-spacing: 0.08rem;
   animation: wiggle 0.5s linear;
-}
-
-.box.invert footer a:hover,
-.box.invert footer a:focus {
-  border-bottom: 2px solid var(--alert-desat);
 }
 
 @keyframes wiggle {
@@ -313,6 +274,7 @@ footer a:focus {
 dialog {
   padding: 0;
   border: none;
+  color: inherit;
   background: transparent;
   width: min(422px, 90%);
   margin: auto;
@@ -334,14 +296,9 @@ dialog::backdrop {
 dialog > .card {
   margin: 0;
   animation: none !important;
-  box-shadow: var(--primary) 12px 12px 0px 0px;
-  background-color: var(--light);
+  box-shadow: var(--shadow) 12px 12px 0px 0px;
+  background-color: var(--bg);
   width: 100%;
-}
-
-.box.invert dialog > .card {
-  box-shadow: var(--dark) 12px 12px 0px 0px;
-  background-color: var(--dark2);
 }
 
 dialog #close-dialog {

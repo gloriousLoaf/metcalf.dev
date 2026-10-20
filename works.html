@@ -40,127 +40,126 @@
     <link rel="apple-touch-icon" href="./favicon.png" sizes="120x120" />
     <link rel="apple-touch-icon" href="./favicon.png" sizes="152x152" />
     <link rel="apple-touch-icon" href="./favicon.png" sizes="180x180" />
+    <!-- theme: set before first paint, see assets/scripts/theme.js -->
+    <script>try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; } catch { }</script>
     <!-- styles -->
     <link rel="stylesheet" href="./assets/styles/global.css">
     <link rel="stylesheet" href="./assets/styles/works.css" />
-    <link rel="stylesheet" href="./assets/styles/theme.css" />
     <title>Works | metcalf.dev</title>
 </head>
 
 <body>
-    <div class="box">
-        <header>
-            <div>
-                <p>
-                    &lt;
-                    <span id="typing"></span>
-                    &nbsp;&#47;&gt;
-                </p>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="index.html">About</a>
-                        </li>
-                        <li>
-                            <a href="works.html" class="current" aria-current="true">Works</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">Contact</a>
-                        </li>
-                        <li><button id="theme-btn">Theme</button></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+    <header>
+        <div>
+            <p>
+                &lt;
+                <span id="typing"></span>
+                &nbsp;&#47;&gt;
+            </p>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">About</a>
+                    </li>
+                    <li>
+                        <a href="works.html" aria-current="page">Works</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li><button id="theme-btn">Theme</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <main>
-            <!-- Featured Projects -->
-            <section aria-labelledby="featured-projects">
-                <h1 id="featured-projects">Featured Projects</h1>
-                <div class="featured-grid">
-                    <!-- Beyond This Page -->
-                    <div class="card featured-card">
-                        <div class="image-container">
-                            <div class="skeleton"></div>
-                            <img src="/assets/images/btp.webp" loading="lazy" class="loading"
-                                alt="A close-up of a worn and battered public utility box, with a simple hand-drawn face that appears anxious. The effect is of a robot, uncertain of its purpose.">
-                        </div>
-                        <p class="card-title">
-                            <a href="https://beyondthis.page" target="_blank" rel="noopener">
-                                Beyond This Page
-                            </a>
-                            <img src="/assets/images/beyond_this_page.svg"
-                                alt="Beyond This Page logo features a dark teal circular line, bisected by an earthy terra cotta red stripe."
-                                aria-hidden="true" width="48" height="48" />
-                        </p>
-                        <p>
-                            This new project is still taking shape. Pardon the mess.
-                        </p>
+    <main>
+        <!-- Featured Projects -->
+        <section aria-labelledby="featured-projects">
+            <h1 id="featured-projects">Featured Projects</h1>
+            <div class="featured-grid">
+                <!-- Beyond This Page -->
+                <div class="card featured-card">
+                    <div class="image-container">
+                        <div class="skeleton"></div>
+                        <img src="/assets/images/btp.webp" loading="lazy" class="loading"
+                            alt="A close-up of a worn and battered public utility box, with a simple hand-drawn face that appears anxious. The effect is of a robot, uncertain of its purpose.">
                     </div>
-
-                    <!-- Please To Begin -->
-                    <div class="card featured-card">
-                        <div class="image-container">
-                            <div class="skeleton"></div>
-                            <img src="/assets/images/jim_metcalf.webp" loading="lazy" class="loading" alt="Jim Metcalf">
-                        </div>
-                        <p class="card-title">
-                            <a href="https://www.pleasetobegin.com/" target="_blank" rel="noopener">
-                                Please To Begin
-                            </a>
-                        </p>
-                        <p>A tribute to my late grandfather, Journalist and Poet Jim Metcalf.
-                        </p>
-                    </div>
-
-                    <!-- Wine Journal -->
-                    <div class="card featured-card">
-                        <div class="image-container">
-                            <div class="skeleton"></div>
-                            <img src="/assets/images/wine_journal.webp" loading="lazy" class="loading"
-                                alt="A grid of various wine labels from a personal wine journal.">
-                        </div>
-                        <p class="card-title">
-                            <a href="https://wine.metcalf.dev" target="_blank" rel="noopener">
-                                Wine Journal
-                            </a>
-                        </p>
-                        <p>
-                            I used to be a sommelier. He lies the trail of dead bottles.
-                        </p>
-                    </div>
-
-                    <!-- Writistry -->
-                    <div class="card featured-card">
-                        <div class="image-container">
-                            <div class="skeleton"></div>
-                            <img src="/assets/images/writistry.webp" loading="lazy" class="loading"
-                                alt="Link to Writistry app in a new tab; social blogging with markdown. Features an anguled sharpened pencil, ready to write.">
-                        </div>
-                        <p class="card-title">
-                            <a href="https://github.com/gloriousLoaf/Writistry" target="_blank" rel="noopener">
-                                Writistry - nerfed
-                            </a>
-                        </p>
-                        <p>Server shutdown, see repo. Social blogging with Markdown support. Save your favorite
-                            community posts to
-                            your reading
-                            list.</p>
-                        <p>MERN, Redux, Markdown - <a href="https://github.com/gloriousLoaf/Writistry" target="_blank"
-                                rel="noopener">Repository</a>
-                        </p>
-                    </div>
+                    <p class="card-title">
+                        <a href="https://beyondthis.page" target="_blank" rel="noopener">
+                            Beyond This Page
+                        </a>
+                        <img src="/assets/images/beyond_this_page.svg"
+                            alt="Beyond This Page logo features a dark teal circular line, bisected by an earthy terra cotta red stripe."
+                            aria-hidden="true" width="48" height="48" />
+                    </p>
+                    <p>
+                        This new project is still taking shape. Pardon the mess.
+                    </p>
                 </div>
-            </section>
 
-        </main>
+                <!-- Please To Begin -->
+                <div class="card featured-card">
+                    <div class="image-container">
+                        <div class="skeleton"></div>
+                        <img src="/assets/images/jim_metcalf.webp" loading="lazy" class="loading" alt="Jim Metcalf">
+                    </div>
+                    <p class="card-title">
+                        <a href="https://www.pleasetobegin.com/" target="_blank" rel="noopener">
+                            Please To Begin
+                        </a>
+                    </p>
+                    <p>A tribute to my late grandfather, Journalist and Poet Jim Metcalf.
+                    </p>
+                </div>
 
-        <!-- Footer -->
-        <footer>
-            <a href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">
-                @gloriousLoaf</a>
-        </footer>
-    </div>
+                <!-- Wine Journal -->
+                <div class="card featured-card">
+                    <div class="image-container">
+                        <div class="skeleton"></div>
+                        <img src="/assets/images/wine_journal.webp" loading="lazy" class="loading"
+                            alt="A grid of various wine labels from a personal wine journal.">
+                    </div>
+                    <p class="card-title">
+                        <a href="https://wine.metcalf.dev" target="_blank" rel="noopener">
+                            Wine Journal
+                        </a>
+                    </p>
+                    <p>
+                        I used to be a sommelier. He lies the trail of dead bottles.
+                    </p>
+                </div>
+
+                <!-- Writistry -->
+                <div class="card featured-card">
+                    <div class="image-container">
+                        <div class="skeleton"></div>
+                        <img src="/assets/images/writistry.webp" loading="lazy" class="loading"
+                            alt="Link to Writistry app in a new tab; social blogging with markdown. Features an anguled sharpened pencil, ready to write.">
+                    </div>
+                    <p class="card-title">
+                        <a href="https://github.com/gloriousLoaf/Writistry" target="_blank" rel="noopener">
+                            Writistry - nerfed
+                        </a>
+                    </p>
+                    <p>Server shutdown, see repo. Social blogging with Markdown support. Save your favorite
+                        community posts to
+                        your reading
+                        list.</p>
+                    <p>MERN, Redux, Markdown - <a href="https://github.com/gloriousLoaf/Writistry" target="_blank"
+                            rel="noopener">Repository</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <a href="https://github.com/gloriousLoaf" target="_blank" rel="noopener">
+            @gloriousLoaf</a>
+    </footer>
 
     <!-- scripts -->
     <script src="./assets/scripts/typing.js"></script>
