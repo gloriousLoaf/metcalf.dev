@@ -122,12 +122,19 @@ main {
   view-transition-name: main;
 }
 
+/* everything else (header, footer, background, size changes): 0.25s default */
+::view-transition-group(*),
+::view-transition-old(*),
+::view-transition-new(*) {
+  animation-duration: 0.15s;
+}
+
 ::view-transition-old(main) {
-  animation: 0.15s ease-in both vt-out;
+  animation: 0.1s ease-in both vt-out;
 }
 
 ::view-transition-new(main) {
-  animation: 0.3s ease-out both vt-in;
+  animation: 0.18s ease-out both vt-in;
 }
 
 @keyframes vt-out {
@@ -139,7 +146,7 @@ main {
 @keyframes vt-in {
   from {
     opacity: 0;
-    transform: translateY(0.5rem);
+    transform: translateY(0.25rem);
   }
 }
 
@@ -164,6 +171,7 @@ section {
 h1,
 h2 {
   padding: 0.75rem 0;
+  font-family: var(--mono);
 }
 
 /* headings read like code comments; the "/ ''" keeps screen readers quiet */
