@@ -109,7 +109,7 @@ body::before {
       transparent 46%
     ),
     radial-gradient(ellipse at 30% 115%, var(--pool), transparent 60%);
-  animation: drift 90s ease-in-out infinite alternate;
+  animation: drift 30s ease-in-out infinite alternate;
 }
 
 @keyframes drift {
@@ -117,7 +117,7 @@ body::before {
     transform: translateX(-8%);
   }
   to {
-    transform: translateX(8%);
+    transform: translateX(12%);
   }
 }
 
