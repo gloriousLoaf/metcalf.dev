@@ -173,6 +173,7 @@ h1,
 h2 {
   padding: 0.75rem 0;
   font-family: var(--mono);
+  text-transform: lowercase;
 }
 
 /* headings read like code comments; the "/ ''" keeps screen readers quiet */
@@ -452,6 +453,10 @@ nav ul {
   justify-content: flex-end;
   list-style: none;
   padding: 0;
+  font-family: var(--mono);
+  /* mono runs wide; shrink a little below 400px so small phones fit */
+  font-size: min(1.25rem, 5vw);
+  text-transform: lowercase;
 }
 
 nav li {
@@ -475,6 +480,7 @@ nav [aria-current="page"] {
 nav li button {
   cursor: pointer;
   font-size: inherit;
+  text-transform: inherit;
   background-color: transparent;
   border-bottom: 3px solid transparent;
   border-radius: 0;
