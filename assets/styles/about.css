@@ -17,9 +17,10 @@ section > div:nth-child(2) {
 /* selfie img - multiplied over the container's gradient, so the white
  * backdrop turns teal and the shadows stay dark */
 main img {
+  display: block;
   border-radius: 50%;
-  width: 20rem;
-  height: 20rem;
+  width: 100%;
+  height: auto;
   mix-blend-mode: multiply;
   animation: img-scale 0.3s ease;
 }
@@ -79,10 +80,12 @@ h2 + div p strong {
   }
 }
 
+/* 20rem, or the full width between the body's 1rem gutters on phones
+ * narrower than that */
 .image-container {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: min(20rem, 100vw - 2rem);
+  aspect-ratio: 1;
   border-radius: 50%;
   isolation: isolate;
   background: var(--portrait);
