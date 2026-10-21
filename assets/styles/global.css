@@ -18,6 +18,7 @@
   --line: var(--primary);
   --shadow: var(--dark);
   --hover-line: var(--alert-desat);
+  --hover-text: var(--secondary);
   --field: var(--dark);
   --button: var(--secondary);
   --skeleton: #22252f;
@@ -28,19 +29,26 @@
   --portrait: linear-gradient(to bottom, #8dfdc1, #45a29e 65%, #1d3f5d);
 }
 
+/**
+ * light gray, mirroring the dark theme: same cool hue as --dark2, cards
+ * raised (lighter) and fields recessed
+ */
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg: var(--light);
-  --fg: var(--dark);
+  --bg: hsl(223 12% 92%);
+  --fg: var(--dark2);
   --line: var(--secondary);
   --shadow: var(--primary);
   --hover-line: var(--alert);
-  --field: var(--light);
+  /* brand teal is 2.5:1 on the gray, this deeper teal is ~4.6:1 */
+  --hover-text: #287370;
+  --field: hsl(223 12% 96%);
   --button: transparent;
   --skeleton: #f0f0f0;
   --skeleton-shine: #e0e0e0;
   --surface: var(--light);
-  --glow: rgb(69 162 158 / 0.08);
+  /* with headroom above the gray, the band adds light again, like dark */
+  --glow: rgb(255 255 255 / 0.5);
   --pool: rgb(29 63 93 / 0.06);
   --portrait: linear-gradient(to bottom, #8dfdc1, #5cfca7 60%, #58aba8 80%);
 }
@@ -195,7 +203,7 @@ a {
 
 a:hover,
 a:focus {
-  color: var(--secondary);
+  color: var(--hover-text);
   border-bottom: 2px solid var(--hover-line);
 }
 
@@ -456,7 +464,7 @@ nav li a {
 
 nav li a:hover,
 nav li a:focus {
-  color: var(--secondary);
+  color: var(--hover-text);
   border-bottom: 3px solid var(--hover-line);
 }
 
@@ -475,7 +483,7 @@ nav li button {
 nav li button:hover,
 nav li button:focus {
   outline: none;
-  color: var(--secondary);
+  color: var(--hover-text);
   border-bottom: 3px solid var(--hover-line);
 }
 
@@ -529,7 +537,7 @@ footer a {
 
 footer a:hover,
 footer a:focus {
-  color: var(--secondary);
+  color: var(--hover-text);
   font-weight: 600;
   border-bottom: 2px solid var(--hover-line);
   margin: 0 0.25rem;
@@ -577,7 +585,7 @@ dialog > .card {
   margin: 0;
   animation: none !important;
   box-shadow: var(--shadow) 12px 12px 0px 0px;
-  background-color: var(--bg);
+  background-color: var(--surface);
   width: 100%;
 }
 
